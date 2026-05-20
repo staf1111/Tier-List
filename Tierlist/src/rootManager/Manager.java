@@ -34,7 +34,7 @@ public class Manager {
         }
     }
 	
-	private Manager(Stage pr)
+	private Manager(Stage pr) //constructeur de la page
 	{
 		stage = pr;
 		setPage(DEFAULT);
@@ -49,19 +49,20 @@ public class Manager {
             }
             
             root = FXMLLoader.load(Manager.class.getResource(PATH)); // on itilisalise le rot
-    		if(root != null)
+    	
+            if(root != null) //on initialise le thème de la page
     		{
     			for (ThemeList t : ThemeList.values())
     			{
-    				if(t.name().equalsIgnoreCase(Settings.getInstance().getTheme()))
+    				if(t.name() == Settings.getInstance().getTheme().toString()) //on prend le theme qui est enregistrer dans les paramètres
     				{
     					setTheme(t);
     					break;
     				}
     			}
     		}
-    		
-            stage.setResizable(false);
+  
+            stage.setResizable(false); //on empèche le redimensionnement de la page
         	
             if (stage.getScene() == null) { // si null cela veut dire que la scene n'existe pas
 
@@ -82,7 +83,7 @@ public class Manager {
         }
     }
 
-	public void openModal(ModalType MT, String title) throws IOException
+	public void openModal(ModalType MT, String title) throws IOException //fonction pour ouvrire une modal
 	{
 		try {
 			String PATH = MODAL.getPath(MT);
@@ -103,13 +104,13 @@ public class Manager {
 		}
 	}
 	
-	public static void closeModal()
+	public static void closeModal() //fonction pour fermer la modal
 	{
 		modalStage.close();
 	}
 	
-	
-	public void setTheme(ThemeList th)
+
+	public void setTheme(ThemeList th) //fonction pour changer de theme
 	{
 		this.currentT = th;
 		

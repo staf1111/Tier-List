@@ -11,8 +11,9 @@ class Page {
 	Page()
 	{
 		//screen
-		//index.put(PageType.HOME, "/fxml/screen/home.fxml");
-		//index.put(PageType.SEARCHPAGE, "/fxml/screen/search.fxml");
+		index.put(PageType.HOME, "/fxml/page/home.fxml");
+		index.put(PageType.CREATETIERLIST, "/fxml/page/createTierList.fxml");
+		index.put(PageType.PLAY, "/fxml/page/play.fxml");
 	}
 
 	public String getPath(PageType type) {

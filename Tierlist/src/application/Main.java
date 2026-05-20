@@ -1,20 +1,23 @@
 package application;
 	
+import data.DataManager;
+import data.Settings;
 import javafx.application.Application;
 import javafx.stage.Stage;
-import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-
+import rootManager.Manager;
 
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			BorderPane root = new BorderPane();
-			Scene scene = new Scene(root,400,400);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			Settings.init();  //on initialise la classe qui va gérer les paramètre de l'application
+			DataManager.init();  //on initialise la classe qui va géré la sauvegarde des donnée et l'importation des tier list ainsi que
+			
+			Manager.init(primaryStage); //on initialise la classe qui va géré les différente page et modal
+			
+			
+			primaryStage.setTitle("Tierlist");
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

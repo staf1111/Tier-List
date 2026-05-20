@@ -11,8 +11,8 @@ class Modal {
 	Modal()
 	{
 		//screen
-		index.put(ModalType.API_POPUP, "/fxml/popup/api_popup_init.fxml");
-		index.put(ModalType.SETTINGS, "/fxml/popup/settings.fxml");
+		index.put(ModalType.API_POPUP, "/fxml/modal/");
+		index.put(ModalType.SETTINGS, "/fxml/modal/");
 
 	}
 
