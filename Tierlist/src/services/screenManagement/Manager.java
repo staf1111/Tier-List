@@ -1,8 +1,8 @@
-package rootManager;
+package services.screenManagement;
 
 import java.io.IOException;
 
-import data.Settings;
+import services.data.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;

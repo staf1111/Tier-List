@@ -1,4 +1,4 @@
-package rootManager;
+package services.screenManagement;
 
 public enum ModalType {
 	API_POPUP,

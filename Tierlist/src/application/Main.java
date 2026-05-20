@@ -1,11 +1,10 @@
 package application;
-	
-import data.DataManager;
-import data.Settings;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
-import rootManager.Manager;
-import rootManager.ThemeList;
+import services.data.DataManager;
+import services.data.Settings;
+import services.screenManagement.Manager;
 
 public class Main extends Application {
 	@Override

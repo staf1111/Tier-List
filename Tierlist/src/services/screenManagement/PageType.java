@@ -1,4 +1,4 @@
-package rootManager;
+package services.screenManagement;
 
 public enum PageType {
 	HOME,

@@ -1,6 +1,6 @@
-package data;
+package services.data;
 
-import rootManager.ThemeList;
+import services.screenManagement.*;
 
 public class Settings {
 	private static Settings instance;
