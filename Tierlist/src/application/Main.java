@@ -4,7 +4,7 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import services.data.DataManager;
 import services.data.Settings;
-import services.screenManagement.Manager;
+import services.screenManager.Manager;
 
 public class Main extends Application {
 	@Override

@@ -1,4 +1,4 @@
-package services.screenManagement;
+package services.screenManager;
 
 
 import java.util.EnumMap;
@@ -11,9 +11,9 @@ class Page {
 	Page()
 	{
 		//screen
-		index.put(PageType.HOME, "/fxml/page/home.fxml");
-		index.put(PageType.CREATETIERLIST, "/fxml/page/createTierList.fxml");
-		index.put(PageType.PLAY, "/fxml/page/play.fxml");
+		index.put(PageType.HOME, "/application/views/home.fxml");
+		index.put(PageType.CREATETIERLIST, "/application/views/createTierList.fxml");
+		index.put(PageType.PLAY, "/application/views/play.fxml");
 	}
 
 	public String getPath(PageType type) {

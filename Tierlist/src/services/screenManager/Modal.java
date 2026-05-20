@@ -1,4 +1,4 @@
-package services.screenManagement;
+package services.screenManager;
 
 
 import java.util.EnumMap;

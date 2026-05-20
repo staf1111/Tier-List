@@ -1,6 +1,6 @@
 package services.data;
 
-import services.screenManagement.*;
+import services.screenManager.*;
 
 public class Settings {
 	private static Settings instance;
