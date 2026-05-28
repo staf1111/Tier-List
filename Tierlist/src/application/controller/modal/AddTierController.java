@@ -61,6 +61,8 @@ public class AddTierController {
 	public void save()
 	{
 		tier.add(new Tier(name.getText(), backColor.getValue(), textColor.getValue()));
+		
+		System.out.println("added");
 	}
 	
 	public void reset() {
@@ -74,7 +76,7 @@ public class AddTierController {
 	}
 	
 	@FXML
-	private void leave()
+	public void leave()
 	{
 		Stage stage = (Stage) name.getScene().getWindow();
 		stage.close();

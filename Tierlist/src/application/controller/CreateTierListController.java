@@ -6,12 +6,14 @@ import java.util.List;
 import application.controller.modal.AddTierController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Items;
@@ -40,12 +42,14 @@ public class CreateTierListController {
 		Scrollpane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
 		Scrollpane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
 		
-		
-		TierContainer.setPrefWidth(Scrollpane.getWidth());
-		TierContainer.setPrefHeight(Scrollpane.getHeight());
+		Scrollpane.setFitToWidth(true);
 		
 		
 		tierlist = new TierListManager();
+		
+		TierContainer.setSpacing(10);
+		TierContainer.setAlignment(Pos.TOP_CENTER);
+		
 	}
 	
 	
@@ -66,11 +70,15 @@ public class CreateTierListController {
 			
 			stage.showAndWait();
 			
-			tiers = controller.getTier();
 			
-			for(Tier t : tiers)
+			
+			if(controller.getTier() != null)
 			{
-				TierContainer.getChildren().add(t);
+				for(Tier t : controller.getTier())
+				{
+					t.setSize(TierContainer.getWidth(), TierContainer.getHeight() * 0.15);
+					TierContainer.getChildren().add(t);
+				}
 			}
 			
 		} catch (Exception e) {
