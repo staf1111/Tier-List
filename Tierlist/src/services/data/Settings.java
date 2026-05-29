@@ -23,8 +23,8 @@ public class Settings {
 	
 	private Settings()
 	{
-		RAWG_apiKey = "1234";
-		TMDB_apiKey = "1234";
+		RAWG_apiKey = "69cc1f05ae3c40daab0d0889eb46acaf";
+		TMDB_apiKey = "581cb5fcdd5f9a93344b6d275fbb65d1";
 	}
 
 	public String getRAWG_apiKey() {
