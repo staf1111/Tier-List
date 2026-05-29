@@ -8,8 +8,8 @@ public class Settings {
 	private String RAWG_apiKey = "";
 	private String TMDB_apiKey = "";
 	
-	private int ApiRate = 5; // nombre limite de résultat lors de la requette
-	private int MaxApiRate = 20; //nombre maximum de résultat par requette
+	private int ApiRate = 5; // nombre limite de résultats lors de la requette
+	private int MaxApiRate = 20; //nombre maximum de résultats par requette
 	
 	private ThemeList theme = ThemeList.LIGHT;
 	
