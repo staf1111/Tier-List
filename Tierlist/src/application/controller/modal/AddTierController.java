@@ -6,17 +6,16 @@ import java.util.List;
 import javafx.fxml.FXML;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import model.Tier;
+import model.TierM;
 
 public class AddTierController {
-	private List<Tier> tier = new ArrayList<Tier>();
+	private List<TierM> tier = new ArrayList<TierM>();
 	
 	@FXML ColorPicker textColor, backColor;
 	
@@ -60,7 +59,7 @@ public class AddTierController {
 	@FXML
 	public void save()
 	{
-		tier.add(new Tier(name.getText(), backColor.getValue(), textColor.getValue()));
+		tier.add(new TierM(name.getText(), backColor.getValue(), textColor.getValue()));
 		
 		System.out.println("added");
 	}
@@ -70,7 +69,7 @@ public class AddTierController {
 	}
 	
 	
-	public List<Tier> getTier()
+	public List<TierM> getTier()
 	{
 		return tier;
 	}

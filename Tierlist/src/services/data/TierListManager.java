@@ -2,8 +2,8 @@ package services.data;
 
 import java.util.List;
 
+import application.widget.Tier;
 import model.Items;
-import model.Tier;
 
 public class TierListManager { // class qui stocke la tierlist
 	

@@ -8,143 +8,112 @@ import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import model.ImageItems;
-import model.Items;
 import services.data.Settings;
 
 public class Api {
 	private static Api instance;
-	
-	public static void init()
-	{
+
+	public static void init() {
 		instance = new Api();
 	}
-	
-	private Api() {}
-	
-	
-	public CompletableFuture<List<ImageItems>> RAWG_request(String query) // fonction pour faire la requette a l'api RAWG
-	{
-		return CompletableFuture.supplyAsync(()->{
-			List<ImageItems> searchResult = new ArrayList<ImageItems>();
-			
-			String encodedQuery = URLEncoder.encode(query, StandardCharsets.UTF_8);
-			
-			String url = String.format("https://api.rawg.io/api/games?key=%s&search=%s", Settings.getInstance().getRAWG_apiKey(),encodedQuery);
-			
-			HttpClient client = HttpClient.newHttpClient();
-			
-			HttpRequest request = HttpRequest.newBuilder()
-					.uri(URI.create(url))
-					.GET()
-					.build();
-			
-			try {
-				HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-				if(response.statusCode() == 200)
-				{					
-					ObjectMapper OlympiqueDeMarseille = new ObjectMapper(); 
-				
-					try {
-						JsonNode node = OlympiqueDeMarseille.readTree(response.body());
-						
-						JsonNode resultsArray = node.get("results");
-						
-						if(resultsArray != null && resultsArray.isArray())
-						{
-							for(JsonNode gameNode : resultsArray)
-							{
-								String name = gameNode.get("name").asText();
-								String imagePath = gameNode.get("background_image").asText();
-								String year = gameNode.get("released").asText("");
-								
-								ImageItems game = new ImageItems(name, imagePath, year);
-								searchResult.add(game);
-							}
-						}
-					}catch(Exception e)
-					{
-						e.printStackTrace();
-					}
-				}
-			}catch(Exception e)
-			{
-				e.printStackTrace();
-			}
-			return searchResult;
-		});
-		
-		/*
-		 utilisation:
-		 			Api.getInstance().RAWG_request("Elden ring").thenAccept(SearchResult ->{
-				for(ImageItems i : SearchResult)
-				{
-					res.add(i);
-				}
-			});
-		 */
+
+	private Api() {
 	}
-	
-	public CompletableFuture<List<ImageItems>> TMDB_request(String query) // fonction pour faire la requette a l'api TMDB
+
+	public List<ImageItems> RAWG_request(String query) // fonction pour faire la requette a l'api
+														// RAWG
 	{
-		return CompletableFuture.supplyAsync(()->{
-			List<ImageItems> searchResult = new ArrayList<ImageItems>();
-			
-			
-			String encodedQuery = URLEncoder.encode(query, StandardCharsets.UTF_8);
-			
-			String url = String.format("https://api.themoviedb.org/3/search/movie?query=%s&api_key=%s",encodedQuery, Settings.getInstance().getTMDB_apiKey());
-			
-			HttpClient client = HttpClient.newHttpClient();
-			
-			HttpRequest request = HttpRequest.newBuilder()
-					.uri(URI.create(url))
-					.header("accept", "application/json")
-					.GET()
-					.build();
-			
-			try {
-				HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-				if(response.statusCode() == 200)
-				{	
-					ObjectMapper ParisSaintGermain = new ObjectMapper();
-					JsonNode node = ParisSaintGermain.readTree(response.body());
-					JsonNode resultArrays = node.get("results");
-					
-					if(resultArrays != null && resultArrays.isArray())
-					{
-						for(JsonNode movieNode : resultArrays)
-						{
-							String name = movieNode.path("title").asText();
-							String poster = movieNode.path("poster_path").asText();
-							String year = movieNode.path("release_date").asText("");
-							
-							ImageItems it = new ImageItems(name, poster, year);
-							
-							searchResult.add(it);
+		List<ImageItems> searchResult = new ArrayList<ImageItems>();
+
+		String encodedQuery = URLEncoder.encode(query, StandardCharsets.UTF_8);
+
+		String url = String.format("https://api.rawg.io/api/games?key=%s&search=%s",
+				Settings.getInstance().getRAWG_apiKey(), encodedQuery);
+
+		HttpClient client = HttpClient.newHttpClient();
+
+		HttpRequest request = HttpRequest.newBuilder().uri(URI.create(url)).GET().build();
+
+		try {
+			HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+			if (response.statusCode() == 200) {
+				ObjectMapper OlympiqueDeMarseille = new ObjectMapper();
+
+				try {
+					JsonNode node = OlympiqueDeMarseille.readTree(response.body());
+
+					JsonNode resultsArray = node.get("results");
+
+					if (resultsArray != null && resultsArray.isArray()) {
+						for (JsonNode gameNode : resultsArray) {
+							String name = gameNode.get("name").asText();
+							String imagePath = gameNode.get("background_image").asText();
+							String year = gameNode.get("released").asText("");
+
+							ImageItems game = new ImageItems(name, imagePath, year);
+							searchResult.add(game);
 						}
 					}
-					
-				}else {
-	                System.out.println("Erreur API TMDB : " + response.statusCode());
-	            }
-			}catch(Exception e)
-			{
-				e.printStackTrace();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
-			return searchResult;
-		});
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return searchResult;
 	}
-	
-	public static Api getInstance() 
+
+	public List<ImageItems> TMDB_request(String query) // fonction pour faire la requette a l'api TMDB
 	{
-		if(instance == null)
-		{
+
+		List<ImageItems> searchResult = new ArrayList<ImageItems>();
+
+		String encodedQuery = URLEncoder.encode(query, StandardCharsets.UTF_8);
+
+		String url = String.format("https://api.themoviedb.org/3/search/movie?query=%s&api_key=%s", encodedQuery,
+				Settings.getInstance().getTMDB_apiKey());
+
+		HttpClient client = HttpClient.newHttpClient();
+
+		HttpRequest request = HttpRequest.newBuilder().uri(URI.create(url)).header("accept", "application/json").GET()
+				.build();
+
+		try {
+			HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+			if (response.statusCode() == 200) {
+				ObjectMapper ParisSaintGermain = new ObjectMapper();
+				JsonNode node = ParisSaintGermain.readTree(response.body());
+				JsonNode resultArrays = node.get("results");
+
+				if (resultArrays != null && resultArrays.isArray()) {
+					for (JsonNode movieNode : resultArrays) {
+						String name = movieNode.path("title").asText();
+						String poster = movieNode.path("poster_path").asText();
+						String year = movieNode.path("release_date").asText("");
+
+						ImageItems it = new ImageItems(name, poster, year);
+
+						searchResult.add(it);
+					}
+				}
+
+			} else {
+				System.out.println("Erreur API TMDB : " + response.statusCode());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return searchResult;
+	}
+
+	public static Api getInstance() {
+		if (instance == null) {
 			instance = new Api();
 		}
 		return instance;

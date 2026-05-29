@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import application.controller.modal.AddTierController;
+import application.widget.Tier;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
@@ -13,13 +14,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Items;
-import model.Tier;
+import model.TierM;
 import services.data.TierListManager;
-import services.screenManager.Manager;
 
 public class CreateTierListController {
 	
@@ -49,7 +47,7 @@ public class CreateTierListController {
 		
 		TierContainer.setSpacing(10);
 		TierContainer.setAlignment(Pos.TOP_CENTER);
-		
+		TierContainer.setFillWidth(true);
 	}
 	
 	
@@ -74,10 +72,11 @@ public class CreateTierListController {
 			
 			if(controller.getTier() != null)
 			{
-				for(Tier t : controller.getTier())
+				for(TierM t : controller.getTier())
 				{
-					t.setSize(TierContainer.getWidth(), TierContainer.getHeight() * 0.15);
-					TierContainer.getChildren().add(t);
+					Tier tier = new Tier(t);
+					tier.setWitdh(TierContainer.getWidth());
+					TierContainer.getChildren().add(tier);
 				}
 			}
 			
