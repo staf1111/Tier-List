@@ -1,0 +1,106 @@
+.root {
+    -fx-background-color: #050508; /* Fond très sombre de la maquette */
+    -fx-font-family: "Courier New", "Lucida Console", monospace; /* Effet pixelisé retro */
+}
+
+/* SIDEBAR */
+.sidebar {
+    -fx-background-color: #0b0712;
+    -fx-padding: 25;
+    -fx-spacing: 20;
+    -fx-pref-width: 200;
+    -fx-border-color: transparent #ff007f transparent transparent; /* Ligne rose à droite */
+    -fx-border-width: 2;
+}
+
+.logo {
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-padding: 0 0 20 0;
+    -fx-effect: dropshadow(three-pass-box, #ff007f, 10, 0.5, 0, 0); /* Effet néon */
+}
+
+/* MENU BUTTONS */
+.menu-button,
+.menu-button-active {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ff007f;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-alignment: center-left;
+    -fx-pref-width: 160;
+    -fx-padding: 8 12;
+}
+
+.menu-button-active {
+    -fx-text-fill: white;
+    -fx-background-color: rgba(255, 0, 127, 0.15);
+    -fx-border-color: #ff007f;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+}
+
+/* MAIN PANEL */
+.main-panel {
+    -fx-background-color: #07040a;
+    -fx-padding: 35;
+}
+
+/* TITLES */
+.title {
+    -fx-text-fill: #ffe600; /* Jaune RankStation */
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+}
+
+.subtitle {
+    -fx-text-fill: #736b7e;
+    -fx-font-size: 13px;
+}
+
+.section-title {
+    -fx-text-fill: #ff0055;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 15 0 0 0;
+}
+
+/* BUTTONS */
+.primary-button {
+    -fx-background-color: #ff007f;
+    -fx-text-fill: white;
+    -fx-background-radius: 15;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+}
+
+.secondary-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-border-color: #4a2768;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 15;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+}
+
+/* CARDS */
+.card {
+    -fx-background-color: #0d0816;
+    -fx-border-color: #32194c;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+    -fx-pref-width: 160;
+    -fx-pref-height: 180; /* Format vertical de l'image */
+}
+
+.card:hover {
+    -fx-border-color: #ff007f;
+}
+
+.grid {
+    -fx-padding: 10 0 0 0;
+}

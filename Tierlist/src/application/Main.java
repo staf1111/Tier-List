@@ -13,7 +13,7 @@ import model.Items;
 import services.data.DataManager;
 import services.data.Settings;
 import services.screenManager.Manager;
-import services.screenManager.PageType;
+import services.screenManager.ThemeList;
 
 public class Main extends Application {
 	@Override
@@ -23,7 +23,7 @@ public class Main extends Application {
 			DataManager.init();  //on initialise la classe qui va géré la sauvegarde des donnée et l'importation des tier list ainsi que 
 			
 			Manager.init(primaryStage); //on initialise la classe qui va géré les différente page et modal
-						
+			Manager.getInstance().setTheme(ThemeList.DARK);			
 			primaryStage.setTitle("Tierlist");
 			Api.init();
 			
