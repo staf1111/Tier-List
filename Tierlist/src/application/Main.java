@@ -13,6 +13,7 @@ import model.Items;
 import services.data.DataManager;
 import services.data.Settings;
 import services.screenManager.Manager;
+import services.screenManager.PageType;
 
 public class Main extends Application {
 	@Override
@@ -41,6 +42,7 @@ public class Main extends Application {
 				}
 			});
 			*/
+						
 			
 			primaryStage.setTitle("Tierlist");
 		} catch(Exception e) {

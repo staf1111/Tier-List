@@ -1,8 +1,10 @@
 package model;
 
-public class ImageItems extends Items {
-
+public class ImageItems implements Items{
+	private String name;
+	
 	private String path;
+	
 	private String year = "";
 	
 	public ImageItems(String name, String path, String year)
@@ -12,16 +14,22 @@ public class ImageItems extends Items {
 	}
 	
 	public ImageItems(String name, String path) {
-		super(name, ItemsType.IMAGE);
+		this.name = name;
 		this.path = path;
 	}
-	public String getPath() {
+	
+	@Override
+	public String getContent() {
 		return path;
 	}
-
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return name;
+	}
+	
 	@Override
 	public String toString() {
-		return "ImageItems [path=" + path + ", year=" + year + ", getName()=" + getName() + ", getType()=" + getType() + "]";
+		return "ImageItems [path=" + path + ", year=" + year + ", getName()=" + getName() + "]";
 	}
-
 }
