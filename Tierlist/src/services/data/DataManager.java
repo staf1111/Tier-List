@@ -24,7 +24,7 @@ public class DataManager {
 	}
 	
 	
-	public void saveTierList()
+	public void saveTierList(TierListManager tierlist)
 	{
 		
 	}

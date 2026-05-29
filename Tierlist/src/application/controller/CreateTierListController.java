@@ -56,7 +56,7 @@ public class CreateTierListController {
 	
 	
 	@FXML
-	public void addTier()
+	public void addTier() // fonction pour ajouter des tiers
 	{
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/views/modal/addTier.fxml"));
@@ -90,7 +90,7 @@ public class CreateTierListController {
 	
 	
 	@FXML
-	public void saveTierList()
+	public void saveTierList() // fonction pour initier la sauvegarde
 	{
 		tierlist.setTier(this.tiers);
 		tierlist.setItems(this.items);

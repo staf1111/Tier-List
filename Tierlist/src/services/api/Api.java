@@ -28,7 +28,7 @@ public class Api {
 	private Api() {}
 	
 	
-	public CompletableFuture<List<ImageItems>> RAWG_request(String query)
+	public CompletableFuture<List<ImageItems>> RAWG_request(String query) // fonction pour faire la requette a l'api RAWG
 	{
 		return CompletableFuture.supplyAsync(()->{
 			List<ImageItems> searchResult = new ArrayList<ImageItems>();
@@ -90,7 +90,7 @@ public class Api {
 		 */
 	}
 	
-	public CompletableFuture<List<ImageItems>> TMDB_request(String query)
+	public CompletableFuture<List<ImageItems>> TMDB_request(String query) // fonction pour faire la requette a l'api TMDB
 	{
 		return CompletableFuture.supplyAsync(()->{
 			List<ImageItems> searchResult = new ArrayList<ImageItems>();
@@ -141,7 +141,7 @@ public class Api {
 		});
 	}
 	
-	public static Api getInstance()
+	public static Api getInstance() 
 	{
 		if(instance == null)
 		{

@@ -5,7 +5,7 @@ import java.util.List;
 import model.Items;
 import model.Tier;
 
-public class TierListManager {
+public class TierListManager { // class qui stocke la tierlist
 	
 	private List<Tier> tier;
 	private List<Items> items;
