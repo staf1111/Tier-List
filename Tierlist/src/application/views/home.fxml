@@ -1,49 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml/1"
-            prefWidth="1000" prefHeight="650"
-            styleClass="root"
-            stylesheets="@style.css">
+<BorderPane prefHeight="650" prefWidth="1000" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.HomeController">
 
     <left>
         <VBox styleClass="sidebar">
 
-            <Label styleClass="logo" text="TIER&#10;LIST"/>
+            <Label styleClass="logo" text="TIER&#10;LIST" />
 
-            <Button text="🏠 Accueil" styleClass="menu-button-active"/>
-            <Button text="📋 Mes tier list" styleClass="menu-button"/>
-            <Button text="⬇ Importer" styleClass="menu-button"/>
-            <Button text="⚙ Paramètres" styleClass="menu-button"/>
-            <Button text="? Aide" styleClass="menu-button"/>
+            <Button styleClass="menu-button-active" text="🏠 Accueil" />
+            <Button styleClass="menu-button" text="📋 Mes tier list" />
+            <Button styleClass="menu-button" text="⬇ Importer" />
+            <Button styleClass="menu-button" text="⚙ Paramètres" />
+            <Button styleClass="menu-button" text="? Aide" />
 
         </VBox>
     </left>
 
     <center>
-        <VBox styleClass="main-panel" spacing="20">
+        <VBox spacing="20" styleClass="main-panel">
 
-            <Label text="RankStation" styleClass="title"/>
-            <Label text="Bienvenue, voici vos tier lists" styleClass="subtitle"/>
+            <Label styleClass="title" text="RankStation" />
+            <Label styleClass="subtitle" text="Bienvenue, voici vos tier lists" />
 
             <HBox spacing="15">
-                <Button text="+ Nouvelle Tier List" styleClass="primary-button"/>
-                <Button text="⬇ Importer une Tier List" styleClass="secondary-button"/>
+                <Button styleClass="primary-button" text="+ Nouvelle Tier List" />
+                <Button styleClass="secondary-button" text="⬇ Importer une Tier List" />
             </HBox>
 
-            <Label text="Vos tier lists du moment" styleClass="section-title"/>
+            <Label styleClass="section-title" text="Vos tier lists du moment" />
 
-            <GridPane hgap="20" vgap="20" styleClass="grid">
-                <Pane styleClass="card" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-                <Pane styleClass="card" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-                <Pane styleClass="card" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+            <GridPane hgap="20" styleClass="grid" vgap="20">
+                <Pane styleClass="card" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Pane styleClass="card" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Pane styleClass="card" GridPane.columnIndex="2" GridPane.rowIndex="0" />
 
-                <Pane styleClass="card" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                <Pane styleClass="card" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                <Pane styleClass="card" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                <Pane styleClass="card" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <Pane styleClass="card" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Pane styleClass="card" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <columnConstraints>
+               <ColumnConstraints />
+               <ColumnConstraints />
+               <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
             </GridPane>
 
         </VBox>

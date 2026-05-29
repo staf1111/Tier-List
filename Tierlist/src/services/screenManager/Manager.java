@@ -15,17 +15,17 @@ public class Manager {
 
 	private static final Page PAGE = new Page(); //initialisation de la class Page
 	private static final Theme THEME = new Theme();
-	
+
 	private static Parent root;
-	
+
 	private static final PageType DEFAULT = PageType.CREATETIERLIST;
-	
-	private static final int HEIGHT_PREF = 750;
+
+	private static final int HEIGHT_PREF = 650;
 	private static final int WIDTH_PREF = 1000;
-	
+
 	private PageType current; // type de la page en cours
 	private ThemeList currentT;
-	
+
 	public static void init(Stage primaryStage) { // on initalise le root
         if (instance == null) {
             instance = new Manager(primaryStage);
