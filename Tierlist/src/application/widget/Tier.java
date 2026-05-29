@@ -1,5 +1,6 @@
 package application.widget;
 
+import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -39,6 +40,9 @@ public class Tier extends HBox{
 	    labelPane.setMinHeight(squareSize);
 	    labelPane.setMaxWidth(squareSize); 
 	    labelPane.setMaxHeight(squareSize);
+	    
+	    labelPane.setBackground(new Background(new BackgroundFill(model.getBackColor(),CornerRadii.EMPTY,Insets.EMPTY)));
+	    labelPane.setAlignment(javafx.geometry.Pos.CENTER);
 	    
 	    Label text = new Label(model.getName());
 	    text.setTextFill(model.getNameColor());

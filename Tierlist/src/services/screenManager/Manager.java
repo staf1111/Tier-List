@@ -1,13 +1,10 @@
 package services.screenManager;
 
-import java.io.IOException;
-
-import services.data.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
+import services.data.Settings;
 
 public class Manager {
 	private static Manager instance; // on crée une instance pour le manager
@@ -20,7 +17,7 @@ public class Manager {
 	
 	private static final PageType DEFAULT = PageType.CREATETIERLIST;
 	
-	private static final int HEIGHT_PREF = 750;
+	private static final int HEIGHT_PREF = 650;
 	private static final int WIDTH_PREF = 1000;
 	
 	private PageType current; // type de la page en cours

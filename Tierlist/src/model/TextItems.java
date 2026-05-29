@@ -1,6 +1,6 @@
 package model;
 
-public class TextItems implements Items {
+public class TextItems implements ItemsM {
 	private String name;
 	
 	private String content;

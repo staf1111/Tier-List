@@ -7,7 +7,7 @@ import javafx.scene.paint.Color;
 
 public class TierM {
 	private String name;
-	private List<Items> content = new ArrayList<Items>();
+	private List<ItemsM> content = new ArrayList<ItemsM>();
 	private Color backColor;
 	private Color nameColor;
 	
@@ -32,12 +32,12 @@ public class TierM {
 		this.height = h;
 	}
 	
-	public void addItem(Items c)
+	public void addItem(ItemsM c)
 	{
 		content.add(c);
 	}
 	
-	public void removeItem(Items it)
+	public void removeItem(ItemsM it)
 	{
 		for(int i = 0; i < content.size(); i++)
 		{

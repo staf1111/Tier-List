@@ -5,82 +5,179 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CreateTierListController">
-   <children>
-      <VBox layoutX="14.0" layoutY="42.0" prefHeight="687.0" prefWidth="192.0" />
-      <Button fx:id="Preview" layoutX="749.0" layoutY="17.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="103.0" text="Aperçus" />
-      <Button fx:id="Themes" layoutX="874.0" layoutY="17.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="103.0" text="Themes" />
-      <Label fx:id="Title" contentDisplay="CENTER" layoutX="430.0" layoutY="44.0" text="Nom de la tiers list" textFill="#ffe45e">
-         <font>
-            <Font name="System Bold" size="30.0" />
-         </font>
-      </Label>
-      <Label fx:id="lastUpdate" contentDisplay="CENTER" layoutX="430.0" layoutY="89.0" text="Dernière modification le XX/XX/XXXX à XX:XX" />
-      <Button fx:id="back" layoutX="230.0" layoutY="53.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="103.0" text="Retour" />
-      <HBox alignment="CENTER" layoutX="233.0" layoutY="125.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="77.0" prefWidth="720.0" style="-fx-border-color: red;">
-         <children>
-            <Button fx:id="AddTier" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addTier" text="Ajouter un tier">
+<BorderPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CreateTierListController">
+
+    <top>
+        <HBox alignment="CENTER_RIGHT" fillHeight="true">
+            <padding>
+                <Insets bottom="8" left="12" right="12" top="8" />
+            </padding>
+            <Button fx:id="Preview" mnemonicParsing="false" prefHeight="27" prefWidth="103" text="Aperçus">
+                <HBox.margin><Insets right="8" /></HBox.margin>
+            </Button>
+            <Button fx:id="Themes" mnemonicParsing="false" prefHeight="27" prefWidth="103" text="Themes" />
+        </HBox>
+    </top>
+
+    <!-- ═══════════════════════════════════════
+         LEFT SIDEBAR (panneau vide)
+    ════════════════════════════════════════ -->
+    <left>
+        <VBox fillWidth="true" prefWidth="192" />
+    </left>
+
+    <!-- ═══════════════════════════════════════
+         CENTER : header + toolbar + contenu principal
+    ════════════════════════════════════════ -->
+    <center>
+        <VBox fillWidth="true" prefHeight="205.0" prefWidth="808.0">
+            <padding>
+                <Insets bottom="12" left="12" right="12" top="0" />
+            </padding>
+
+            <!-- ── HEADER ROW : Retour | Titre + date | (espace) ── -->
+            <HBox alignment="CENTER" fillHeight="true">
+                <padding>
+                    <Insets bottom="4" top="10" />
+                </padding>
+
+                <!-- Retour (ancré à gauche) -->
+                <Button fx:id="back" mnemonicParsing="false" prefHeight="27" prefWidth="103" text="Retour" />
+
+                <!-- Spacer gauche -->
+                <Region HBox.hgrow="ALWAYS" />
+
+                <!-- Titre + date (centré) -->
+                <VBox alignment="CENTER_LEFT">
+               <TextField fx:id="Title" alignment="CENTER" style="-fx-border-style: none;" text="Nom de la tiers list">
+                  <font>
+                     <Font name="System Bold" size="30.0" />
+                  </font>
+               </TextField>
+                    <Label fx:id="lastUpdate" contentDisplay="CENTER" text="Dernière modification le XX/XX/XXXX à XX:XX" />
+                </VBox>
+
+                <!-- Spacer droit (équilibre le bouton Retour) -->
+                <Region HBox.hgrow="ALWAYS" />
+                <Region prefWidth="103" />
+            </HBox>
+
+            <!-- ── TOOLBAR : Ajouter / Réinitialiser / Sauvegarder + Play ── -->
+            <HBox alignment="CENTER_LEFT" fillHeight="true">
+                <VBox.margin><Insets bottom="8" /></VBox.margin>
+
+                <!-- Boutons gauche -->
+                <Button fx:id="AddTier" mnemonicParsing="false" onAction="#addTier" text="Ajouter un tier">
+                    <HBox.margin><Insets bottom="10.0" left="5.0" right="5.0" top="10.0" /></HBox.margin>
+                </Button>
+            <Button fx:id="AddItem" mnemonicParsing="false" onAction="#addItems" text="Ajouter un element">
                <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="Reset" contentDisplay="CENTER" mnemonicParsing="false" text="Réinitialiser ">
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </HBox.margin>
-            </Button>
-            <Button fx:id="Save" contentDisplay="CENTER" mnemonicParsing="false" text="Sauvegarder">
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </HBox.margin>
-            </Button>
-            <Separator prefHeight="0.0" prefWidth="258.0" visible="false" />
-            <Button fx:id="Play" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="42.0" prefWidth="53.0">
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </HBox.margin>
-               <graphic>
-                  <ImageView fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../assets/iconPlay.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-         </children>
-      </HBox>
-      <VBox alignment="TOP_CENTER" layoutX="828.0" layoutY="221.0" prefHeight="424.0" prefWidth="124.0" style="-fx-border-color: red;">
-         <children>
-            <Button fx:id="TierSettings" mnemonicParsing="false" prefHeight="66.0" prefWidth="67.0">
-               <graphic>
-                  <VBox prefHeight="128.0" prefWidth="127.0">
-                     <children>
-                        <ImageView fitHeight="64.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../assets/iconConfig.png" />
-                           </image>
+                <Button fx:id="Reset" mnemonicParsing="false" text="Réinitialiser">
+                    <HBox.margin><Insets bottom="10.0" left="5.0" right="5.0" top="10.0" /></HBox.margin>
+                </Button>
+                <Button fx:id="Save" mnemonicParsing="false" text="Sauvegarder">
+                    <HBox.margin><Insets bottom="10.0" left="5.0" right="5.0" top="10.0" /></HBox.margin>
+                </Button>
+
+                <!-- Spacer pour pousser Play à droite -->
+                <Region prefHeight="63.0" prefWidth="250.0" HBox.hgrow="ALWAYS" />
+
+                <!-- Bouton Play (icône) -->
+                <Button fx:id="Play" prefHeight="42" prefWidth="53">
+                    <HBox.margin><Insets bottom="10" right="10" top="10" /></HBox.margin>
+                    <graphic>
+                        <ImageView fitHeight="34" fitWidth="36" pickOnBounds="true" preserveRatio="true">
+                            <image><Image url="@../../assets/iconPlay.png" /></image>
                         </ImageView>
-                        <Label alignment="CENTER" prefHeight="18.0" prefWidth="201.0" text="Config tier" />
-                     </children>
-                  </VBox>
-               </graphic>
-               <VBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </VBox.margin>
-            </Button>
-         </children>
-      </VBox>
-      <ScrollPane fx:id="Scrollpane" layoutX="233.0" layoutY="221.0" prefHeight="425.0" prefWidth="580.0">
-         <content>
-            <VBox fx:id="TierContainer" alignment="CENTER" fillWidth="false" prefHeight="425.0" prefWidth="580.0" />
-         </content>
-      </ScrollPane>
-   </children>
-</Pane>
+                    </graphic>
+                </Button>
+            <Region prefHeight="63.0" prefWidth="25.0" />
+            </HBox>
+
+            <!-- ── CONTENU PRINCIPAL : ScrollPane + Panneau config ── -->
+            <HBox fillHeight="true" prefHeight="222.0" prefWidth="784.0" VBox.vgrow="ALWAYS">
+
+                <!-- ScrollPane (prend toute la largeur restante) -->
+                <ScrollPane fx:id="Scrollpane" fitToWidth="true" prefHeight="350.0" prefWidth="567.0" HBox.hgrow="ALWAYS">
+                    <content>
+                        <VBox fx:id="TierContainer" alignment="CENTER" fillWidth="false" />
+                    </content>
+                </ScrollPane>
+
+                <!-- Panneau latéral droit (Config tier) -->
+                <VBox alignment="TOP_CENTER" prefWidth="124" spacing="5.0">
+                    <HBox.margin><Insets left="8" /></HBox.margin>
+
+                    <Button fx:id="TierSettings" alignment="CENTER" mnemonicParsing="false" prefHeight="69.0" prefWidth="75.0">
+                        <VBox.margin><Insets bottom="5.0" top="10.0" /></VBox.margin>
+                        <graphic>
+                            <VBox alignment="TOP_CENTER" prefHeight="58.0" prefWidth="50.0">
+                                <ImageView fitHeight="62.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                                    <image><Image url="@../../assets/iconConfig.png" /></image>
+                                </ImageView>
+                                <Label alignment="CENTER" prefHeight="18" prefWidth="201" text="Config tier" />
+                            </VBox>
+                        </graphic>
+                    </Button>
+               <Separator prefWidth="97.0" />
+               <Button fx:id="Export" mnemonicParsing="false" prefHeight="72.0" prefWidth="79.0">
+                  <graphic>
+                     <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <ImageView fitHeight="69.0" fitWidth="57.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../../assets/exporter.png" />
+                              </image>
+                           </ImageView>
+                           <Label alignment="CENTER" prefHeight="18.0" prefWidth="51.0" text="Exporter" />
+                        </children>
+                     </VBox>
+                  </graphic>
+                  <VBox.margin>
+                     <Insets bottom="5.0" top="5.0" />
+                  </VBox.margin>
+               </Button>
+               <Separator prefWidth="200.0" />
+               <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0">
+                  <graphic>
+                     <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                           <ImageView fx:id="Export1" fitHeight="62.0" fitWidth="56.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../../assets/supprimer.png" />
+                              </image>
+                           </ImageView>
+                           <Label alignment="CENTER" prefHeight="18.0" prefWidth="67.0" text="Supprimer" />
+                        </children>
+                     </VBox>
+                  </graphic>
+                  <VBox.margin>
+                     <Insets bottom="5.0" top="5.0" />
+                  </VBox.margin>
+               </Button>
+                </VBox>
+
+            </HBox>
+         <HBox prefHeight="100.0" prefWidth="699.0" VBox.vgrow="NEVER">
+            <children>
+               <FlowPane fx:id="itemsContainer" hgap="8.0" prefHeight="100.0" prefWidth="683.0" vgap="8.0" HBox.hgrow="ALWAYS" />
+               <Separator prefHeight="5.0" prefWidth="114.0" visible="false" />
+            </children>
+         </HBox>
+
+        </VBox>
+    </center>
+</BorderPane>

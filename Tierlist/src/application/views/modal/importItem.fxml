@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="345.0" prefWidth="506.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.modal.AddItemController">
+   <children>
+      <TabPane fx:id="nav" prefHeight="345.0" prefWidth="506.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Texte">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label contentDisplay="CENTER" layoutX="94.0" layoutY="22.0" prefHeight="35.0" prefWidth="318.0" text="Ajouter un item de type texte" textAlignment="CENTER">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="155.0" layoutY="86.0" prefHeight="26.0" prefWidth="188.0" />
+                        <Button fx:id="ajouter" layoutX="191.0" layoutY="172.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="35.0" prefWidth="116.0" text="Ajouter" />
+                        <Button fx:id="quitter" layoutX="201.0" layoutY="229.0" mnemonicParsing="false" onAction="#leave" prefHeight="28.0" prefWidth="95.0" text="Quiiter" />
+                        <Label fx:id="texMessageSystemt" contentDisplay="CENTER" layoutX="161.0" layoutY="122.0" prefHeight="35.0" prefWidth="170.0" text="message d'ajout" textAlignment="CENTER">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Image local">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="191.0" layoutY="172.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="35.0" prefWidth="116.0" text="Ajouter" />
+                        <Button fx:id="leave" layoutX="201.0" layoutY="229.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="95.0" text="Quiiter" />
+                        <Button fx:id="localImage" layoutX="196.0" layoutY="14.0" mnemonicParsing="false" onAction="#getLocalImage" prefHeight="98.0" prefWidth="98.0">
+                           <graphic>
+                              <ImageView fx:id="localImageIcon" fitHeight="98.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../assets/click.PNG" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label fx:id="MessageSystem" contentDisplay="CENTER" layoutX="168.0" layoutY="122.0" prefHeight="35.0" prefWidth="170.0" text="message d'ajout" textAlignment="CENTER">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Image film">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+            <Tab text="Image Jeu">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</Pane>

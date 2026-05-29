@@ -1,6 +1,6 @@
 package model;
 
-public class ImageItems implements Items{
+public class ImageItems implements ItemsM{
 	private String name;
 	
 	private String path;

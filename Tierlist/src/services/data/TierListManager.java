@@ -3,12 +3,12 @@ package services.data;
 import java.util.List;
 
 import application.widget.Tier;
-import model.Items;
+import model.ItemsM;
 
 public class TierListManager { // class qui stocke la tierlist
 	
 	private List<Tier> tier;
-	private List<Items> items;
+	private List<ItemsM> items;
 	
 	public TierListManager(){}
 
@@ -20,11 +20,11 @@ public class TierListManager { // class qui stocke la tierlist
 		this.tier = tier;
 	}
 
-	public List<Items> getItems() {
+	public List<ItemsM> getItems() {
 		return items;
 	}
 
-	public void setItems(List<Items> items) {
+	public void setItems(List<ItemsM> items) {
 		this.items = items;
 	}
 }

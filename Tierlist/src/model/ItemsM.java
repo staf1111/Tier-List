@@ -1,6 +1,6 @@
 package model;
 
-public interface Items {
+public interface ItemsM {
 	public String getName();
 	
 	public String getContent();

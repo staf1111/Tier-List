@@ -36,7 +36,7 @@ public class DataManager {
 		
 		JFileChooser fileChooser = new JFileChooser();
 		
-		FileNameExtensionFilter filter = new FileNameExtensionFilter("Fichiers JSON (*.json)", "json");
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("Fichiers MMLC (*.mmlc)", "mmlc");
 
 		fileChooser.setFileFilter(filter);
 
