@@ -1,9 +1,14 @@
 package services.data;
 
+import java.io.DataOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
-import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
+import model.ItemsM;
+import model.TierM;
 
 public class DataManager {
 	
@@ -24,31 +29,62 @@ public class DataManager {
 	}
 	
 	
-	public void saveTierList(TierListManager tierlist)
+	public void saveTierList(TierList tierlist)
 	{
-		
+		try {
+			FileOutputStream fos = new FileOutputStream(DEFAULT_PATH + File.separator +tierlist.getName() + ".mmlc");
+			DataOutputStream dos = new DataOutputStream(fos);
+			
+			dos.writeUTF(tierlist.getName());
+			
+			//on écrit les Tier dans le fichier
+			for(TierM t : tierlist.getTier())
+			{
+				dos.writeUTF(t.getName());
+				dos.writeFloat(t.getWidth());
+				dos.writeFloat(t.getHeight());
+				
+				dos.writeDouble(t.getBackColor().getRed());
+                dos.writeDouble(t.getBackColor().getGreen());
+                dos.writeDouble(t.getBackColor().getBlue());
+                dos.writeDouble(t.getBackColor().getOpacity());
+                
+                dos.writeDouble(t.getNameColor().getRed());
+                dos.writeDouble(t.getNameColor().getGreen());
+                dos.writeDouble(t.getNameColor().getBlue());
+                dos.writeDouble(t.getNameColor().getOpacity());
+			}
+			
+			
+			for(ItemsM i : tierlist.getItems())
+			{
+				dos.writeUTF(i.getName());
+				dos.writeUTF(i.getContent());
+				
+				if(i.getName() == "Image local")
+				{
+					Path path = Paths.get(i.getContent());
+					if(Files.exists(path))
+					{
+						byte[] octet = Files.readAllBytes(path);
+						dos.writeInt(octet.length);
+						dos.write(octet);
+					}
+					else
+					{
+						dos.write(0);
+					}
+				}
+			}
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
-	public File importTierList()
+	public TierList importTierList()
 	{
-		
-		File fileSelected = null;
-		
-		JFileChooser fileChooser = new JFileChooser();
-		
-		FileNameExtensionFilter filter = new FileNameExtensionFilter("Fichiers MMLC (*.mmlc)", "mmlc");
-
-		fileChooser.setFileFilter(filter);
-
-		int response = fileChooser.showOpenDialog(null);
-		
-		if(response == fileChooser.APPROVE_OPTION)
-		{
-			fileSelected = fileChooser.getSelectedFile();
-		}
-		
-		
-		return fileSelected;
+		return null;
 	}
 	
 	

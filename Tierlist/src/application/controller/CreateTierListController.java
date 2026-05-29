@@ -22,7 +22,8 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.ItemsM;
 import model.TierM;
-import services.data.TierListManager;
+import services.data.DataManager;
+import services.data.TierList;
 
 public class CreateTierListController {
 
@@ -36,14 +37,14 @@ public class CreateTierListController {
 	VBox TierContainer;
 
 	@FXML
-	ScrollPane Scrollpane;
+	ScrollPane Scrollpane, Scrollpane2;
 
 	@FXML
 	TextField Title;
 
 	@FXML FlowPane itemsContainer;
 	
-	private TierListManager tierlist = null;
+	private TierList tierlist = null;
 
 	List<TierM> tiers = new ArrayList<TierM>();
 	List<ItemsM> items = new ArrayList<ItemsM>();
@@ -52,15 +53,17 @@ public class CreateTierListController {
 	public void initialize() {
 		Scrollpane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
 		Scrollpane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-
+		Scrollpane2.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+		Scrollpane2.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+		
 		Scrollpane.setFitToWidth(true);
-
-		tierlist = new TierListManager();
 
 		TierContainer.setSpacing(10);
 		TierContainer.setAlignment(Pos.TOP_CENTER);
 		TierContainer.setFillWidth(true);
 
+		itemsContainer.setPrefWidth(Scrollpane2.getWidth());
+		
 		Title.setStyle("-fx-background-color: transparent;-fx-background-insets: 0;-fx-background-radius: 0;-fx-padding: 0;-fx-text-fill: #FFE45E");
 	}
 
@@ -78,9 +81,10 @@ public class CreateTierListController {
 			stage.setTitle("Ajouter une Tier");
 
 			stage.showAndWait();
-
-			if (controller.getTier() != null) {
-				for (TierM t : controller.getTier()) {
+			List<TierM> newTier = controller.getTier();
+			tiers.addAll(newTier);
+			if (newTier != null) {
+				for (TierM t : newTier) {
 					Tier tier = new Tier(t);
 					tier.setWitdh(TierContainer.getWidth());
 					TierContainer.getChildren().add(tier);
@@ -112,6 +116,7 @@ public class CreateTierListController {
 	        stage.showAndWait();
 
 	        List<ItemsM> newItems = controller.getItems();
+	        items.addAll(newItems);
 	        if (!newItems.isEmpty()) {
 	            for (ItemsM t : newItems) {
 	                itemsContainer.getChildren().add(new Items(t));
@@ -127,7 +132,8 @@ public class CreateTierListController {
 	@FXML
 	public void saveTierList() // fonction pour initier la sauvegarde
 	{
-		//TODO
+		tierlist = new TierList(Title.getText(), tiers, items);
+		DataManager.getInstance().saveTierList(tierlist);
 	}
 
 }

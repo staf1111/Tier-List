@@ -19,17 +19,17 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label contentDisplay="CENTER" layoutX="94.0" layoutY="22.0" prefHeight="35.0" prefWidth="318.0" text="Ajouter un item de type texte" textAlignment="CENTER">
+                        <Label fx:id="title_text" contentDisplay="CENTER" layoutX="94.0" layoutY="22.0" prefHeight="35.0" prefWidth="318.0" text="Ajouter un item de type texte" textAlignment="CENTER">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="155.0" layoutY="86.0" prefHeight="26.0" prefWidth="188.0" />
+                        <TextField fx:id="text" layoutX="155.0" layoutY="86.0" prefHeight="26.0" prefWidth="188.0" />
                         <Button fx:id="ajouter" layoutX="191.0" layoutY="172.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="35.0" prefWidth="116.0" text="Ajouter" />
                         <Button fx:id="quitter" layoutX="201.0" layoutY="229.0" mnemonicParsing="false" onAction="#leave" prefHeight="28.0" prefWidth="95.0" text="Quiiter" />
-                        <Label fx:id="texMessageSystemt" contentDisplay="CENTER" layoutX="161.0" layoutY="122.0" prefHeight="35.0" prefWidth="170.0" text="message d'ajout" textAlignment="CENTER">
+                        <Label fx:id="SysMsg" alignment="CENTER" contentDisplay="CENTER" layoutX="155.0" layoutY="122.0" prefHeight="35.0" prefWidth="187.0" textAlignment="CENTER">
                            <font>
-                              <Font size="10.0" />
+                              <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
                      </children>
@@ -41,7 +41,7 @@
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <Button layoutX="191.0" layoutY="172.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="35.0" prefWidth="116.0" text="Ajouter" />
-                        <Button fx:id="leave" layoutX="201.0" layoutY="229.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="95.0" text="Quiiter" />
+                        <Button layoutX="201.0" layoutY="229.0" mnemonicParsing="false" onAction="#leave" prefHeight="28.0" prefWidth="95.0" text="Quiiter" />
                         <Button fx:id="localImage" layoutX="196.0" layoutY="14.0" mnemonicParsing="false" onAction="#getLocalImage" prefHeight="98.0" prefWidth="98.0">
                            <graphic>
                               <ImageView fx:id="localImageIcon" fitHeight="98.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
@@ -51,9 +51,9 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Label fx:id="MessageSystem" contentDisplay="CENTER" layoutX="168.0" layoutY="122.0" prefHeight="35.0" prefWidth="170.0" text="message d'ajout" textAlignment="CENTER">
+                        <Label fx:id="SysMsg1" alignment="CENTER" contentDisplay="CENTER" layoutX="159.0" layoutY="130.0" prefHeight="35.0" prefWidth="187.0" textAlignment="CENTER">
                            <font>
-                              <Font size="10.0" />
+                              <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
                      </children>

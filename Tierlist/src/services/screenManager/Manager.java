@@ -57,7 +57,7 @@ public class Manager {
     			}
     		}
   
-            stage.setResizable(false); //on empèche le redimensionnement de la page
+            stage.setResizable(true); //on empèche le redimensionnement de la page
         	
             if (stage.getScene() == null) { // si null cela veut dire que la scene n'existe pas
 

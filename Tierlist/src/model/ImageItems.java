@@ -6,7 +6,7 @@ public class ImageItems implements ItemsM{
 	private String path;
 	
 	private String year = "";
-	
+		
 	public ImageItems(String name, String path, String year)
 	{
 		this(name,path);

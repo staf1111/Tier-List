@@ -88,7 +88,7 @@
                 <Button fx:id="Reset" mnemonicParsing="false" text="Réinitialiser">
                     <HBox.margin><Insets bottom="10.0" left="5.0" right="5.0" top="10.0" /></HBox.margin>
                 </Button>
-                <Button fx:id="Save" mnemonicParsing="false" text="Sauvegarder">
+                <Button fx:id="Save" mnemonicParsing="false" onAction="#saveTierList" text="Sauvegarder">
                     <HBox.margin><Insets bottom="10.0" left="5.0" right="5.0" top="10.0" /></HBox.margin>
                 </Button>
 
@@ -108,10 +108,10 @@
             </HBox>
 
             <!-- ── CONTENU PRINCIPAL : ScrollPane + Panneau config ── -->
-            <HBox fillHeight="true" prefHeight="222.0" prefWidth="784.0" VBox.vgrow="ALWAYS">
+            <HBox fillHeight="true" prefHeight="276.0" prefWidth="784.0" VBox.vgrow="ALWAYS">
 
                 <!-- ScrollPane (prend toute la largeur restante) -->
-                <ScrollPane fx:id="Scrollpane" fitToWidth="true" prefHeight="350.0" prefWidth="567.0" HBox.hgrow="ALWAYS">
+                <ScrollPane fx:id="Scrollpane" fitToWidth="true" prefHeight="270.0" prefWidth="651.0" HBox.hgrow="ALWAYS">
                     <content>
                         <VBox fx:id="TierContainer" alignment="CENTER" fillWidth="false" />
                     </content>
@@ -171,10 +171,15 @@
                 </VBox>
 
             </HBox>
+         <Separator orientation="VERTICAL" prefHeight="20.0" prefWidth="6.0" visible="false" />
          <HBox prefHeight="100.0" prefWidth="699.0" VBox.vgrow="NEVER">
             <children>
-               <FlowPane fx:id="itemsContainer" hgap="8.0" prefHeight="100.0" prefWidth="683.0" vgap="8.0" HBox.hgrow="ALWAYS" />
-               <Separator prefHeight="5.0" prefWidth="114.0" visible="false" />
+               <ScrollPane fx:id="Scrollpane2" hbarPolicy="NEVER" prefHeight="100.0" prefWidth="679.0" HBox.hgrow="ALWAYS">
+                  <content>
+                     <FlowPane fx:id="itemsContainer" hgap="8.0" orientation="VERTICAL" prefHeight="100.0" prefWidth="662.0" vgap="8.0" />
+                  </content>
+               </ScrollPane>
+               <Region prefHeight="100.0" prefWidth="111.0" HBox.hgrow="ALWAYS" />
             </children>
          </HBox>
 

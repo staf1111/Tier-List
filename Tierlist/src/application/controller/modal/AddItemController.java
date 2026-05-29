@@ -22,50 +22,58 @@ import model.TextItems;
 
 public class AddItemController {
 
-	@FXML Label MessageSystem;
 	@FXML Button ajouter, quitter, localImage;
 	@FXML TextField text;
 	
 	@FXML TabPane nav;
 	@FXML ImageView localImageIcon;
 	
+	@FXML Label SysMsg, SysMsg1;
+	
 	List<ItemsM> items = new ArrayList<ItemsM>();
 	
 	
 	private String imagePath;
 	
-	
+	@FXML
+	public void initialize()
+	{
+	}
 	
 	@FXML 
 	public void ajouter()
 	{
+		SysMsg.setText("");
 		Tab ongletActif = nav.getSelectionModel().getSelectedItem();
 		
 		if (ongletActif == null) return;
 
 	    String titreOnglet = ongletActif.getText();
-	    System.out.println(titreOnglet);
 	    
 		switch (titreOnglet) {
 		case "Texte": 
 		    if (text == null) {
-		        MessageSystem.setText("Erreur: champ texte non trouvé (fx:id manquant?)");
+		    	SysMsg.setText("Erreur: champ texte non trouvé (fx:id manquant?)");
+		    	SysMsg.setStyle("-fx-text-fill: Red;");
 		        return;
 		    }
 			TextItems Ti = new TextItems(titreOnglet, text.getText());
 			items.add(Ti);
+	    	SysMsg.setText("Item ajouté");
+	    	SysMsg.setStyle("-fx-text-fill: Green;");
 			break;
 		case "Image local":
 			ImageItems II = new ImageItems(titreOnglet, imagePath);
 			items.add(II);
-			break;
+	    	SysMsg1.setText("Item ajouté");
+	    	SysMsg1.setStyle("-fx-text-fill: Green;");
+	    	break;
 		case "Image film":
 			break;
 		case "Image Jeu":
 			break;
 		}
 		
-		MessageSystem.setText("Items ajouté");
 	}
 	@FXML
 	public void getLocalImage()
@@ -103,6 +111,5 @@ public class AddItemController {
 	public List<ItemsM> getItems()
 	{
 		return items;
-	}
-	
+	}	
 }
