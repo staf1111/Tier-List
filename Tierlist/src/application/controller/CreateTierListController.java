@@ -5,8 +5,9 @@ import java.util.List;
 
 import application.controller.modal.AddItemController;
 import application.controller.modal.AddTierController;
+import application.controller.modal.ConfigureTierList;
 import application.widget.Items;
-import application.widget.Tier;
+import application.widget.Tier_Create;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
@@ -79,13 +80,17 @@ public class CreateTierListController {
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
 			stage.setTitle("Ajouter une Tier");
-
+			stage.setResizable(false);
+			
+			
 			stage.showAndWait();
+			
+			
 			List<TierM> newTier = controller.getTier();
 			tiers.addAll(newTier);
 			if (newTier != null) {
 				for (TierM t : newTier) {
-					Tier tier = new Tier(t);
+					Tier_Create tier = new Tier_Create(t);
 					tier.setWitdh(TierContainer.getWidth());
 					TierContainer.getChildren().add(tier);
 					tiers.add(t);
@@ -112,6 +117,7 @@ public class CreateTierListController {
 	        stage.initModality(Modality.WINDOW_MODAL);
 	        stage.setScene(new Scene(root));
 	        stage.setTitle("Ajouter une Items");
+	        stage.setResizable(false);
 
 	        stage.showAndWait();
 
@@ -154,9 +160,29 @@ public class CreateTierListController {
 		//TODO deleteTierList
 	}
 	
+	@FXML
 	public void configureTierList()
 	{
-		//TODO configureTierList
+	    try {
+	        FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/views/modal/editTierslist.fxml"));
+	        Parent root = loader.load();
+
+	        ConfigureTierList controller = loader.getController();
+	        controller.setTiersAndItems(tiers, items);
+	        
+	        Stage stage = new Stage();
+	        Stage ownerStage = (Stage) TierContainer.getScene().getWindow();
+	        stage.initOwner(ownerStage);
+	        stage.initModality(Modality.WINDOW_MODAL);
+	        stage.setScene(new Scene(root));
+	        stage.setTitle("Configurer la TiersList");
+	        
+	        stage.showAndWait();
+	        //TODO
+	        
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
 	}
 	
 	@FXML

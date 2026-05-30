@@ -15,11 +15,11 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import model.TierM;
 
-public class Tier extends HBox{
+public class Tier_Create extends HBox{
 
 	private HBox itemsContainer;
 	
-	public Tier(TierM model)
+	public Tier_Create(TierM model)
 	{
 		
 		this.setPrefHeight(model.getHeight());
