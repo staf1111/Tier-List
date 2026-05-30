@@ -1,13 +1,16 @@
-● créer, dupliquer et supprimer une tier list
-● ajouter et supprimer des catégories (les “tiers”)
-● renommer et réordonner les tiers
-● ajouter, modifier et supprimer des items (simple texte OU image) à classer
-● importer un item à partir d’une image locale
-● organiser les items par glisser-déposer dans les différents tiers
-● organiser l’ordre des items par glisser-déposer dans chaque tier
-● réinitialiser une tier list (remettre tous les items dans la zone “à classer)
-● choisir un thème visuel (clair, sombre)
-● modifier la couleur, la hauteur des tiers
-● ajuster la taille ou l’apparence des items
-● importer et exporter ses tier list localement dans un fichier au format à définir Export et partage
-● importer des images depuis une API au choix (RAWG, TMDB, …) 
+Tâches faite :
+● importer un item à partir d’une image locale FAIT
+● modifier la couleur des tier FAIT 
+
+
+
+Tâches urgentes :
+● créer, dupliquer et supprimer une tier list A FAIRE LEO 
+● ajouter et supprimer des catégories (les “tiers”) EN COURS MAXENCE
+● renommer et réordonner les tiers EN COURS MAXENCE
+● ajouter, modifier et supprimer des items (simple texte OU image) à classer EN COURS MAXENCE
+● organiser les items par glisser-déposer dans les différents tiers A FAIRE MUSTAFA
+● organiser l’ordre des items par glisser-déposer dans chaque tier  A FAIRE MUSTAFA
+● réinitialiser une tier list (remettre tous les items dans la zone “à classer) A FAIRE LEO
+● importer et exporter ses tier list localement dans un fichier au format à définir A FAIRE LEO
+● importer des images depuis une API au choix (RAWG, TMDB, …)  EN COURS CHARLY

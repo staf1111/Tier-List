@@ -135,5 +135,34 @@ public class CreateTierListController {
 		tierlist = new TierList(Title.getText(), tiers, items);
 		DataManager.getInstance().saveTierList(tierlist);
 	}
+	
+	
+	@FXML
+	public void resetTierList()
+	{
+		this.tiers.clear();
+		this.items.clear();
+		
+		this.TierContainer.getChildren().clear();
+		this.itemsContainer.getChildren().clear();
+	}
+	
+	
+	@FXML
+	public void deleteTierList()
+	{
+		//TODO deleteTierList
+	}
+	
+	public void configureTierList()
+	{
+		//TODO configureTierList
+	}
+	
+	@FXML
+	public void exportTierList()
+	{
+		//TODO exportTierList
+	}
 
 }

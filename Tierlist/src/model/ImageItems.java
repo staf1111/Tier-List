@@ -24,7 +24,6 @@ public class ImageItems implements ItemsM{
 	}
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
 		return name;
 	}
 	

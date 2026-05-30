@@ -85,7 +85,7 @@
                   <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
                </HBox.margin>
             </Button>
-                <Button fx:id="Reset" mnemonicParsing="false" text="Réinitialiser">
+                <Button fx:id="Reset" mnemonicParsing="false" onAction="#resetTierList" text="Réinitialiser">
                     <HBox.margin><Insets bottom="10.0" left="5.0" right="5.0" top="10.0" /></HBox.margin>
                 </Button>
                 <Button fx:id="Save" mnemonicParsing="false" onAction="#saveTierList" text="Sauvegarder">

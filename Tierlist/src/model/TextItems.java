@@ -12,7 +12,6 @@ public class TextItems implements ItemsM {
 	
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
 		return name;
 	}
 	

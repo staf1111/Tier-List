@@ -76,10 +76,11 @@ public class DataManager {
 					}
 				}
 			}
-			
+			dos.close();	
+			fos.close();
 		}catch (Exception e) {
 			e.printStackTrace();
-		}
+		}	
 	}
 	
 	public TierList importTierList()
