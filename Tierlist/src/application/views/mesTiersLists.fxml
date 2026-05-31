@@ -12,19 +12,14 @@
 <?import javafx.scene.text.Text?>
 
 <BorderPane prefHeight="761.0" prefWidth="1045.0" styleClass="root" stylesheets="@../styles/dark.css" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1">
-
     <left>
         <VBox prefWidth="220.0" spacing="30" stylesheets="@../styles/dark.css">
             <children>
-
-                <!-- Logo -->
                 <ImageView fitHeight="161.0" fitWidth="238.0" preserveRatio="true">
                     <image>
                         <Image url="@../../assets/logo.png" />
                     </image>
                 </ImageView>
-
-                <!-- Home -->
                 <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button" stylesheets="@../styles/dark.css">
                     <children>
                         <ImageView fitHeight="40" fitWidth="40" preserveRatio="true">
@@ -35,8 +30,6 @@
                         <Label style="-fx-font-size: 15;" text="Accueil" textFill="WHITE" />
                     </children>
                 </HBox>
-
-                <!-- Mes Tier Lists -->
                 <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button" stylesheets="@../styles/dark.css">
                     <children>
                         <ImageView fitHeight="40" fitWidth="40" preserveRatio="true" styleClass="sidebar-button">
@@ -47,8 +40,6 @@
                         <Label style="-fx-font-size: 15;" text="Mes Tier Lists" textFill="#d15555" />
                     </children>
                 </HBox>
-
-                <!-- Importer -->
                 <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button" stylesheets="@../styles/dark.css">
                     <children>
                         <ImageView fitHeight="40" fitWidth="40" preserveRatio="true">
@@ -59,8 +50,6 @@
                         <Label style="-fx-font-size: 15;" text="Importer" textFill="WHITE" />
                     </children>
                 </HBox>
-
-                <!-- Aide -->
                 <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button" stylesheets="@../styles/dark.css">
                     <children>
                         <ImageView fitHeight="40" fitWidth="40" preserveRatio="true">

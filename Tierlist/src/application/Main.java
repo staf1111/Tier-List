@@ -19,9 +19,8 @@ public class Main extends Application {
 			
 			
 			Settings.getInstance().setCurrentTierList_edit(DataManager.getInstance().importTierList("C:\\Users\\maxim\\Documents\\TierList_TD11A\\test.mmlc"));
-			Manager.getInstance().setPage(PageType.CREATETIERLIST);
+			Manager.getInstance().setPage(PageType.PLAY);
 
-			primaryStage.setTitle("Tierlist");
 			Api.init();
 			
 				
