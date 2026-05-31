@@ -7,7 +7,8 @@ import application.controller.modal.AddItemController;
 import application.controller.modal.AddTierController;
 import application.controller.modal.ConfigureTierList;
 import application.widget.Items;
-import application.widget.Tier_Create;
+import application.widget.Tier;
+import application.widget.TierType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
@@ -25,6 +26,8 @@ import model.ItemsM;
 import model.TierM;
 import services.data.DataManager;
 import services.data.TierList;
+import services.screenManager.Manager;
+import services.screenManager.PageType;
 
 public class CreateTierListController {
 
@@ -87,16 +90,11 @@ public class CreateTierListController {
 			
 			
 			List<TierM> newTier = controller.getTier();
-			tiers.addAll(newTier);
-			if (newTier != null) {
-				for (TierM t : newTier) {
-					Tier_Create tier = new Tier_Create(t);
-					tier.setWitdh(TierContainer.getWidth());
-					TierContainer.getChildren().add(tier);
-					tiers.add(t);
-				}
+			if(newTier != null)
+			{
+				refreshTier(newTier);
 			}
-
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -122,7 +120,9 @@ public class CreateTierListController {
 	        stage.showAndWait();
 
 	        List<ItemsM> newItems = controller.getItems();
+	        
 	        items.addAll(newItems);
+	        
 	        if (!newItems.isEmpty()) {
 	            for (ItemsM t : newItems) {
 	                itemsContainer.getChildren().add(new Items(t));
@@ -151,6 +151,8 @@ public class CreateTierListController {
 		
 		this.TierContainer.getChildren().clear();
 		this.itemsContainer.getChildren().clear();
+		
+		tierlist = null;
 	}
 	
 	
@@ -178,11 +180,42 @@ public class CreateTierListController {
 	        stage.setTitle("Configurer la TiersList");
 	        
 	        stage.showAndWait();
-	        //TODO
+	        
+	        //on efface les tiers avant de mettre les nouveau
+	        
+	        if(controller.getTiers() != null)
+	        {
+	        	//on delete la liste des tiers
+	        	tiers.clear();
+	        	//on delete tout les tiers afficher
+	        	TierContainer.getChildren().clear();	        	
+	        	refreshTier(controller.getTiers());
+	        	
+	        }
 	        
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	    }
+	}
+	
+	private void refreshTier(List<TierM> m)
+	{
+		if(m.isEmpty() || m == null)
+		{
+			return;
+		}
+		
+		if(m != null)
+		{
+			for(TierM t : m)
+			{
+				Tier tier = new Tier(t, TierType.PLAY);
+				tier.setWitdh(TierContainer.getWidth());
+				TierContainer.getChildren().add(tier);
+				tiers.add(t);
+			}
+        	TierContainer.requestLayout();
+		}
 	}
 	
 	@FXML
@@ -191,4 +224,10 @@ public class CreateTierListController {
 		//TODO exportTierList
 	}
 
+	
+	@FXML
+	public void goBack()
+	{
+		Manager.getInstance().setPage(PageType.HOME);
+	}
 }

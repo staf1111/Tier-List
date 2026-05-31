@@ -63,7 +63,7 @@ public class TierM {
 	public void setBackColor(Color backColor) {
 		this.backColor = backColor;
 	}
-
+	
 	public Color getNameColor() {
 		return nameColor;
 	}

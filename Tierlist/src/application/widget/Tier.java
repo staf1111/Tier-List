@@ -1,0 +1,188 @@
+package application.widget;
+
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
+import javafx.scene.control.ColorPicker;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderStroke;
+import javafx.scene.layout.BorderStrokeStyle;
+import javafx.scene.layout.BorderWidths;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import model.TierM;
+
+public class Tier extends HBox{
+
+	private HBox itemsContainer = null;
+	private HBox editContainer = null;
+	
+	private TextField nameController;
+	private ColorPicker nameFill;
+	private ColorPicker background;
+	
+	private Button up;
+	private Button down;
+	
+	private Runnable onUp;
+	private Runnable onDown;
+	private Runnable onDelete;
+	
+	public Tier(TierM model, TierType type)
+	{
+		
+		this.setPrefHeight(model.getHeight());
+		this.setPrefWidth(model.getWidth());
+		this.setMaxWidth(Double.MAX_VALUE);
+		
+
+	    this.setAlignment(javafx.geometry.Pos.CENTER_LEFT);
+	    
+	    this.setBackground(new Background(new BackgroundFill(Color.TRANSPARENT, null,null)));
+		if(model.getBackColor().toString().equalsIgnoreCase("0xffffffff"))
+		{
+			this.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+		}
+		else
+		{
+			this.setBorder(new Border(new BorderStroke(model.getBackColor(), BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+		}
+		
+	    StackPane labelPane = new StackPane();
+	    double squareSize = model.getHeight();
+	    
+	    labelPane.setPrefWidth(squareSize);
+	    labelPane.setPrefHeight(squareSize);
+	    labelPane.setMinWidth(squareSize);
+	    labelPane.setMinHeight(squareSize);
+	    labelPane.setMaxWidth(squareSize); 
+	    labelPane.setMaxHeight(squareSize);
+	    
+	    labelPane.setBackground(new Background(new BackgroundFill(model.getBackColor(),CornerRadii.EMPTY,Insets.EMPTY)));
+	    labelPane.setAlignment(javafx.geometry.Pos.CENTER);
+	    
+	    Label text = new Label(model.getName());
+	    text.setTextFill(model.getNameColor());
+	    
+	    labelPane.getChildren().add(text);
+	    
+
+		if(type == TierType.PLAY)
+		{
+			this.itemsContainer = new HBox();
+			this.itemsContainer.setSpacing(5);
+			
+			HBox.setHgrow(itemsContainer, Priority.ALWAYS);
+			this.borderProperty().set(new Border(new BorderStroke(
+				    model.getBackColor(), 
+				    BorderStrokeStyle.SOLID, 
+				    CornerRadii.EMPTY, 
+				    BorderWidths.DEFAULT
+				)));
+			this.getChildren().addAll(labelPane,itemsContainer);
+		}
+		else if(type == TierType.EDIT)
+		{
+			//creation du container
+			this.editContainer = new HBox();
+			HBox.setHgrow(editContainer, Priority.ALWAYS);
+			editContainer.setSpacing(10);
+			editContainer.setAlignment(Pos.CENTER_LEFT);
+			
+			//creation des label:
+			Label nameL = new Label("Nom :");
+			Label nomColorL = new Label("couleur texte :");
+			Label backgroundL = new Label("Arrière plan :");
+			
+			//creation des controller;
+			nameController = new TextField();
+			nameController.setText(model.getName());
+			text.textProperty().bind(nameController.textProperty());
+			
+			//on applique le nouveau nom
+			nameController.textProperty().addListener((observable, oldName, newName)->{
+				model.setName(newName);
+			});
+			
+			nameFill = new ColorPicker();
+			nameFill.setValue(model.getNameColor());
+			nameFill.setMaxWidth(50);
+			
+			background = new ColorPicker();
+			background.setValue(model.getBackColor());
+			background.setMaxWidth(50);
+			
+			//on applique la nouvel couleur du texte
+			nameFill.valueProperty().addListener((observable, oldColor, newColor) ->{
+				if(newColor != null)
+				{
+					text.setTextFill(newColor);
+					model.setNameColor(newColor);
+				}
+			});
+			
+			//on applique la nouvel couleur du background
+			background.valueProperty().addListener((observable, oldColor, newColor) ->{
+				if(newColor != null)
+				{
+					labelPane.setBackground(new Background(new BackgroundFill(newColor, null, null)));
+					model.setBackColor(newColor);
+				}
+			});
+			
+			//creation des bouton pour up et down la tier
+			VBox buttonLayout = new VBox();
+
+			up = new Button("up");
+			down = new Button("down");
+			
+			up.setOnAction(e ->{
+				if(this.onUp != null) this.onUp.run();
+			});
+			
+			down.setOnAction(e ->{
+				if(this.onDown != null) this.onDown.run();
+			});
+			
+			buttonLayout.getChildren().addAll(up, down);
+			
+			Button delete = new Button("Delete");
+
+			
+			// on ajoute le tout;
+			this.editContainer.getChildren().addAll(
+			        nameL, nameController, 
+			        nomColorL, nameFill, 
+			        backgroundL, background,
+			        buttonLayout, delete
+			    );			
+			this.getChildren().addAll(labelPane,editContainer);
+		}
+	}
+	
+	public void setWitdh(double w)
+	{
+		this.setWidth(w);
+	}
+
+	public void setOnUp(Runnable onUp) {
+		this.onUp = onUp;
+	}
+
+	public void setOnDown(Runnable onDown) {
+		this.onDown = onDown;
+	}
+	
+	public void setOnDelete(Runnable onDelete)
+	{
+		this.onDelete = onDelete;
+	}
+}

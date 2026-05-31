@@ -1,15 +1,8 @@
 package application;
 
-import services.api.*;
-
-import java.util.ArrayList;
-import java.util.List;
-
-
 import javafx.application.Application;
 import javafx.stage.Stage;
-import model.ImageItems;
-import model.ItemsM;
+import services.api.Api;
 import services.data.DataManager;
 import services.data.Settings;
 import services.screenManager.Manager;
@@ -23,7 +16,7 @@ public class Main extends Application {
 			DataManager.init();  //on initialise la classe qui va géré la sauvegarde des donnée et l'importation des tier list ainsi que 
 			
 			Manager.init(primaryStage); //on initialise la classe qui va géré les différente page et modal
-						
+			Manager.getInstance().setPage(PageType.CREATETIERLIST);
 			primaryStage.setTitle("Tierlist");
 			Api.init();
 			
