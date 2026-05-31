@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="installedFeatures">
+		<item value="org.eclipse.egit:7.4.0.202509020913-r"/>
+		<item value="org.eclipse.epp.mpc:1.13.0.v20250816-1241"/>
+		<item value="org.eclipse.fx.ide.css.feature:3.8.0.202204150904"/>
+		<item value="org.eclipse.help:2.3.2300.v20250905-0730"/>
+		<item value="org.eclipse.jgit.gpg.bc:7.4.0.202509020913-r"/>
+		<item value="org.eclipse.jgit.http.apache:7.4.0.202509020913-r"/>
+		<item value="org.eclipse.jgit.ssh.apache:7.4.0.202509020913-r"/>
+		<item value="org.eclipse.jgit:7.4.0.202509020913-r"/>
+		<item value="org.eclipse.m2e.feature:2.9.1.20250811-2022"/>
+		<item value="org.eclipse.m2e.logback.feature:2.7.100.20250418-1315"/>
+		<item value="org.eclipse.mylyn.builds.feature:4.8.0.v20250813-1217"/>
+		<item value="org.eclipse.mylyn.commons.feature:4.8.0.v20250813-0645"/>
+		<item value="org.eclipse.mylyn.commons.identity.feature:4.8.0.v20250809-1505"/>
+		<item value="org.eclipse.mylyn.commons.notifications.feature:4.8.0.v20250813-0648"/>
+		<item value="org.eclipse.mylyn.commons.repositories.feature:4.8.0.v20250826-1201"/>
+		<item value="org.eclipse.mylyn.context.feature:4.8.0.v20250816-0943"/>
+		<item value="org.eclipse.mylyn.egit.feature:4.8.0.v20250815-0537"/>
+		<item value="org.eclipse.mylyn.git.feature:4.8.0.v20250821-0543"/>
+		<item value="org.eclipse.mylyn.github.feature:6.9.0.v20250816-0848"/>
+		<item value="org.eclipse.mylyn.ide.feature:4.8.0.v20250816-0845"/>
+		<item value="org.eclipse.mylyn.jdt.feature:4.8.0.v20250816-0849"/>
+		<item value="org.eclipse.mylyn.jenkins.feature:4.8.0.v20250809-1546"/>
+		<item value="org.eclipse.mylyn.monitor.feature:4.8.0.v20250814-1811"/>
+		<item value="org.eclipse.mylyn.reviews.feature:4.8.0.v20250820-0707"/>
+		<item value="org.eclipse.mylyn.tasks.feature:4.8.0.v20250821-0416"/>
+		<item value="org.eclipse.mylyn.team.feature:4.8.0.v20250815-0736"/>
+		<item value="org.eclipse.mylyn.versions.feature:4.8.0.v20250821-0548"/>
+		<item value="org.eclipse.mylyn.wikitext.feature:4.8.0.v20250823-0814"/>
+		<item value="org.eclipse.oomph.p2:1.34.0.v20251024-1029"/>
+		<item value="org.eclipse.oomph.setup.core:1.35.0.v20251008-0516"/>
+		<item value="org.eclipse.oomph.setup:1.37.0.v20251024-1029"/>
+		<item value="org.eclipse.rcp:4.37.0.v20250905-0730"/>
+		<item value="org.eclipse.wst.xml_ui.feature:3.41.0.v202601060332"/>
+		<item value="org.eclipse.xtend.lib:2.42.0.v20260223-0608"/>
+		<item value="org.eclipse.xtend.sdk:2.42.0.v20260223-0608"/>
+		<item value="org.eclipse.xtext.sdk:2.42.0.v20260223-0608"/>
+		<item value="org.eclipse.xtext.ui:2.42.0.v20260223-0608"/>
+		<item value="org.eclipse.xtext.xbase.lib:2.42.0.v20260223-0608"/>
+		<item value="org.eclipse.xtext.xbase:2.42.0.v20260223-0608"/>
+		<item value="org.eclipse.xtext.xtext.ui.graph:2.42.0.v20260223-0608"/>
+		<item value="org.eclipse.xtext.xtext.ui:2.42.0.v20260223-0608"/>
+	</list>
+</section>

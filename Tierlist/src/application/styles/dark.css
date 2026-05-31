@@ -1,0 +1,162 @@
+.button_newTierPage2{
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #550CE7, #060A35);
+    -fx-text-fill: white;
+}
+.button_TrierPage2 {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #70437F, #000000);
+    -fx-text-fill: white;
+}
+
+.root {
+    -fx-background-color:
+        linear-gradient(from 0% 0% to 0% 100%,
+        #000000,
+        #000000);
+
+    -fx-font-family: "Orbitron";
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    -fx-background-color: #11152B;
+
+    -fx-padding: 20;
+
+    -fx-border-color: #8B3DFF30;
+    -fx-border-width: 0 2 0 0;
+}
+
+
+/* =========================
+   SIDEBAR BUTTONS
+========================= */
+
+.sidebar-button {
+    -fx-padding: 12;
+
+    -fx-background-radius: 12;
+
+    -fx-cursor: hand;
+}
+
+
+.sidebar-button:hover {
+
+    -fx-background-color: #1A1F3A;
+
+    -fx-effect: dropshadow(
+        gaussian,
+        #8B3DFF80,
+        12,
+        0.2,
+        0,
+        0
+    );
+}
+
+
+/* =========================
+   ACTIVE BUTTON
+========================= */
+
+
+
+
+/* =========================
+   TITRE PRINCIPAL
+========================= */
+
+.main-title {
+
+    -fx-fill: #FF5EE7;
+
+    -fx-font-family: "Press Start 2P";
+
+    -fx-font-size: 28px;
+}
+
+
+/* =========================
+   PRIMARY BUTTON
+========================= */
+
+.primary-button {
+
+    -fx-background-color:
+        linear-gradient(from 0% 0% to 100% 0%,
+        #3B0DFF,
+        #6F2DFF);
+
+    -fx-text-fill: white;
+
+    -fx-background-radius: 10;
+
+    -fx-font-family: "Orbitron";
+
+    -fx-font-size: 14px;
+
+    -fx-font-weight: bold;
+
+    -fx-cursor: hand;
+
+    -fx-effect: dropshadow(
+        gaussian,
+        #8B3DFF70,
+        12,
+        0.2,
+        0,
+        0
+    );
+}
+
+
+.primary-button:hover {
+
+    -fx-background-color:
+        linear-gradient(from 0% 0% to 100% 0%,
+        #5A2DFF,
+        #8B3DFF);
+}
+
+
+/* =========================
+   SECONDARY BUTTON
+========================= */
+
+.secondary-button {
+
+    -fx-background-color: #141A30;
+
+    -fx-border-color: #8B3DFF;
+
+    -fx-border-width: 1.5;
+
+    -fx-border-radius: 10;
+
+    -fx-background-radius: 10;
+
+    -fx-text-fill: white;
+
+    -fx-font-family: "Orbitron";
+
+    -fx-cursor: hand;
+}
+
+
+.secondary-button:hover {
+
+    -fx-background-color: #1A1F3A;
+
+    -fx-effect: dropshadow(
+        gaussian,
+        #8B3DFF70,
+        10,
+        0.2,
+        0,
+        0
+    );
+}
