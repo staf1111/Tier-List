@@ -1,6 +1,6 @@
 package services.data;
 
-import services.screenManager.*;
+import services.screenManager.ThemeList;
 
 public class Settings {
 	private static Settings instance;
@@ -12,6 +12,8 @@ public class Settings {
 	private int MaxApiRate = 20; //nombre maximum de résultat par requette
 	
 	private ThemeList theme = ThemeList.LIGHT;
+	
+	private TierList currentTierList_play, currentTierList_edit;
 	
 	public static void init()
 	{
@@ -59,6 +61,25 @@ public class Settings {
 		ApiRate = apiRate;
 	}
 
+	
+	public TierList getCurrentTierList_play() {
+		return currentTierList_play;
+	}
+
+	public void setCurrentTierList_play(TierList currentTierList_play) {
+		this.currentTierList_play = currentTierList_play;
+	}
+
+	public TierList getCurrentTierList_edit() {
+		return currentTierList_edit;
+	}
+
+	public void setCurrentTierList_edit(TierList currentTierList_edit) {
+		this.currentTierList_edit = currentTierList_edit;
+	}
+	
+	
+	
 	public static Settings getInstance()
 	{
 		if(instance == null)
@@ -68,4 +89,5 @@ public class Settings {
 		}
 		return instance;
 	}
+	
 }

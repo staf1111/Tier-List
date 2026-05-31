@@ -1,11 +1,14 @@
 package application.widget;
 
+import java.io.ByteArrayInputStream;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
+import model.ImageItems;
 import model.ItemsM;
 
 public class Items extends StackPane {
@@ -39,11 +42,24 @@ public class Items extends StackPane {
 	        this.getChildren().add(l);
 	    } else {
 	    	try {
-	            Image image = new Image(model.getContent());
+	            Image image = null;
+	            
+	            if("Image Local".equals(model.getName())) // si c'est une image local on affiche l'image a partir des byte de l'image et non du path
+	            {
+	            	ImageItems II = (ImageItems) model;
+	            	image = new Image(new ByteArrayInputStream(II.getImageData()));
+	            }
+	            else
+	            {
+	            	image = new Image(model.getContent());
+	            }
+	            
 	            if (image.isError()) {
 	                System.err.println("Erreur chargement image : " + model.getContent());
 	                Label errorLabel = new Label("[Image Erreur]");
+	                
 	                errorLabel.setStyle("-fx-text-fill: red;");
+	                
 	                this.getChildren().add(errorLabel);
 	            } else {
 	                ImageView imageView = new ImageView(image);

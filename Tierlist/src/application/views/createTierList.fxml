@@ -52,7 +52,7 @@
                 </padding>
 
                 <!-- Retour (ancré à gauche) -->
-                <Button fx:id="back" mnemonicParsing="false" prefHeight="27" prefWidth="103" text="Retour" />
+                <Button fx:id="back" mnemonicParsing="false" onAction="#goBack" prefHeight="27" prefWidth="103" text="Retour" />
 
                 <!-- Spacer gauche -->
                 <Region HBox.hgrow="ALWAYS" />
@@ -174,7 +174,7 @@
          <Separator orientation="VERTICAL" prefHeight="20.0" prefWidth="6.0" visible="false" />
          <HBox prefHeight="100.0" prefWidth="699.0" VBox.vgrow="NEVER">
             <children>
-               <ScrollPane fx:id="Scrollpane2" hbarPolicy="NEVER" prefHeight="100.0" prefWidth="679.0" HBox.hgrow="ALWAYS">
+               <ScrollPane fx:id="Scrollpane2" prefHeight="100.0" prefWidth="679.0" vbarPolicy="NEVER" HBox.hgrow="ALWAYS">
                   <content>
                      <FlowPane fx:id="itemsContainer" hgap="8.0" orientation="VERTICAL" prefHeight="100.0" prefWidth="662.0" vgap="8.0" />
                   </content>
