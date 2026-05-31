@@ -1,6 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
+<BorderPane prefHeight="761.0" prefWidth="1045.0" styleClass="root" stylesheets="@../styles/dark.css" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1">
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" styleClass="body" />
+    <!-- ===================================================== -->
+    <!-- SIDEBAR -->
+    <!-- ===================================================== -->
+
+    <left>
+        <VBox prefHeight="761.0" prefWidth="220.0" spacing="6" styleClass="sidebar">
+
+            <ImageView fitHeight="162.0" fitWidth="210.0" preserveRatio="true">
+                <image>
+                    <Image url="@../../assets/logo.png" />
+                </image>
+                <VBox.margin>
+                    <Insets bottom="10" />
+                </VBox.margin>
+            </ImageView>
+
+            <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button">
+
+                <ImageView fitHeight="28" fitWidth="28" preserveRatio="true">
+                    <image>
+                        <Image url="@../../assets/Home.png" />
+                    </image>
+                </ImageView>
+
+                <Label style="-fx-font-size:13px; -fx-font-family:'Orbitron';" text="Accueil" textFill="WHITE" />
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button-active">
+
+                <ImageView fitHeight="28" fitWidth="28" preserveRatio="true">
+                    <image>
+                        <Image url="@../../assets/mesTiersLists.png" />
+                    </image>
+                </ImageView>
+
+                <Label style="-fx-font-size:13px; -fx-font-family:'Orbitron';" text="Mes Tier List" textFill="#FF5EE7" />
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button">
+
+                <ImageView fitHeight="28" fitWidth="28" preserveRatio="true">
+                    <image>
+                        <Image url="@../../assets/Importer.png" />
+                    </image>
+                </ImageView>
+
+                <Label style="-fx-font-size:13px; -fx-font-family:'Orbitron';" text="Importer" textFill="WHITE" />
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button">
+
+                <ImageView fitHeight="28" fitWidth="28" preserveRatio="true">
+                    <image>
+                        <Image url="@../../assets/parametre.png" />
+                    </image>
+                </ImageView>
+
+                <Label style="-fx-font-size:13px; -fx-font-family:'Orbitron';" text="Paramètres" textFill="WHITE" />
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button">
+
+                <ImageView fitHeight="28" fitWidth="28" preserveRatio="true">
+                    <image>
+                        <Image url="@../../assets/aide.png" />
+                    </image>
+                </ImageView>
+
+                <Label style="-fx-font-size:13px; -fx-font-family:'Orbitron';" text="Aide" textFill="WHITE" />
+            </HBox>
+
+        </VBox>
+    </left>
+
+    <!-- ===================================================== -->
+    <!-- CENTER -->
+    <!-- ===================================================== -->
+
+    <center>
+
+        <VBox spacing="18" style="-fx-padding: 18;">
+
+            <!-- HEADER -->
+
+            <AnchorPane prefHeight="90">
+
+                <Label layoutX="10" layoutY="10" style="-fx-font-family:'Orbitron'; -fx-font-size:28px; -fx-font-weight:bold;" text="RankStation" textFill="#FFE04D" />
+
+                <Label layoutX="10" layoutY="50" style="-fx-font-size:11px;" text="Bienvenue Corbot, voici vos tiers list" textFill="#BFBFBF" />
+
+                <Button layoutX="600" layoutY="8" prefWidth="80" styleClass="button-apercu" text="Aperçu" />
+
+                <Button layoutX="690" layoutY="8" prefWidth="80" styleClass="button-theme" text="Theme" />
+
+            </AnchorPane>
+
+            <!-- ACTIONS -->
+
+            <HBox spacing="15">
+
+                <Button prefHeight="40" prefWidth="220" styleClass="primary-button" text="+ Nouvelle Tier List" />
+
+                <Button prefHeight="40" prefWidth="220" styleClass="secondary-button" text="Importer une Tier List" />
+
+            </HBox>
+
+            <!-- SECTION -->
+
+            <Label style="-fx-font-family:'Orbitron'; -fx-font-size:18px;" text="Vos tiers du moment" textFill="#FF2B8A" />
+         <VBox prefHeight="499.0" prefWidth="770.0" spacing="40.0">
+            <children>
+               <HBox prefHeight="220.0" prefWidth="770.0" spacing="38.0">
+                  <children>
+                     <Pane prefHeight="90" prefWidth="230.0" style="                       -fx-background-color:#0A0D1A;                       -fx-border-color:#8B3DFF;                       -fx-border-radius:10;                       -fx-background-radius:10;                       ">
+                        <children>
+                           <ImageView fitHeight="220.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" />
+                        </children></Pane>
+                     <Pane prefHeight="90" prefWidth="230.0" style="                       -fx-background-color:#0A0D1A;                       -fx-border-color:#8B3DFF;                       -fx-border-radius:10;                       -fx-background-radius:10;                       ">
+                        <children>
+                           <ImageView fitHeight="220.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" />
+                        </children></Pane>
+                     <Pane prefHeight="90.0" prefWidth="230.0" style="                       -fx-background-color:#0A0D1A;                       -fx-border-color:#8B3DFF;                       -fx-border-radius:10;                       -fx-background-radius:10;                       ">
+                        <children>
+                           <ImageView fitHeight="220.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" />
+                        </children></Pane>
+                  </children>
+               </HBox>
+               <HBox prefHeight="220.0" prefWidth="770.0" spacing="38.0">
+                  <children>
+                     <Pane prefHeight="90" prefWidth="230.0" style="                       -fx-background-color:#0A0D1A;                       -fx-border-color:#8B3DFF;                       -fx-border-radius:10;                       -fx-background-radius:10;                       ">
+                        <children>
+                           <ImageView fitHeight="220.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" />
+                        </children></Pane>
+                     <Pane prefHeight="126.0" prefWidth="230.0" style="                       -fx-background-color:#0A0D1A;                       -fx-border-color:#8B3DFF;                       -fx-border-radius:10;                       -fx-background-radius:10;                       ">
+                        <children>
+                           <ImageView fitHeight="220.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" />
+                        </children></Pane>
+                     <Pane prefHeight="90.0" prefWidth="230.0" style="                       -fx-background-color:#0A0D1A;                       -fx-border-color:#8B3DFF;                       -fx-border-radius:10;                       -fx-background-radius:10;                       ">
+                        <children>
+                           <ImageView fitHeight="220.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" />
+                        </children></Pane>
+                  </children>
+               </HBox>
+            </children>
+         </VBox>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

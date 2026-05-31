@@ -182,3 +182,42 @@
 	    -fx-background-radius: 8;
 	    -fx-background-color: #111111;
 }
+
+.tier-card {
+    -fx-background-color: #0A0D1A;
+
+    -fx-border-color: #8B3DFF;
+    -fx-border-width: 1;
+
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(139,61,255,0.25),
+        10,
+        0.2,
+        0,
+        0
+    );
+}
+
+.tier-card:hover {
+    -fx-border-color: #FF5EE7;
+
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(255,94,231,0.5),
+        18,
+        0.3,
+        0,
+        0
+    );
+}
+
+.card-title {
+    -fx-text-fill: white;
+    -fx-font-family: "Orbitron";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
