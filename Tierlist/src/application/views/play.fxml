@@ -81,10 +81,9 @@
             </AnchorPane>
             </HBox>
 
-            <!-- ── CONTENU PRINCIPAL : ScrollPane + Panneau config ── -->
             <HBox fillHeight="true" prefHeight="276.0" prefWidth="784.0" VBox.vgrow="ALWAYS">
 
-                <!-- ScrollPane (prend toute la largeur restante) -->
+              
                 <ScrollPane fx:id="Scrollpane" fitToWidth="true" prefHeight="308.0" prefWidth="828.0" stylesheets="@../styles/dark.css" HBox.hgrow="ALWAYS">
                     <content>
                         <VBox fx:id="TierContainer" alignment="CENTER" fillWidth="false" />
@@ -117,7 +116,7 @@
                </image>
             </ImageView>
    
-                <!-- Retour (ancré à gauche) -->
+             
                 <Button fx:id="back" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" prefHeight="27" prefWidth="103" stylesheets="@../styles/dark.css" text="&lt;-  Retour">
                <styleClass>
                   <String fx:value="button_newTierPage2" />
