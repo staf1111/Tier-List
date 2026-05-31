@@ -1,18 +1,9 @@
-.button_newTierPage2{
-    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #550CE7, #060A35);
-    -fx-text-fill: white;
-}
-.button_TrierPage2 {
-    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #70437F, #000000);
-    -fx-text-fill: white;
-}
+/* =========================
+   ROOT
+========================= */
 
 .root {
-    -fx-background-color:
-        linear-gradient(from 0% 0% to 0% 100%,
-        #000000,
-        #000000);
-
+    -fx-background-color: #000000;
     -fx-font-family: "Orbitron";
 }
 
@@ -22,11 +13,9 @@
 ========================= */
 
 .sidebar {
-    -fx-background-color: #11152B;
-
+    -fx-background-color: #0A0D1A;
     -fx-padding: 20;
-
-    -fx-border-color: #8B3DFF30;
+    -fx-border-color: rgba(139, 61, 255, 0.19);
     -fx-border-width: 0 2 0 0;
 }
 
@@ -37,25 +26,13 @@
 
 .sidebar-button {
     -fx-padding: 12;
-
     -fx-background-radius: 12;
-
     -fx-cursor: hand;
 }
 
-
 .sidebar-button:hover {
-
     -fx-background-color: #1A1F3A;
-
-    -fx-effect: dropshadow(
-        gaussian,
-        #8B3DFF80,
-        12,
-        0.2,
-        0,
-        0
-    );
+    -fx-effect: dropshadow(gaussian, rgba(139, 61, 255, 0.5), 12, 0.2, 0, 0);
 }
 
 
@@ -63,7 +40,14 @@
    ACTIVE BUTTON
 ========================= */
 
-
+.sidebar-button-active {
+    -fx-background-color: #1A1F3A;
+    -fx-background-radius: 12;
+    -fx-padding: 12;
+    -fx-border-color: transparent transparent transparent #FF5EE7;
+    -fx-border-width: 0 0 0 3;
+    -fx-cursor: hand;
+}
 
 
 /* =========================
@@ -71,12 +55,32 @@
 ========================= */
 
 .main-title {
-
     -fx-fill: #FF5EE7;
-
     -fx-font-family: "Press Start 2P";
-
     -fx-font-size: 28px;
+}
+
+
+/* =========================
+   BOUTONS TIER LIST
+========================= */
+
+.button_newTierPage2 {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #550CE7, #060A35);
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+}
+
+.button_TrierPage2 {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #8B3DFF, #1A0A2E);
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-border-color: rgba(139, 61, 255, 0.5);
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-cursor: hand;
+	-fx-alignment: CENTER_LEFT;
 }
 
 
@@ -85,41 +89,18 @@
 ========================= */
 
 .primary-button {
-
-    -fx-background-color:
-        linear-gradient(from 0% 0% to 100% 0%,
-        #3B0DFF,
-        #6F2DFF);
-
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #3B0DFF, #6F2DFF);
     -fx-text-fill: white;
-
     -fx-background-radius: 10;
-
     -fx-font-family: "Orbitron";
-
     -fx-font-size: 14px;
-
     -fx-font-weight: bold;
-
     -fx-cursor: hand;
-
-    -fx-effect: dropshadow(
-        gaussian,
-        #8B3DFF70,
-        12,
-        0.2,
-        0,
-        0
-    );
+    -fx-effect: dropshadow(gaussian, rgba(139, 61, 255, 0.44), 12, 0.2, 0, 0);
 }
 
-
 .primary-button:hover {
-
-    -fx-background-color:
-        linear-gradient(from 0% 0% to 100% 0%,
-        #5A2DFF,
-        #8B3DFF);
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #5A2DFF, #8B3DFF);
 }
 
 
@@ -128,35 +109,115 @@
 ========================= */
 
 .secondary-button {
-
     -fx-background-color: #141A30;
-
     -fx-border-color: #8B3DFF;
-
     -fx-border-width: 1.5;
-
     -fx-border-radius: 10;
-
     -fx-background-radius: 10;
-
     -fx-text-fill: white;
-
     -fx-font-family: "Orbitron";
-
     -fx-cursor: hand;
 }
 
-
 .secondary-button:hover {
-
     -fx-background-color: #1A1F3A;
+    -fx-effect: dropshadow(gaussian, rgba(139, 61, 255, 0.44), 10, 0.2, 0, 0);
+}
+
+.button-apercu {
+    -fx-background-color: #000000;
+    -fx-text-fill: white;
+    -fx-border-color: #8B3DFF;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.button-theme {
+    -fx-background-color: #000000;
+    -fx-text-fill: white;
+    -fx-border-color: #8B3DFF;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.pagination-button-fleche {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-border-color: #444444;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-size: 16px;
+    -fx-cursor: hand;
+    -fx-pref-width: 36;
+    -fx-pref-height: 36;
+}
+
+
+
+.button-saveandreload{
+	-fx-background-color: #000000;
+	    -fx-text-fill: white;
+	    -fx-border-color: #9E00FF;
+	    -fx-border-width: 1.5;
+	    -fx-border-radius: 8;
+	    -fx-background-radius: 8;
+	    -fx-cursor: hand;
+}
+
+.Zone-blanches-nom-tier {
+    -fx-background-color: #000000;
+    -fx-border-color: #80006D;
+}
+
+.Zone-blanches-add-tier{
+		-fx-border-color: #34C759;
+	    -fx-border-width: 1.5;
+	    -fx-border-style: dashed;
+	    -fx-border-radius: 8;
+	    -fx-background-radius: 8;
+	    -fx-background-color: #111111;
+}
+
+.tier-card {
+    -fx-background-color: #0A0D1A;
+
+    -fx-border-color: #8B3DFF;
+    -fx-border-width: 1;
+
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
 
     -fx-effect: dropshadow(
         gaussian,
-        #8B3DFF70,
+        rgba(139,61,255,0.25),
         10,
         0.2,
         0,
         0
     );
+}
+
+.tier-card:hover {
+    -fx-border-color: #FF5EE7;
+
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(255,94,231,0.5),
+        18,
+        0.3,
+        0,
+        0
+    );
+}
+
+.card-title {
+    -fx-text-fill: white;
+    -fx-font-family: "Orbitron";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
 }
