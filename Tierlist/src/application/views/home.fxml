@@ -22,15 +22,15 @@
                     <Insets bottom="10" />
                 </VBox.margin>
             </ImageView>
-            <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button">
+            <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button-active">
                 <ImageView fitHeight="28" fitWidth="28" preserveRatio="true">
                     <image>
                         <Image url="@../../assets/Home.png" />
                     </image>
                 </ImageView>
-                <Label style="-fx-font-size:13px; -fx-font-family:'Orbitron';" text="Accueil" textFill="WHITE" />
+                <Label style="-fx-font-size:13px; -fx-font-family:'Orbitron';" stylesheets="@../styles/dark.css" text="Accueil" textFill="WHITE" />
             </HBox>
-            <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button-active">
+            <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button">
                 <ImageView fitHeight="28" fitWidth="28" preserveRatio="true">
                     <image>
                         <Image url="@../../assets/mesTiersLists.png" />
@@ -70,8 +70,13 @@
             <AnchorPane prefHeight="90">
                 <Label layoutX="10" layoutY="10" style="-fx-font-family:'Orbitron'; -fx-font-size:28px; -fx-font-weight:bold;" text="RankStation" textFill="#FFE04D" />
                 <Label layoutX="10" layoutY="50" style="-fx-font-size:11px;" text="Bienvenue Corbot, voici vos tiers list" textFill="#BFBFBF" />
-                <Button layoutX="600" layoutY="8" prefWidth="80" styleClass="button-apercu" text="Aperçu" />
-                <Button layoutX="690" layoutY="8" prefWidth="80" styleClass="button-theme" text="Theme" />
+                <Button layoutX="573.0" layoutY="8.0" prefWidth="80" styleClass="button-apercu" text="Aperçu" />
+                <Button layoutX="672.0" layoutY="8" prefHeight="29.0" prefWidth="98.0" styleClass="button-theme" text="Theme" />
+            <ImageView fitHeight="39.0" fitWidth="59.0" layoutX="662.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../assets/thème.png" />
+               </image>
+            </ImageView>
             </AnchorPane>
             <HBox spacing="15">
                 <Button prefHeight="40" prefWidth="220" styleClass="primary-button" text="+ Nouvelle Tier List" />
@@ -100,15 +105,15 @@
                   <children>
                      <Pane prefHeight="90" prefWidth="230.0" style="                       -fx-background-color:#0A0D1A;                       -fx-border-color:#8B3DFF;                       -fx-border-radius:10;                       -fx-background-radius:10;                       ">
                         <children>
-                           <ImageView fitHeight="220.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fitHeight="220.0" fitWidth="220.0" layoutX="56.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
                         </children></Pane>
                      <Pane prefHeight="126.0" prefWidth="230.0" style="                       -fx-background-color:#0A0D1A;                       -fx-border-color:#8B3DFF;                       -fx-border-radius:10;                       -fx-background-radius:10;                       ">
                         <children>
-                           <ImageView fitHeight="220.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fitHeight="220.0" fitWidth="220.0" layoutX="-96.0" layoutY="-45.0" pickOnBounds="true" preserveRatio="true" />
                         </children></Pane>
                      <Pane prefHeight="90.0" prefWidth="230.0" style="                       -fx-background-color:#0A0D1A;                       -fx-border-color:#8B3DFF;                       -fx-border-radius:10;                       -fx-background-radius:10;                       ">
                         <children>
-                           <ImageView fitHeight="220.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fitHeight="220.0" fitWidth="220.0" layoutX="-61.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
                         </children></Pane>
                   </children>
                </HBox>
