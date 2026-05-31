@@ -15,8 +15,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CreateTierListController">
-
+<BorderPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CreateTierListController">
+	
     <top>
         <HBox alignment="CENTER_RIGHT" fillHeight="true">
             <padding>
@@ -52,7 +52,7 @@
                 </padding>
 
                 <!-- Retour (ancré à gauche) -->
-                <Button fx:id="back" mnemonicParsing="false" prefHeight="27" prefWidth="103" text="Retour" />
+                <Button fx:id="back" mnemonicParsing="false" prefHeight="27" prefWidth="103" text="&lt;- Retour" />
 
                 <!-- Spacer gauche -->
                 <Region HBox.hgrow="ALWAYS" />
@@ -125,7 +125,7 @@
                         <VBox.margin><Insets bottom="5.0" top="10.0" /></VBox.margin>
                         <graphic>
                             <VBox alignment="TOP_CENTER" prefHeight="58.0" prefWidth="50.0">
-                                <ImageView fitHeight="62.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="39.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                                     <image><Image url="@../../assets/iconConfig.png" /></image>
                                 </ImageView>
                                 <Label alignment="CENTER" prefHeight="18" prefWidth="201" text="Config tier" />
@@ -137,7 +137,7 @@
                   <graphic>
                      <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
                         <children>
-                           <ImageView fitHeight="69.0" fitWidth="57.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fitHeight="46.0" fitWidth="44.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
                               <image>
                                  <Image url="@../../assets/exporter.png" />
                               </image>
@@ -155,7 +155,7 @@
                   <graphic>
                      <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
                         <children>
-                           <ImageView fx:id="Export1" fitHeight="62.0" fitWidth="56.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="Export1" fitHeight="47.0" fitWidth="43.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
                               <image>
                                  <Image url="@../../assets/supprimer.png" />
                               </image>

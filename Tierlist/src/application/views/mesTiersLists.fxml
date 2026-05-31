@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -14,96 +15,89 @@
 <BorderPane prefHeight="761.0" prefWidth="1045.0" styleClass="root" stylesheets="@../styles/dark.css" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1">
 
     <left>
-        <VBox prefWidth="220.0" spacing="30" stylesheets="@../styles/dark.css">
-            <children>
+        <VBox prefHeight="761.0" prefWidth="220.0" spacing="6" styleClass="sidebar" stylesheets="@../styles/dark.css">
 
-                <!-- Logo -->
-                <ImageView fitHeight="161.0" fitWidth="238.0" preserveRatio="true">
-                    <image>
-                        <Image url="@../../assets/logo.png" />
-                    </image>
+            
+            <ImageView fitHeight="162.0" fitWidth="210.0" preserveRatio="true">
+                <image><Image url="@../../assets/logo.png" /></image>
+                <VBox.margin><Insets bottom="10" /></VBox.margin>
+            </ImageView>
+
+            
+            <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button">
+                <ImageView fitHeight="28" fitWidth="28" preserveRatio="true">
+                    <image><Image url="@../../assets/Home.png" /></image>
                 </ImageView>
+                <Label style="-fx-font-size:13px; -fx-font-family:'Orbitron';" text="Accueil" textFill="WHITE" />
+            </HBox>
 
-                <!-- Home -->
-                <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button" stylesheets="@../styles/dark.css">
-                    <children>
-                        <ImageView fitHeight="40" fitWidth="40" preserveRatio="true">
-                            <image>
-                                <Image url="@../../assets/Home.png" />
-                            </image>
-                        </ImageView>
-                        <Label style="-fx-font-size: 15;" text="Accueil" textFill="WHITE" />
-                    </children>
-                </HBox>
+            
+            <HBox alignment="CENTER_LEFT" spacing="12" style="-fx-border-color: transparent transparent transparent #FF5EE7;                          -fx-border-width: 0 0 0 3;                          -fx-background-color: #1A1F3A;                          -fx-background-radius: 12;" styleClass="sidebar-button">
+                <ImageView fitHeight="28" fitWidth="28" preserveRatio="true">
+                    <image><Image url="@../../assets/mesTiersLists.png" /></image>
+                </ImageView>
+                <Label style="-fx-font-size:13px; -fx-font-family:'Orbitron';" text="Mes Tier List" textFill="#FF5EE7" />
+            </HBox>
 
-                <!-- Mes Tier Lists -->
-                <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button" stylesheets="@../styles/dark.css">
-                    <children>
-                        <ImageView fitHeight="40" fitWidth="40" preserveRatio="true" styleClass="sidebar-button">
-                            <image>
-                                <Image url="@../../assets/mesTiersLists.png" />
-                            </image>
-                        </ImageView>
-                        <Label style="-fx-font-size: 15;" text="Mes Tier Lists" textFill="#d15555" />
-                    </children>
-                </HBox>
+            
+            <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button">
+                <ImageView fitHeight="28" fitWidth="28" preserveRatio="true">
+                    <image><Image url="@../../assets/Importer.png" /></image>
+                </ImageView>
+                <Label style="-fx-font-size:13px; -fx-font-family:'Orbitron';" text="Importer" textFill="WHITE" />
+            </HBox>
 
-                <!-- Importer -->
-                <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button" stylesheets="@../styles/dark.css">
-                    <children>
-                        <ImageView fitHeight="40" fitWidth="40" preserveRatio="true">
-                            <image>
-                                <Image url="@../../assets/Importer.png" />
-                            </image>
-                        </ImageView>
-                        <Label style="-fx-font-size: 15;" text="Importer" textFill="WHITE" />
-                    </children>
-                </HBox>
+           
+            <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button">
+                <ImageView fitHeight="28" fitWidth="28" preserveRatio="true">
+                    <image><Image url="@../../assets/parametre.png" /></image>
+                </ImageView>
+                <Label style="-fx-font-size:13px; -fx-font-family:'Orbitron';" text="Paramètres" textFill="WHITE" />
+            </HBox>
 
-                <!-- Aide -->
-                <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button" stylesheets="@../styles/dark.css">
-                    <children>
-                        <ImageView fitHeight="40" fitWidth="40" preserveRatio="true">
-                            <image>
-                                <Image url="@../../assets/aide.png" />
-                            </image>
-                        </ImageView>
-                        <Label style="-fx-font-size: 15;" text="Aide" textFill="WHITE" />
-                    </children>
-                </HBox>
+            
+            <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button">
+                <ImageView fitHeight="28" fitWidth="28" preserveRatio="true">
+                    <image><Image url="@../../assets/aide.png" /></image>
+                </ImageView>
+                <Label style="-fx-font-size:13px; -fx-font-family:'Orbitron';" text="Aide" textFill="WHITE" />
+            </HBox>
 
-            </children>
         </VBox>
     </left>
-   <center>
-      <VBox prefHeight="761.0" prefWidth="791.0" BorderPane.alignment="CENTER">
-         <children>
-            <AnchorPane prefHeight="257.0" prefWidth="807.0">
+
+    <center>
+        <VBox prefHeight="761.0" prefWidth="791.0" BorderPane.alignment="CENTER">
+            <children>
+                <AnchorPane prefHeight="257.0" prefWidth="793.0">
+                    <children>
+                        <Text fill="#ff5ee7" layoutX="13.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mes Tiers Lists" wrappingWidth="213.92578125">
+                            <font><Font size="28.0" /></font>
+                        </Text>
+                        <Button layoutX="580.0" layoutY="19.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="77.0" style="-fx-background-color: black;" styleClass="button-apercu" stylesheets="@../styles/dark.css" text="Aperçu" textFill="WHITE" />
+                        <Button layoutX="670.0" layoutY="19.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" styleClass="button-theme" stylesheets="@../styles/dark.css" text="Thème" />
+                        <ImageView fitHeight="32.0" fitWidth="47.0" layoutX="665.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                            <image><Image url="@../../assets/thème.png" /></image>
+                        </ImageView>
+                        <Button layoutX="14.0" layoutY="106.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="269.0" styleClass="button_newTierPage2" stylesheets="@../styles/dark.css" text="Nouvelle Tier List" />
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="22.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+                            <image><Image url="@../../assets/add.png" /></image>
+                        </ImageView>
+                        <Button layoutX="314.0" layoutY="106.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="165.0" styleClass="button_newTierPage2" stylesheets="@../styles/dark.css" text="★ Favoris" />
+                        <Button layoutX="14.0" layoutY="165.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="240.0" styleClass="button_TrierPage2" stylesheets="@../styles/dark.css" text="Trier par :  " textFill="#6750a4" />
+                    </children>
+                </AnchorPane>
+            <AnchorPane prefHeight="507.0" prefWidth="793.0">
                <children>
-                  <Text fill="#ff5ee7" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mes Tiers Lists" wrappingWidth="213.92578125">
+                  <Text fill="#ff5ee7" layoutX="670.0" layoutY="486.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Page 1" wrappingWidth="56.92578125">
                      <font>
-                        <Font size="28.0" />
+                        <Font size="17.0" />
                      </font>
                   </Text>
-                  <Button layoutX="595.0" layoutY="21.0" mnemonicParsing="false" text="Aperçu" />
-                  <Button layoutX="675.0" layoutY="21.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Thème" />
-                  <ImageView fitHeight="32.0" fitWidth="47.0" layoutX="665.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../assets/thème.png" />
-                     </image>
-                  </ImageView>
-                  <Button layoutY="137.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="269.0" styleClass="button_newTierPage2" stylesheets="@../styles/dark.css" text="Nouvelle Tier List" />
-                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="40.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../assets/add.png" />
-                     </image>
-                  </ImageView>
-                  <Button layoutX="321.0" layoutY="137.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="165.0" styleClass="button_newTierPage2" stylesheets="@../styles/dark.css" text="★ Favoris" />
-                  <Button layoutY="215.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="240.0" styleClass="button_TrierPage2" stylesheets="@../styles/dark.css" text="Trier par :  " textFill="#6750a4" />
                </children>
             </AnchorPane>
-         </children>
-      </VBox>
-   </center>
+            </children>
+        </VBox>
+    </center>
 
 </BorderPane>
