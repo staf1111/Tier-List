@@ -2,8 +2,9 @@ package model;
 
 import java.io.IOException;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.file.Path;
 
 public class ImageItems implements ItemsM{
 	private static final long serialVersionUID = 1L;
@@ -29,8 +30,9 @@ public class ImageItems implements ItemsM{
 		if("Image local".equals(name))
 		{
 			try {
-				imageData = Files.readAllBytes(Paths.get(URI.create(path)));
-			} catch (IOException e) {
+				imageData = Files.readAllBytes(Path.of(new URI(path).getPath()));
+
+			} catch (IOException | URISyntaxException e) {
 				e.printStackTrace();
 			}
 		}

@@ -53,9 +53,9 @@ public class CreateTierListController {
 
 	private TierList tierlist = null;
 
-	List<TierM> tiers = new ArrayList<TierM>();
-	List<ItemsM> items = new ArrayList<ItemsM>();
-
+	private List<TierM> tiers = new ArrayList<TierM>();
+	private List<ItemsM> items = new ArrayList<ItemsM>();
+	
 	@FXML
 	public void initialize() {
 		Scrollpane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
@@ -146,6 +146,7 @@ public class CreateTierListController {
 	{
 		tierlist = new TierList(Title.getText(), tiers, items);
 		tierlist.setDate(LocalDateTime.now());
+		
 		setLastUpdate(tierlist.getDate());
 		DataManager.getInstance().saveTierList(tierlist);
 	}
@@ -192,7 +193,6 @@ public class CreateTierListController {
 				// on delete tout les tiers afficher
 				TierContainer.getChildren().clear();
 				refreshTier(controller.getTiers());
-
 			}
 
 		} catch (Exception e) {

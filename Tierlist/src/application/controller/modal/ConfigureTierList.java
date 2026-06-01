@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -25,10 +26,10 @@ public class ConfigureTierList {
 	@FXML ScrollPane Scrollpane;
 	@FXML VBox TierContainer;
 	@FXML FlowPane itemsContainer;
+	@FXML ImageView imagePreview;
 	
 	private List<TierM> tiers = new ArrayList<TierM>();
 	private List<ItemsM> items = new ArrayList<ItemsM>();
-	
 
 	
 	@FXML
@@ -85,6 +86,7 @@ public class ConfigureTierList {
 	    }
 	}
 
+	
 	//recupération des tiers et items
 	public List<TierM> getTiers() {
 		return tiers;
@@ -95,7 +97,7 @@ public class ConfigureTierList {
 		return items;
 	}
 		
-	 
+	
 	
 	private void moveTier(Tier tier, TierM tierM, int direction) //fonction pour bouger graphique une tier et modifier sa position dans le tableau qui stock le model
 	{
