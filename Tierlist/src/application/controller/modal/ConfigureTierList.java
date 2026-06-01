@@ -79,7 +79,6 @@ public class ConfigureTierList {
 	    		TierContainer.getChildren().remove(tier);
 	    		tiers.remove(tr);
 	    		TierContainer.requestLayout();
-	    		//TODO a finir
 	    	});
 	    	
 	    	TierContainer.getChildren().add(tier);
