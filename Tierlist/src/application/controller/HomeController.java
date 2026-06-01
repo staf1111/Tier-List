@@ -1,4 +1,4 @@
-package application.controller.modal;
+package application.controller;
 
 import java.io.IOException;
 

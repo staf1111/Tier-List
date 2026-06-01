@@ -18,33 +18,19 @@
 <?import javafx.scene.text.Font?>
 
 <BorderPane prefHeight="650.0" prefWidth="1000.0" stylesheets="@../styles/dark.css" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CreateTierListController">
-
-    <!-- ═══════════════════════════════════════
-         LEFT SIDEBAR (panneau vide)
-    ════════════════════════════════════════ -->
     <left>
         <VBox fillWidth="true" prefHeight="599.0" prefWidth="0.0" />
     </left>
-
-    <!-- ═══════════════════════════════════════
-         CENTER : header + toolbar + contenu principal
-    ════════════════════════════════════════ -->
     <center>
         <VBox fillWidth="true" prefHeight="205.0" prefWidth="808.0">
             <padding>
                 <Insets bottom="12" left="12" right="12" top="0" />
             </padding>
-
-            <!-- ── HEADER ROW : Retour | Titre + date | (espace) ── -->
             <HBox alignment="CENTER" fillHeight="true">
                 <padding>
                     <Insets bottom="4" top="10" />
                 </padding>
-
-                <!-- Spacer gauche -->
                 <Region prefHeight="82.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
-
-                <!-- Titre + date (centré) -->
                 <VBox alignment="CENTER_LEFT">
                <TextField fx:id="Title" alignment="CENTER" prefHeight="91.0" prefWidth="942.0" style="-fx-border-style: none;" styleClass="Zone-blanches-nom-tier" stylesheets="@../styles/dark.css" text="Nom de la tiers list">
                   <font>
@@ -53,13 +39,9 @@
                </TextField>
                     <Label fx:id="lastUpdate" contentDisplay="CENTER" />
                 </VBox>
-
-                <!-- Spacer droit (équilibre le bouton Retour) -->
                 <Region HBox.hgrow="ALWAYS" />
                 <Region prefWidth="103" />
             </HBox>
-
-            <!-- ── TOOLBAR : Ajouter / Réinitialiser / Sauvegarder + Play ── -->
             <HBox alignment="CENTER_LEFT" fillHeight="true">
                 <VBox.margin><Insets bottom="8" /></VBox.margin>
             <Region prefHeight="63.0" prefWidth="25.0" />
@@ -82,8 +64,6 @@
             </HBox>
 
             <HBox fillHeight="true" prefHeight="276.0" prefWidth="784.0" VBox.vgrow="ALWAYS">
-
-              
                 <ScrollPane fx:id="Scrollpane" fitToWidth="true" prefHeight="308.0" prefWidth="828.0" stylesheets="@../styles/dark.css" HBox.hgrow="ALWAYS">
                     <content>
                         <VBox fx:id="TierContainer" alignment="CENTER" fillWidth="false" />
@@ -115,8 +95,6 @@
                   <Image url="@../../assets/thème.png" />
                </image>
             </ImageView>
-   
-             
                 <Button fx:id="back" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" prefHeight="27" prefWidth="103" stylesheets="@../styles/dark.css" text="&lt;-  Retour">
                <styleClass>
                   <String fx:value="button_newTierPage2" />
