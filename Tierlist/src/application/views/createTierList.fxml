@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="650.0" prefWidth="1000.0" stylesheets="@../styles/dark.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CreateTierListController">
+<BorderPane prefHeight="650.0" prefWidth="1000.0" stylesheets="@../styles/dark.css" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CreateTierListController">
 
     <top>
         <HBox alignment="CENTER_RIGHT" fillHeight="true">
@@ -103,7 +103,7 @@
                     <Insets bottom="4" top="10" />
                 </padding>
 
-                <Button fx:id="back" mnemonicParsing="false" onAction="#goBack" prefHeight="27" prefWidth="103" text="Retour" />
+                <Button fx:id="back" mnemonicParsing="false" onAction="#goBack" prefHeight="27" prefWidth="103" styleClass="secondary-button" text="Retour" />
 
                 <Region HBox.hgrow="ALWAYS" />
 
@@ -123,24 +123,24 @@
             <HBox alignment="CENTER_LEFT" fillHeight="true">
                 <VBox.margin><Insets bottom="8" /></VBox.margin>
 
-                <Button fx:id="AddTier" mnemonicParsing="false" onAction="#addTier" text="Ajouter un tier">
+                <Button fx:id="AddTier" mnemonicParsing="false" onAction="#addTier" prefHeight="30.0" prefWidth="139.0" styleClass="primary-button" text="Ajouter un tier">
                     <HBox.margin><Insets bottom="10.0" left="5.0" right="5.0" top="10.0" /></HBox.margin>
                 </Button>
-            <Button fx:id="AddItem" mnemonicParsing="false" onAction="#addItems" text="Ajouter un element">
+            <Button fx:id="AddItem" mnemonicParsing="false" onAction="#addItems" prefHeight="30.0" prefWidth="170.0" styleClass="primary-button" text="Ajouter un element">
                <HBox.margin>
                   <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
                </HBox.margin>
             </Button>
-                <Button fx:id="Reset" mnemonicParsing="false" onAction="#resetTierList" text="Réinitialiser">
+                <Button fx:id="Reset" mnemonicParsing="false" onAction="#resetTierList" prefHeight="29.0" prefWidth="105.0" styleClass="secondary-button" text="Réinitialiser">
                     <HBox.margin><Insets bottom="10.0" left="5.0" right="5.0" top="10.0" /></HBox.margin>
                 </Button>
-                <Button fx:id="Save" mnemonicParsing="false" onAction="#saveTierList" text="Sauvegarder">
+                <Button fx:id="Save" mnemonicParsing="false" onAction="#saveTierList" prefHeight="29.0" prefWidth="108.0" styleClass="secondary-button" text="Sauvegarder">
                     <HBox.margin><Insets bottom="10.0" left="5.0" right="5.0" top="10.0" /></HBox.margin>
                 </Button>
 
                 <Region prefHeight="62.0" prefWidth="198.0" HBox.hgrow="ALWAYS" />
 
-                <Button fx:id="Play" prefHeight="42" prefWidth="53">
+                <Button fx:id="Play" prefHeight="42" prefWidth="53" styleClass="tier-card">
                     <HBox.margin><Insets bottom="10" right="10" top="10" /></HBox.margin>
                     <graphic>
                         <ImageView fitHeight="34" fitWidth="36" pickOnBounds="true" preserveRatio="true">
@@ -162,28 +162,28 @@
                 <VBox alignment="TOP_CENTER" prefWidth="124" spacing="5.0" style="-fx-background-color: transparent;">
                     <HBox.margin><Insets left="8" /></HBox.margin>
 
-                    <Button fx:id="TierSettings" alignment="CENTER" mnemonicParsing="false" onAction="#configureTierList" prefHeight="69.0" prefWidth="75.0">
+                    <Button fx:id="TierSettings" alignment="CENTER" mnemonicParsing="false" onAction="#configureTierList" prefHeight="69.0" prefWidth="75.0" styleClass="Zone-blanches-nom-tier" textFill="#872996">
                         <VBox.margin><Insets bottom="5.0" top="10.0" /></VBox.margin>
                         <graphic>
                             <VBox alignment="TOP_CENTER" prefHeight="58.0" prefWidth="50.0">
                                 <ImageView fitHeight="62.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
                                     <image><Image url="@../../assets/iconConfig.png" /></image>
                                 </ImageView>
-                                <Label alignment="CENTER" prefHeight="18" prefWidth="201" text="Config tier" />
+                                <Label alignment="CENTER" prefHeight="18" prefWidth="201" text="Config tier" textFill="#872996" />
                             </VBox>
                         </graphic>
                     </Button>
                <Separator prefWidth="97.0" />
-               <Button fx:id="Export" mnemonicParsing="false" prefHeight="72.0" prefWidth="79.0">
+               <Button fx:id="Export" mnemonicParsing="false" prefHeight="72.0" prefWidth="79.0" styleClass="Zone-blanches-nom-tier" textFill="#872996">
                   <graphic>
                      <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
                         <children>
-                           <ImageView fitHeight="69.0" fitWidth="57.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fitHeight="69.0" fitWidth="57.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" styleClass="Zone-blanches-nom-tier">
                               <image>
                                  <Image url="@../../assets/exporter.png" />
                               </image>
                            </ImageView>
-                           <Label alignment="CENTER" prefHeight="18.0" prefWidth="51.0" text="Exporter" />
+                           <Label alignment="CENTER" prefHeight="18.0" prefWidth="51.0" text="Exporter" textFill="#872996" />
                         </children>
                      </VBox>
                   </graphic>
@@ -192,7 +192,7 @@
                   </VBox.margin>
                </Button>
                <Separator prefWidth="200.0" />
-               <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0">
+               <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" styleClass="Zone-blanches-nom-tier">
                   <graphic>
                      <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
                         <children>
@@ -201,7 +201,7 @@
                                  <Image url="@../../assets/supprimer.png" />
                               </image>
                            </ImageView>
-                           <Label alignment="CENTER" prefHeight="18.0" prefWidth="67.0" text="Supprimer" />
+                           <Label alignment="CENTER" prefHeight="18.0" prefWidth="67.0" text="Supprimer" textFill="#872996" />
                         </children>
                      </VBox>
                   </graphic>
