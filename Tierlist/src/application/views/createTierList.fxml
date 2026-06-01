@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="650.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CreateTierListController">
+<BorderPane prefHeight="650.0" prefWidth="1000.0" stylesheets="@../styles/dark.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CreateTierListController">
 
     <top>
         <HBox alignment="CENTER_RIGHT" fillHeight="true">
@@ -138,7 +138,7 @@
                     <HBox.margin><Insets bottom="10.0" left="5.0" right="5.0" top="10.0" /></HBox.margin>
                 </Button>
 
-                <Region prefHeight="63.0" prefWidth="250.0" HBox.hgrow="ALWAYS" />
+                <Region prefHeight="62.0" prefWidth="198.0" HBox.hgrow="ALWAYS" />
 
                 <Button fx:id="Play" prefHeight="42" prefWidth="53">
                     <HBox.margin><Insets bottom="10" right="10" top="10" /></HBox.margin>
