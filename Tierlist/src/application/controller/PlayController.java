@@ -3,7 +3,7 @@ package application.controller;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
- 
+
 import application.widget.Items;
 import application.widget.Tier;
 import application.widget.TierType;
@@ -85,6 +85,11 @@ public class PlayController {
 		TierContainer.requestLayout();
 	}
  
+	@FXML
+	public void resetTierList() {
+	    System.out.println("Reset button clicked!");
+	}
+	
 	private void refreshItems(List<ItemsM> m) {
 		if (m == null || m.isEmpty()) {
 			return;

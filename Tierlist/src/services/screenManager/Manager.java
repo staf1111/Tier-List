@@ -15,7 +15,7 @@ public class Manager {
 	
 	private static Parent root;
 	
-	private static final PageType DEFAULT = PageType.PLAY;
+	private static final PageType DEFAULT = PageType.HOME;
 	
 	private static final int HEIGHT_PREF = 650;
 	private static final int WIDTH_PREF = 1000;	
