@@ -16,7 +16,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="461.0" prefWidth="707.0">
                      <children>
-                        <ScrollPane fx:id="Scrollpane" hbarPolicy="NEVER" layoutX="19.0" layoutY="22.0" prefHeight="402.0" prefWidth="677.0">
+                        <ScrollPane fx:id="Scrollpane" hbarPolicy="NEVER" layoutX="19.0" layoutY="22.0" prefHeight="402.0" prefWidth="687.0">
                            <content>
                               <VBox fx:id="TierContainer" prefHeight="402.0" prefWidth="674.0" />
                            </content></ScrollPane>

@@ -26,7 +26,7 @@ public class TierM implements Serializable {
 	private double nameColor_green;
 	
 	private static final float DEFAULT_WITDH = 150;
-	private static final float DEFAULT_HEIGHT = 50;
+	private static final float DEFAULT_HEIGHT = 80;
 	
 	float width, height;
 	

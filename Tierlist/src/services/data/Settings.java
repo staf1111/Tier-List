@@ -13,7 +13,6 @@ public class Settings {
 	
 	private ThemeList theme = ThemeList.DARK;
 	
-	private TierList currentTierList_play, currentTierList_edit;
 	
 	public static void init()
 	{
@@ -61,22 +60,7 @@ public class Settings {
 		ApiRate = apiRate;
 	}
 
-	
-	public TierList getCurrentTierList_play() {
-		return currentTierList_play;
-	}
 
-	public void setCurrentTierList_play(TierList currentTierList_play) {
-		this.currentTierList_play = currentTierList_play;
-	}
-
-	public TierList getCurrentTierList_edit() {
-		return currentTierList_edit;
-	}
-
-	public void setCurrentTierList_edit(TierList currentTierList_edit) {
-		this.currentTierList_edit = currentTierList_edit;
-	}
 	
 	
 	

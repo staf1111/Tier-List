@@ -9,6 +9,7 @@ import application.widget.Tier;
 import application.widget.TierType;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -19,11 +20,9 @@ import javafx.scene.input.TransferMode;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.Node;
-
 import model.ItemsM;
 import model.TierM;
-import services.data.Settings;
+import services.data.Temporary;
 import services.data.TierList;
 import services.screenManager.Manager;
 import services.screenManager.PageType;
@@ -62,9 +61,9 @@ public class PlayController {
 
         lastUpdate.setText("");
 
-        if (Settings.getInstance().getCurrentTierList_play() != null) {
+        if (Temporary.getInstance().getCurrentTierList_play() != null) {
 
-            tierlist = Settings.getInstance().getCurrentTierList_play();
+            tierlist = Temporary.getInstance().getCurrentTierList_play();
 
             Title.setText(tierlist.getName());
 
@@ -77,7 +76,7 @@ public class PlayController {
         }
     }
 
-    // 🔥 ITEMS DRAGGABLE PROPRE
+
     private Items buildDraggableItem(ItemsM t) {
 
         Items item = new Items(t);
@@ -123,7 +122,6 @@ public class PlayController {
         }
     }
 
-    // 🔥 RESET PROPRE (NE CASSE PAS LES TIERS)
     @FXML
     public void resetTierList() {
 
@@ -141,7 +139,7 @@ public class PlayController {
                     }
                 }
 
-                // vider uniquement la zone items du tier (PAS le tier entier)
+                // supprimer uniquement la zone items du tier
                 for (Node child : tier.getChildren()) {
                     if (child instanceof HBox box) {
                         box.getChildren().clear();
@@ -151,18 +149,11 @@ public class PlayController {
         }
 
         itemsContainer.getChildren().addAll(allItems);
-
-        System.out.println("Reset OK");
-    }
-
-    @FXML
-    public void exportTierList() {
-        // TODO
     }
 
     @FXML
     public void goBack() {
-        Settings.getInstance().setCurrentTierList_play(null);
+		Temporary.getInstance().setCurrentTierList_play(tierlist);
         Manager.getInstance().setPage(PageType.HOME);
     }
 

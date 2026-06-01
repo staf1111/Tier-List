@@ -5,8 +5,8 @@ import javafx.stage.Stage;
 import services.api.Api;
 import services.data.DataManager;
 import services.data.Settings;
+import services.data.Temporary;
 import services.screenManager.Manager;
-import services.screenManager.PageType;
 
 public class Main extends Application {
 	@Override
@@ -18,6 +18,8 @@ public class Main extends Application {
 			Manager.init(primaryStage); //on initialise la classe qui va géré les différente page et modal
 			
 			Api.init();
+			
+			Temporary.init(); // class qui stocke de manière temporaire des donnée
 				
 			
 			primaryStage.setTitle("Tierlist");

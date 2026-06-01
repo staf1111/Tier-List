@@ -94,7 +94,7 @@
                 <Button fx:id="imptierlist" onMouseClicked="#ClickImporterTierList" prefHeight="36" prefWidth="200" styleClass="secondary-button" text="Importer une Tier List" />
             </HBox>
             <Label style="-fx-font-family:'Orbitron'; -fx-font-size:15px;" text="Vos tiers du moment" textFill="#FF2B8A" />
-         <ScrollPane fx:id="tierlistPreview" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="457.0" prefWidth="800.0">
+         <ScrollPane fx:id="tierlistPreview" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="457.0" prefWidth="800.0" styleClass="scroll-pane-transparent">
             <content>
                <FlowPane fx:id="tierlistPreviewContainer" alignment="TOP_CENTER" hgap="50.0" prefHeight="454.0" prefWidth="793.0" vgap="50.0" />
             </content>

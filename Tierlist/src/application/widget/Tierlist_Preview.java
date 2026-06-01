@@ -3,13 +3,16 @@ package application.widget;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
 import model.TierList_previewM;
-import services.data.Settings;
+import services.data.Temporary;
 import services.screenManager.Manager;
 import services.screenManager.PageType;
 
@@ -18,6 +21,9 @@ public class Tierlist_Preview extends VBox{
 	private static final float DEFAULT_HEIGHT = 250;
 	private static final float DEFAULT_WITDH = 225;
 
+	private Runnable onDuplicate;
+	private Runnable onDelete;
+	
 	
 	public Tierlist_Preview(TierList_previewM model)
 	{
@@ -35,11 +41,11 @@ public class Tierlist_Preview extends VBox{
 		VBox container = new VBox();
 
 		Image image = new Image(getClass().getResourceAsStream("/assets/tierlistIllustration.png"));
-
+		
 		
 		ImageView view = new ImageView(image); // on l'affiche
 		view.setFitWidth(witdh);
-		view.setFitHeight(height * 0.75);
+		view.setFitHeight(height * 0.65);
 		
 		Rectangle clip = new Rectangle(witdh, height * 0.75);
 		clip.setArcWidth(12); clip.setArcHeight(12);
@@ -60,7 +66,7 @@ public class Tierlist_Preview extends VBox{
 		playButton.setGraphic(playContent);
 		
 		playButton.setOnAction(e->{
-			Settings.getInstance().setCurrentTierList_play(model.getTierlist());
+			Temporary.getInstance().setCurrentTierList_play(model.getTierlist());
 			Manager.getInstance().setPage(PageType.PLAY);
 		});
 		
@@ -79,7 +85,7 @@ public class Tierlist_Preview extends VBox{
 		editButton.setGraphic(editContent);
 		
 		editButton.setOnAction(e->{
-			Settings.getInstance().setCurrentTierList_edit(model.getTierlist());
+			Temporary.getInstance().setCurrentTierList_edit(model.getTierlist());
 			Manager.getInstance().setPage(PageType.CREATETIERLIST);
 		});
 		//bouton pour dupliquer
@@ -97,9 +103,11 @@ public class Tierlist_Preview extends VBox{
 		duplButton.setGraphic(duplContent);
 		
 		duplButton.setOnAction((e)->{
-			//TODO
-		});
-		
+			if(this.onDuplicate != null)
+			{
+				this.onDuplicate.run(); 
+			}
+		});			
 		//bouton pour supprimer
 		Button delButton = new Button();
 		delButton.setPrefWidth(40);
@@ -115,14 +123,35 @@ public class Tierlist_Preview extends VBox{
 		delButton.setGraphic(delContent);
 		
 		delButton.setOnAction((e)->{
-			//TODO
-		});
+			if(this.onDelete != null)
+			{
+				this.onDelete.run(); 
+			}
+		});	
+		
 		ButtonController.setSpacing(witdh / 16);
 		ButtonController.setAlignment(Pos.CENTER);
 		container.setMargin(ButtonController, new Insets(10,0,0,0));
 		
-		ButtonController.getChildren().addAll(playButton,editButton, duplButton, delButton);
-		container.getChildren().addAll(view, ButtonController);
+		Label text = new Label(model.getTierlist().getName());
+		text.setTextFill(Color.WHITE);
+		text.setAlignment(Pos.CENTER);
+		Font font = new Font(18);
+		text.setFont(font);
+		text.setPrefWidth(witdh);
+		
+		ButtonController.getChildren().addAll(playButton, editButton, duplButton, delButton);
+		
+		container.getChildren().addAll(text, view, ButtonController);
 		this.getChildren().add(container);
+	}
+
+	public void setOnDuplicate(Runnable onDuplicate) {
+		this.onDuplicate = onDuplicate;
+	}
+	
+	public void setOnDelete(Runnable onDelete)
+	{
+		this.onDelete = onDelete;
 	}
 }

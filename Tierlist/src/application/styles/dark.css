@@ -220,3 +220,19 @@
     -fx-font-size: 12px;
     -fx-font-weight: bold;
 }
+
+/* =========================
+   SCROLL PANE
+========================= */
+
+.scroll-pane-transparent {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane-transparent > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane-transparent .scroll-pane-content {
+    -fx-background-color: transparent;
+}

@@ -5,6 +5,9 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -94,6 +97,53 @@ public class DataManager {
 		return tierList;
 	}
 	
+	public void duplicateTierList(TierList tierlist) {
+		int count = 1;
+		
+		
+		String newName = tierlist.getName() + "_copy" + count;
+		
+		while(isFileExist(newName))
+		{
+			newName = tierlist.getName() + "_copy" + count;
+			count++;
+		}
+
+		TierList newTL = new TierList(newName, tierlist.getTier(), tierlist.getItems());
+		newTL.setDate(tierlist.getDate());
+		
+		saveTierList(newTL);
+	}
+	
+	public void deleteTierlist(String path)
+	{
+		if (path == null || path.trim().isEmpty()) {
+	        return;
+	    }
+		
+		try {
+			Path filePath = Paths.get(path);
+			
+			if(!Files.exists(filePath)) 
+			{
+				String filename = path;
+				if(!filename.endsWith(".mmlc")) //permettre de supprimer un fichier juste en aillant sont nom
+				{
+					filename += ".mmlc";
+				}
+				filePath = Paths.get(DEFAULT_PATH, filename);
+			}
+			
+			
+			if (Files.deleteIfExists(filePath)) {
+	            System.out.println("Fichier supprimé avec succès : " + filePath.toAbsolutePath());
+	        } else {
+	            System.out.println("Aucun fichier trouvé à supprimer pour : " + path);
+	        }
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
 	public List<String> getAllTierList()
 	{
@@ -137,6 +187,28 @@ public class DataManager {
 			folder.mkdir();
 		}
 	}
+	
+	private boolean isFileExist(String name)
+	{
+		File folder = new File(DEFAULT_PATH);
+		if(!folder.exists())
+		{
+			folder.mkdir();
+		}
+		
+		for(File file : folder.listFiles())
+		{
+			
+			if(!file.isDirectory() && file.getName().contains(".mmlc"))
+			{
+				String filename = file.getName().replace(".mmlc", "");
+				if(filename.equals(name)) return true;
+			}
+		}
+		
+		return false;
+	}
+	
 	
 	public static DataManager getInstance()
 	{

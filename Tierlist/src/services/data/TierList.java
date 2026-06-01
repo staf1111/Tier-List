@@ -1,9 +1,6 @@
 package services.data;
 
-import java.io.IOException;
 import java.io.Serializable;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -17,7 +14,6 @@ public class TierList implements Serializable { // class qui stocke la tierlist
 	private List<ItemsM> items;
 	private String name;
 	private LocalDateTime date;
-	private byte[] imagePres;
 	
 	public TierList(String n, List<TierM> tier,List<ItemsM> items){
 		name = n;
@@ -60,17 +56,4 @@ public class TierList implements Serializable { // class qui stocke la tierlist
 		return this.date;
 	}
 	
-	public void setImagePres(String path) {
-	    try {
-	        imagePres = Files.readAllBytes(Paths.get(path)); 
-	    } catch (IOException e) {
-	        System.err.println("Erreur lors de la lecture de l'image au chemin : " + path);
-	        e.printStackTrace();
-	    }
-	}
-	
-	public byte[] getImagePres()
-	{
-		return imagePres;
-	}
 }

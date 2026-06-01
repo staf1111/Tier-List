@@ -26,7 +26,7 @@ import javafx.stage.Stage;
 import model.ItemsM;
 import model.TierM;
 import services.data.DataManager;
-import services.data.Settings;
+import services.data.Temporary;
 import services.data.TierList;
 import services.screenManager.Manager;
 import services.screenManager.PageType;
@@ -75,8 +75,8 @@ public class CreateTierListController {
 
 		lastUpdate.setText("");
 		
-		if (Settings.getInstance().getCurrentTierList_edit() != null) {
-			tierlist = Settings.getInstance().getCurrentTierList_edit();
+		if (Temporary.getInstance().getCurrentTierList_edit() != null) {
+			tierlist = Temporary.getInstance().getCurrentTierList_edit();
 			
 			Title.setText(tierlist.getName());
 			//on ajoute les tiers importer
@@ -158,12 +158,18 @@ public class CreateTierListController {
 		this.TierContainer.getChildren().clear();
 		this.itemsContainer.getChildren().clear();
 
+		this.Title.setText("Nom de la tiers list");
 		tierlist = null;
 	}
 
 	@FXML
 	public void deleteTierList() {
 		// TODO deleteTierList
+		if(tierlist != null)
+		{
+			DataManager.getInstance().deleteTierlist(tierlist.getName());
+			resetTierList();
+		}
 	}
 
 	@FXML
@@ -244,7 +250,7 @@ public class CreateTierListController {
 
 	@FXML
 	public void goBack() {
-		Settings.getInstance().setCurrentTierList_edit(null);
+		Temporary.getInstance().setCurrentTierList_edit(null);
 		Manager.getInstance().setPage(PageType.HOME);
 	}
 }
