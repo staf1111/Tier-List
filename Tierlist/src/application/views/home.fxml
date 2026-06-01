@@ -31,7 +31,7 @@
                 </ImageView>
                 <Label style="-fx-font-size:13px; -fx-font-family:'Orbitron';" text="Accueil" textFill="#ff5ee7" />
             </HBox>
-            <HBox fx:id="ClickMesTierList" alignment="CENTER_LEFT" onMouseClicked="#ClickMesTierList" spacing="12" styleClass="sidebar-button">
+            <HBox fx:id="mestierlist" alignment="CENTER_LEFT" onMouseClicked="#ClickMesTierList" spacing="12" styleClass="sidebar-button">
                 <ImageView fitHeight="28" fitWidth="28" preserveRatio="true">
                     <image>
                         <Image url="@../../assets/mesTiersLists.png" />
@@ -69,23 +69,25 @@
     <center>
         <VBox spacing="18" style="-fx-padding: 18;">
             <AnchorPane prefHeight="90">
-            <HBox prefHeight="100.0" prefWidth="710.0">
-               <children>
-                  <VBox prefHeight="66.0" prefWidth="252.0">
-                     <children>
-                            <Label style="-fx-font-family:'Orbitron'; -fx-font-size:28px; -fx-font-weight:bold;" text="RankStation" textFill="#FFE04D" />
-                            <Label style="-fx-font-size:11px;" text="Bienvenue Corbot, voici vos tiers list" textFill="#BFBFBF" />
-                     </children>
-                  </VBox>
-                  <Region prefHeight="100.0" prefWidth="262.0" HBox.hgrow="ALWAYS" />
-                  <HBox prefHeight="38.0" prefWidth="163.0" spacing="25.0" HBox.hgrow="ALWAYS">
-                     <children>
-                            <Button prefWidth="80" styleClass="button-apercu" text="Aperçu" />
-                            <Button prefWidth="80" styleClass="button-theme" text="Theme" />
-                     </children>
-                  </HBox>
-               </children>
-            </HBox>
+            <children>
+               <HBox prefHeight="100.0" prefWidth="903.0">
+                  <children>
+                     <VBox prefHeight="66.0" prefWidth="252.0">
+                        <children>
+                               <Label style="-fx-font-family:'Orbitron'; -fx-font-size:28px; -fx-font-weight:bold;" text="RankStation" textFill="#FFE04D" />
+                               <Label style="-fx-font-size:11px;" text="Bienvenue Corbot, voici vos tiers list" textFill="#BFBFBF" />
+                        </children>
+                     </VBox>
+                     <Region prefHeight="100.0" prefWidth="262.0" HBox.hgrow="ALWAYS" />
+                     <HBox prefHeight="38.0" prefWidth="163.0" spacing="25.0" HBox.hgrow="ALWAYS">
+                        <children>
+                               <Button prefWidth="80" styleClass="button-apercu" text="Aperçu" />
+                               <Button prefWidth="80" styleClass="button-theme" text="Theme" />
+                        </children>
+                     </HBox>
+                  </children>
+               </HBox>
+            </children>
             </AnchorPane>
             <HBox spacing="15">
                 <Button fx:id="newtierlist" onMouseClicked="#ClickNouvelleTierList" prefHeight="40" prefWidth="220" styleClass="primary-button" text="+ Nouvelle Tier List" />
