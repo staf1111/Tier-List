@@ -155,7 +155,7 @@ public class PlayController {
 
 	    return widget;
 	}
-
+	
 	private void enableDropOnFlowPane(FlowPane target) {
 
 	    target.setOnDragOver(e -> {
@@ -174,6 +174,15 @@ public class PlayController {
 
 	            if (draggedSource instanceof FlowPane src) {
 	                src.getChildren().remove(draggedItem);
+	            }
+	            int insertIndex = target.getChildren().size();
+	            for(int i =0;i<target.getChildren().size();i++) {
+	            	 Node child = target.getChildren().get(i);
+
+	                 double childMiddleX =
+	                         child.getBoundsInParent().getMinX()
+	                         + child.getBoundsInParent().getWidth() / 2;
+	                 
 	            }
 	            target.getChildren().add(draggedItem);
 	            e.setDropCompleted(true);
