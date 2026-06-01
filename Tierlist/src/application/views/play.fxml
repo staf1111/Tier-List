@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="650.0" prefWidth="1000.0" stylesheets="@../styles/dark.css" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CreateTierListController">
+<BorderPane prefHeight="650.0" prefWidth="1000.0" stylesheets="@../styles/dark.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.PlayController">
     <left>
         <VBox fillWidth="true" prefHeight="599.0" prefWidth="0.0" />
     </left>
@@ -76,7 +76,10 @@
             <children>
                <ScrollPane fx:id="Scrollpane2" hbarPolicy="NEVER" prefHeight="100.0" prefWidth="1098.0" HBox.hgrow="ALWAYS">
                   <content>
-                     <FlowPane fx:id="itemsContainer" hgap="8.0" orientation="VERTICAL" prefHeight="100.0" prefWidth="959.0" styleClass="Zone-blanches-add-tier" stylesheets="@../styles/dark.css" vgap="8.0" />
+                     <FlowPane fx:id="itemsContainer" hgap="8.0" orientation="VERTICAL" prefHeight="100.0" prefWidth="959.0" styleClass="Zone-blanches-add-tier" stylesheets="@../styles/dark.css" vgap="8.0">
+                        <children>
+                           <Button mnemonicParsing="false" text="+" />
+                        </children></FlowPane>
                   </content>
                </ScrollPane>
                <Region prefHeight="100.0" prefWidth="111.0" HBox.hgrow="ALWAYS" />
