@@ -16,7 +16,6 @@ public class Main extends Application {
 
 			Manager.init(primaryStage); //on initialise la classe qui va géré les différente page et modal
 			
-			DataManager.getInstance().getAllTierList();
 			Api.init();
 			
 				

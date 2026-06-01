@@ -58,17 +58,22 @@ public class PlayController {
 	public void initialize() {
 		Scrollpane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
 		Scrollpane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+		
 		Scrollpane2.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
 		Scrollpane2.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+		
 		Scrollpane.setFitToWidth(true);
 		Scrollpane2.setFitToWidth(true);
+		
 		TierContainer.setSpacing(10);
 		TierContainer.setAlignment(Pos.TOP_CENTER);
 		TierContainer.setFillWidth(true);
+		
 		Title.setStyle(
 				"-fx-background-color: transparent;-fx-background-insets: 0;-fx-background-radius: 0;-fx-padding: 0;-fx-text-fill: #FFE45E");
 		Title.setEditable(false);
 		lastUpdate.setText("");
+		
 		enableDropOnFlowPane(itemsContainer);
  
 		if (Settings.getInstance().getCurrentTierList_play() != null) {

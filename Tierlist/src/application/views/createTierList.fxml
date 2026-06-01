@@ -17,18 +17,6 @@
 
 <BorderPane prefHeight="650.0" prefWidth="1000.0" stylesheets="@../styles/dark.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CreateTierListController">
 
-    <top>
-        <HBox alignment="CENTER_RIGHT" fillHeight="true">
-            <padding>
-                <Insets bottom="6" left="12" right="12" top="6" />
-            </padding>
-            <Button fx:id="Preview" mnemonicParsing="false" prefHeight="27" prefWidth="90" styleClass="button-apercu" text="Aperçus">
-                <HBox.margin><Insets right="8" /></HBox.margin>
-            </Button>
-            <Button fx:id="Themes" mnemonicParsing="false" prefHeight="27" prefWidth="90" styleClass="button-theme" text="Themes" />
-        </HBox>
-    </top>
-
     <left>
         <VBox prefHeight="650.0" prefWidth="180.0" spacing="6" styleClass="sidebar">
             <children>
@@ -94,7 +82,7 @@
                     <Insets bottom="4" top="6" />
                 </padding>
                 <Button fx:id="back" mnemonicParsing="false" onAction="#goBack" prefHeight="27" prefWidth="90" text="Retour" />
-                <Region HBox.hgrow="ALWAYS" />
+                <Region prefHeight="64.0" prefWidth="154.0" HBox.hgrow="ALWAYS" />
                 <VBox alignment="CENTER_LEFT">
                     <TextField fx:id="Title" alignment="CENTER" style="-fx-border-style: none;" text="Nom de la tiers list">
                         <font>
@@ -103,8 +91,8 @@
                     </TextField>
                     <Label fx:id="lastUpdate" contentDisplay="CENTER" text="Dernière modification le XX/XX/XXXX à XX:XX" textFill="WHITE" />
                 </VBox>
-                <Region HBox.hgrow="ALWAYS" />
-                <Region prefWidth="90" />
+                <Region prefHeight="64.0" prefWidth="126.0" HBox.hgrow="ALWAYS" />
+               <Button fx:id="Themes" mnemonicParsing="false" prefHeight="27" prefWidth="90" styleClass="button-theme" text="Themes" />
             </HBox>
             <HBox alignment="CENTER_LEFT" fillHeight="true">
                 <VBox.margin><Insets bottom="4" /></VBox.margin>
@@ -121,14 +109,6 @@
                     <HBox.margin><Insets bottom="6.0" left="4.0" right="4.0" top="6.0" /></HBox.margin>
                 </Button>
                 <Region HBox.hgrow="ALWAYS" />
-                <Button fx:id="Play" prefHeight="38" prefWidth="46">
-                    <HBox.margin><Insets bottom="6" right="8" top="6" /></HBox.margin>
-                    <graphic>
-                        <ImageView fitHeight="28" fitWidth="30" pickOnBounds="true" preserveRatio="true">
-                            <image><Image url="@../../assets/iconPlay.png" /></image>
-                        </ImageView>
-                    </graphic>
-                </Button>
             </HBox>
             <HBox fillHeight="true" prefHeight="320.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
                 <ScrollPane fx:id="Scrollpane" fitToWidth="true" prefHeight="320.0" prefWidth="680.0" style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS">

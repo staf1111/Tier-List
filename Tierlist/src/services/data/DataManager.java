@@ -117,6 +117,17 @@ public class DataManager {
 		return res;
 	}
 	
+	public List<String> getRecentTierList()
+	{
+		List<String> res = new ArrayList<String>();
+		int limit = Math.min(6, getAllTierList().size());
+		
+		for(int i = 0; i < limit; i++)
+		{
+			res.add(getAllTierList().get(i));
+		}
+		return res;
+	}
 	
 	private void pathVerify() //on verifie que le dossier existe
 	{

@@ -12,8 +12,8 @@ import model.ImageItems;
 import model.ItemsM;
 
 public class Items extends StackPane {
-	public static final int DEFAULT_WIDTH = 69;
-	public static final int DEFAULT_HEIGHT = 69;
+	public static final int DEFAULT_WIDTH = 80;
+	public static final int DEFAULT_HEIGHT = 80;
 
 	public Items(ItemsM model) {
 		this(model, DEFAULT_WIDTH, DEFAULT_HEIGHT);
