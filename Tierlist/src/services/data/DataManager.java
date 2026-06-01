@@ -8,6 +8,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import javafx.scene.paint.Color;
 import model.ImageItems;
 import model.ItemsM;
 import model.TierM;
@@ -61,7 +62,12 @@ public class DataManager {
 			
 			for(TierM m : obj.getTier())
 			{
-				//TODO recrée les tier a cause du rgb
+				// on recrée les couleur
+				Color background = new Color(m.getBackColor_red(), m.getBackColor_green(), m.getBackColor_bleu(), 1);
+				Color texteFill = new Color(m.getNameColor_red(), m.getNameColor_green(), m.getNameColor_bleu(), 1);
+
+				TierM model = new TierM(m.getName(), background, texteFill);
+				Tiers.add(model);
 			}
 			
 			for(ItemsM m : obj.getItems()) // on crée des items spé pour les image local étant donnée qu'elle contient des images au format byte

@@ -73,7 +73,15 @@ public class CreateTierListController {
 				"-fx-background-color: transparent;-fx-background-insets: 0;-fx-background-radius: 0;-fx-padding: 0;-fx-text-fill: #FFE45E");
 
 		if (Settings.getInstance().getCurrentTierList_edit() != null) {
-			refreshTier(Settings.getInstance().getCurrentTierList_edit().getTier());
+			tierlist = Settings.getInstance().getCurrentTierList_edit();
+			
+			Title.setText(tierlist.getName());
+			//on ajoute les tiers importer
+			refreshTier(tierlist.getTier());
+			
+			//on ajoute les items importer
+			refreshItems(tierlist.getItems());
+			
 		}
 	}
 

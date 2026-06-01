@@ -11,7 +11,7 @@ public class Settings {
 	private int ApiRate = 5; // nombre limite de résultat lors de la requette
 	private int MaxApiRate = 20; //nombre maximum de résultat par requette
 	
-	private ThemeList theme = ThemeList.LIGHT;
+	private ThemeList theme = ThemeList.DARK;
 	
 	private TierList currentTierList_play, currentTierList_edit;
 	

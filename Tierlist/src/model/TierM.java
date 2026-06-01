@@ -110,6 +110,28 @@ public class TierM implements Serializable {
 	public void setHeight(float height) {
 		this.height = height;
 	}
-	
-	
+
+	public double getBackColor_bleu() {
+		return backColor_bleu;
+	}
+
+	public double getBackColor_red() {
+		return backColor_red;
+	}
+
+	public double getBackColor_green() {
+		return backColor_green;
+	}
+
+	public double getNameColor_bleu() {
+		return nameColor_bleu;
+	}
+
+	public double getNameColor_red() {
+		return nameColor_red;
+	}
+
+	public double getNameColor_green() {
+		return nameColor_green;
+	}	
 }
