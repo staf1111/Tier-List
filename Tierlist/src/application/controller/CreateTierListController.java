@@ -146,7 +146,6 @@ public class CreateTierListController {
 	{
 		tierlist = new TierList(Title.getText(), tiers, items);
 		tierlist.setDate(LocalDateTime.now());
-		
 		setLastUpdate(tierlist.getDate());
 		DataManager.getInstance().saveTierList(tierlist);
 	}
@@ -234,7 +233,7 @@ public class CreateTierListController {
 
 	private void setLastUpdate(LocalDateTime date)
 	{
-		lastUpdate.setText(String.format("Dernière modification le %s/%s/%s à %s:%s", date.getDayOfMonth(), date.getMonth(), date.getYear(), date.getHour(), date.getMinute()));
+		lastUpdate.setText(String.format("Dernière modification le %s/%s/%s à %s:%s", date.getDayOfMonth(), date.getMonthValue(), date.getYear(), date.getHour(), date.getMinute()));
 	}
 	@FXML
 	public void exportTierList() {
