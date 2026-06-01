@@ -17,10 +17,9 @@ public class Main extends Application {
 
 			Manager.init(primaryStage); //on initialise la classe qui va géré les différente page et modal
 			
-			Settings.getInstance().setCurrentTierList_play(DataManager.getInstance().importTierList("C:\\Users\\i2502569\\Documents\\TierList_TD11A\\TEST.mmlc");
+			Settings.getInstance().setCurrentTierList_play(DataManager.getInstance().importTierList("C:\\Users\\i2502569\\Documents\\TierList_TD11A\\TEST.mmlc"));
 			
-			Manager.getInstance().setPage(PageType.PLAY);
-
+			
 			Api.init();
 			
 				
