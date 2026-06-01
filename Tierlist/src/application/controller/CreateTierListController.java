@@ -200,40 +200,42 @@ public class CreateTierListController {
 	}
 
 	private void refreshTier(List<TierM> m) {
-		if (m.isEmpty() || m == null) {
-			return;
-		}
+	    if (m == null || m.isEmpty()) {
+	        return;
+	    }
 
-		if (m != null) {
-			for (TierM t : m) {
-				Tier tier = new Tier(t, TierType.PLAY);
-				tier.setWitdh(TierContainer.getWidth());
-				TierContainer.getChildren().add(tier);
-				tiers.add(t);
-			}
-			TierContainer.requestLayout();
-		}
+	    for (TierM t : m) {
+	        Tier tier = new Tier(t, TierType.PLAY);
+	        tier.setWitdh(TierContainer.getWidth());
+	        TierContainer.getChildren().add(tier);
+	        tiers.add(t);
+	    }
+	    TierContainer.requestLayout();
 	}
 
 	private void refreshItems(List<ItemsM> m) {
-		if (m.isEmpty() || m == null) {
-			return;
-		}
+	    if (m == null || m.isEmpty()) {
+	        return;
+	    }
 
-		if (m != null) {
-
-			for (ItemsM t : m) {
-				itemsContainer.getChildren().add(new Items(t));
-				items.add(t);
-			}
-
-			TierContainer.requestLayout();
-		}
+	    for (ItemsM t : m) {
+	        itemsContainer.getChildren().add(new Items(t));
+	        items.add(t);
+	    }
+	    TierContainer.requestLayout();
 	}
 
-	private void setLastUpdate(LocalDateTime date)
-	{
-		lastUpdate.setText(String.format("Dernière modification le %s/%s/%s à %s:%s", date.getDayOfMonth(), date.getMonthValue(), date.getYear(), date.getHour(), date.getMinute()));
+	private void setLastUpdate(LocalDateTime date) {
+	    if (date == null) {
+	        lastUpdate.setText("Aucune modification enregistrée");
+	        return;
+	    }
+	    lastUpdate.setText(String.format("Dernière modification le %02d/%02d/%d à %02d:%02d", 
+	            date.getDayOfMonth(), 
+	            date.getMonthValue(), 
+	            date.getYear(), 
+	            date.getHour(), 
+	            date.getMinute()));
 	}
 	@FXML
 	public void exportTierList() {
