@@ -113,7 +113,7 @@
                      <Font name="System Bold" size="30.0" />
                   </font>
                </TextField>
-                    <Label fx:id="lastUpdate" contentDisplay="CENTER" text="Dernière modification le XX/XX/XXXX à XX:XX" />
+                    <Label fx:id="lastUpdate" contentDisplay="CENTER" text="Dernière modification le XX/XX/XXXX à XX:XX" textFill="WHITE" />
                 </VBox>
 
                 <Region HBox.hgrow="ALWAYS" />

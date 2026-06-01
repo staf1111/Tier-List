@@ -1,5 +1,6 @@
 package application.controller;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,6 +73,8 @@ public class CreateTierListController {
 		Title.setStyle(
 				"-fx-background-color: transparent;-fx-background-insets: 0;-fx-background-radius: 0;-fx-padding: 0;-fx-text-fill: #FFE45E");
 
+		lastUpdate.setText("");
+		
 		if (Settings.getInstance().getCurrentTierList_edit() != null) {
 			tierlist = Settings.getInstance().getCurrentTierList_edit();
 			
@@ -82,6 +85,7 @@ public class CreateTierListController {
 			//on ajoute les items importer
 			refreshItems(tierlist.getItems());
 			
+			setLastUpdate(tierlist.getDate());
 		}
 	}
 
@@ -141,6 +145,8 @@ public class CreateTierListController {
 	public void saveTierList() // fonction pour initier la sauvegarde
 	{
 		tierlist = new TierList(Title.getText(), tiers, items);
+		tierlist.setDate(LocalDateTime.now());
+		setLastUpdate(tierlist.getDate());
 		DataManager.getInstance().saveTierList(tierlist);
 	}
 
@@ -226,6 +232,10 @@ public class CreateTierListController {
 		}
 	}
 
+	private void setLastUpdate(LocalDateTime date)
+	{
+		lastUpdate.setText(String.format("Dernière modification le %s/%s/%s à %s:%s", date.getDayOfMonth(), date.getMonth(), date.getYear(), date.getHour(), date.getMinute()));
+	}
 	@FXML
 	public void exportTierList() {
 		// TODO exportTierList
@@ -233,6 +243,7 @@ public class CreateTierListController {
 
 	@FXML
 	public void goBack() {
+		Settings.getInstance().setCurrentTierList_edit(null);
 		Manager.getInstance().setPage(PageType.HOME);
 	}
 }
