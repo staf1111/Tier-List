@@ -7,7 +7,10 @@ import java.util.List;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import application.widget.Items;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
@@ -15,18 +18,22 @@ import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import model.ImageItems;
 import model.ItemsM;
 import model.TextItems;
+import services.api.Api;
 
 public class AddItemController {
 
-	@FXML Button ajouter, quitter, localImage;
-	@FXML TextField text;
+	@FXML Button ajouter, quitter, localImage, rechercherFilm, rechercherJeu;
+	@FXML TextField text, rechercheFilm, rechercheJeu;
 	
 	@FXML TabPane nav;
 	@FXML ImageView localImageIcon;
+	
+	@FXML Pane imgFilm, imgJeu;
 	
 	@FXML Label SysMsg, SysMsg1;
 	
@@ -38,6 +45,8 @@ public class AddItemController {
 	@FXML
 	public void initialize()
 	{
+		imgFilm.setAlignment(Pos.CENTER);
+		imgJeu.setAlignment(Pos.CENTER);
 	}
 	
 	@FXML 
@@ -111,5 +120,15 @@ public class AddItemController {
 	public List<ItemsM> getItems()
 	{
 		return items;
-	}	
+	}
+
+	@FXML
+	private void afficherFilm() {
+	    String query = rechercheFilm.getText();
+	    ImageItems img = Api.getInstance().TMDB_request(query);
+	    if(img!=null) {
+	    	Items it = new Items(img);
+	    	imgFilm.getChildren().add(it);
+	    }
+	}
 }

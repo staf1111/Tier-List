@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="345.0" prefWidth="506.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.modal.AddItemController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="345.0" prefWidth="506.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.modal.AddItemController">
    <children>
       <TabPane fx:id="nav" prefHeight="345.0" prefWidth="506.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -24,9 +24,9 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="text" layoutX="155.0" layoutY="86.0" prefHeight="26.0" prefWidth="188.0" />
+                        <TextField fx:id="text" layoutX="155.0" layoutY="86.0" prefHeight="26.0" prefWidth="188.0" promptText="Entrez du texte" />
                         <Button fx:id="ajouter" layoutX="191.0" layoutY="172.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="35.0" prefWidth="116.0" text="Ajouter" />
-                        <Button fx:id="quitter" layoutX="201.0" layoutY="229.0" mnemonicParsing="false" onAction="#leave" prefHeight="28.0" prefWidth="95.0" text="Quiiter" />
+                        <Button fx:id="quitter" layoutX="201.0" layoutY="229.0" mnemonicParsing="false" onAction="#leave" prefHeight="28.0" prefWidth="95.0" text="Quitter" />
                         <Label fx:id="SysMsg" alignment="CENTER" contentDisplay="CENTER" layoutX="155.0" layoutY="122.0" prefHeight="35.0" prefWidth="187.0" textAlignment="CENTER">
                            <font>
                               <Font name="System Bold" size="12.0" />
@@ -36,12 +36,12 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Image local">
+          <Tab text="Image locale">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <Button layoutX="191.0" layoutY="172.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="35.0" prefWidth="116.0" text="Ajouter" />
-                        <Button layoutX="201.0" layoutY="229.0" mnemonicParsing="false" onAction="#leave" prefHeight="28.0" prefWidth="95.0" text="Quiiter" />
+                        <Button layoutX="201.0" layoutY="229.0" mnemonicParsing="false" onAction="#leave" prefHeight="28.0" prefWidth="95.0" text="Quitter" />
                         <Button fx:id="localImage" layoutX="196.0" layoutY="14.0" mnemonicParsing="false" onAction="#getLocalImage" prefHeight="98.0" prefWidth="98.0">
                            <graphic>
                               <ImageView fx:id="localImageIcon" fitHeight="98.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
@@ -62,7 +62,19 @@
           </Tab>
             <Tab text="Image film">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="rechercheFilm" layoutX="27.0" layoutY="65.0" prefHeight="25.0" prefWidth="283.0" promptText="Entrez le nom d'un film" />
+                        <Button fx:id="rechercherFilm" layoutX="347.0" layoutY="65.0" mnemonicParsing="false" onAction="#afficherFilm" prefHeight="25.0" prefWidth="95.0" text="Rechercher" />
+                        <Label layoutX="98.0" layoutY="14.0" text="Importer une image d'un film">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="ajouter" layoutX="66.0" layoutY="246.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="37.0" prefWidth="90.0" text="Ajouter" />
+                        <Button fx:id="quitter" layoutX="325.0" layoutY="246.0" mnemonicParsing="false" onAction="#leave" prefHeight="37.0" prefWidth="90.0" text="Quitter" />
+                        <Pane fx:id="imgFilm" layoutX="169.0" layoutY="90.0" prefHeight="150.0" prefWidth="150.0" />
+                     </children></AnchorPane>
                </content>
             </Tab>
             <Tab text="Image Jeu">

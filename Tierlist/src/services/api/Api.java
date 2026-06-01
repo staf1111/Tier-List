@@ -69,10 +69,8 @@ public class Api {
 		return searchResult;
 	}
 
-	public List<ImageItems> TMDB_request(String query) // fonction pour faire la requette a l'api TMDB
+	public ImageItems TMDB_request(String query) // fonction pour faire la requette a l'api TMDB
 	{
-
-		List<ImageItems> searchResult = new ArrayList<ImageItems>();
 
 		String encodedQuery = URLEncoder.encode(query, StandardCharsets.UTF_8);
 
@@ -92,15 +90,16 @@ public class Api {
 				JsonNode resultArrays = node.get("results");
 
 				if (resultArrays != null && resultArrays.isArray()) {
-					for (JsonNode movieNode : resultArrays) {
-						String name = movieNode.path("title").asText();
-						String poster = movieNode.path("poster_path").asText();
-						String year = movieNode.path("release_date").asText("");
+					JsonNode movieNode = resultArrays.get(0);
+					String name = movieNode.path("title").asText();
+					String poster = movieNode.path("poster_path").asText();
+					String year = movieNode.path("release_date").asText("");
+					
+					String posterUrl = "https://image.tmdb.org/t/p/w500" + poster;
 
-						ImageItems it = new ImageItems(name, poster, year);
-
-						searchResult.add(it);
-					}
+					ImageItems it = new ImageItems(name, posterUrl, year);
+					
+					return it;
 				}
 
 			} else {
@@ -109,7 +108,7 @@ public class Api {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return searchResult;
+		return null;
 	}
 
 	public static Api getInstance() {
