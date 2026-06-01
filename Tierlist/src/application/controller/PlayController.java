@@ -9,10 +9,14 @@ import application.widget.Tier;
 import application.widget.TierType;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.TransferMode;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import model.ItemsM;
@@ -41,12 +45,15 @@ public class PlayController {
  
 	@FXML
 	FlowPane itemsContainer;
- 
+	
 	private TierList tierlist = null;
- 
+	
+
 	List<TierM> tiers = new ArrayList<TierM>();
 	List<ItemsM> items = new ArrayList<ItemsM>();
- 
+	private static final String DRAG_KEY = "ITEM_DRAG";
+	private Items draggedItem  = null;
+	private Node  draggedSource = null;
 	@FXML
 	public void initialize() {
 		Scrollpane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
@@ -62,6 +69,7 @@ public class PlayController {
 				"-fx-background-color: transparent;-fx-background-insets: 0;-fx-background-radius: 0;-fx-padding: 0;-fx-text-fill: #FFE45E");
 		Title.setEditable(false);
 		lastUpdate.setText("");
+		enableDropOnFlowPane(itemsContainer);
  
 		if (Settings.getInstance().getCurrentTierList_play() != null) {
 			tierlist = Settings.getInstance().getCurrentTierList_play();
@@ -95,7 +103,7 @@ public class PlayController {
 			return;
 		}
 		for (ItemsM t : m) {
-			itemsContainer.getChildren().add(new Items(t));
+			itemsContainer.getChildren().add(buildDraggableItem(t));
 			items.add(t);
 		}
 		TierContainer.requestLayout();
@@ -119,5 +127,55 @@ public class PlayController {
 				date.getDayOfMonth(), date.getMonth(), date.getYear(),
 				date.getHour(), date.getMinute()
 		));
+	}
+	private Items buildDraggableItem(ItemsM model) {
+	    Items widget = new Items(model);
+
+	    widget.setOnDragDetected(e -> {
+	        draggedItem   = widget;
+	        draggedSource = widget.getParent();
+	        Dragboard db  = widget.startDragAndDrop(TransferMode.MOVE);
+	        ClipboardContent cc = new ClipboardContent();
+	        cc.putString(DRAG_KEY);
+	        db.setContent(cc);
+	        db.setDragView(widget.snapshot(null, null));
+	        e.consume();
+	    });
+
+	    widget.setOnDragDone(e -> {
+	        draggedItem   = null;
+	        draggedSource = null;
+	        e.consume();
+	    });
+
+	    return widget;
+	}
+
+	private void enableDropOnFlowPane(FlowPane target) {
+
+	    target.setOnDragOver(e -> {
+	        if (e.getGestureSource() != target
+	                && e.getDragboard().hasString()
+	                && DRAG_KEY.equals(e.getDragboard().getString())) {
+	            e.acceptTransferModes(TransferMode.MOVE);
+	        }
+	        e.consume();
+	    });
+
+	    target.setOnDragDropped(e -> {
+	        if (e.getDragboard().hasString()
+	                && DRAG_KEY.equals(e.getDragboard().getString())
+	                && draggedItem != null) {
+
+	            if (draggedSource instanceof FlowPane src) {
+	                src.getChildren().remove(draggedItem);
+	            }
+	            target.getChildren().add(draggedItem);
+	            e.setDropCompleted(true);
+	        } else {
+	            e.setDropCompleted(false);
+	        }
+	        e.consume();
+	    });
 	}
 }
