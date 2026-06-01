@@ -14,6 +14,7 @@ class Page {
 		index.put(PageType.HOME, "/application/views/home.fxml");
 		index.put(PageType.CREATETIERLIST, "/application/views/createTierList.fxml");
 		index.put(PageType.PLAY, "/application/views/play.fxml");
+		index.put(PageType.MYTIERLIST, "/application/views/mesTiersLists.fxml");
 	}
 
 	public String getPath(PageType type) {

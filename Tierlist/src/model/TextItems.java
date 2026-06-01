@@ -1,6 +1,8 @@
 package model;
 
 public class TextItems implements ItemsM {
+	private static final long serialVersionUID = 1L;
+
 	private String name;
 	
 	private String content;

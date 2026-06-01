@@ -1,5 +1,6 @@
 package application.controller;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +26,7 @@ import javafx.stage.Stage;
 import model.ItemsM;
 import model.TierM;
 import services.data.DataManager;
+import services.data.Settings;
 import services.data.TierList;
 import services.screenManager.Manager;
 import services.screenManager.PageType;
@@ -46,8 +48,9 @@ public class CreateTierListController {
 	@FXML
 	TextField Title;
 
-	@FXML FlowPane itemsContainer;
-	
+	@FXML
+	FlowPane itemsContainer;
+
 	private TierList tierlist = null;
 
 	List<TierM> tiers = new ArrayList<TierM>();
@@ -59,16 +62,31 @@ public class CreateTierListController {
 		Scrollpane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
 		Scrollpane2.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
 		Scrollpane2.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-		
+
 		Scrollpane.setFitToWidth(true);
+		Scrollpane2.setFitToWidth(true);
 
 		TierContainer.setSpacing(10);
 		TierContainer.setAlignment(Pos.TOP_CENTER);
 		TierContainer.setFillWidth(true);
 
-		itemsContainer.setPrefWidth(Scrollpane2.getWidth());
+		Title.setStyle(
+				"-fx-background-color: transparent;-fx-background-insets: 0;-fx-background-radius: 0;-fx-padding: 0;-fx-text-fill: #FFE45E");
+
+		lastUpdate.setText("");
 		
-		Title.setStyle("-fx-background-color: transparent;-fx-background-insets: 0;-fx-background-radius: 0;-fx-padding: 0;-fx-text-fill: #FFE45E");
+		if (Settings.getInstance().getCurrentTierList_edit() != null) {
+			tierlist = Settings.getInstance().getCurrentTierList_edit();
+			
+			Title.setText(tierlist.getName());
+			//on ajoute les tiers importer
+			refreshTier(tierlist.getTier());
+			
+			//on ajoute les items importer
+			refreshItems(tierlist.getItems());
+			
+			setLastUpdate(tierlist.getDate());
+		}
 	}
 
 	@FXML
@@ -84,150 +102,148 @@ public class CreateTierListController {
 			stage.setScene(new Scene(root));
 			stage.setTitle("Ajouter une Tier");
 			stage.setResizable(false);
-			
-			
+
 			stage.showAndWait();
-			
-			
+
 			List<TierM> newTier = controller.getTier();
-			if(newTier != null)
-			{
+			if (newTier != null) {
 				refreshTier(newTier);
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	
 	@FXML
 	public void addItems() {
-	    try {
-	        FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/views/modal/importItem.fxml"));
-	        Parent root = loader.load();
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/views/modal/importItem.fxml"));
+			Parent root = loader.load();
 
-	        AddItemController controller = loader.getController();
+			AddItemController controller = loader.getController();
 
-	        Stage stage = new Stage();
-	        Stage ownerStage = (Stage) TierContainer.getScene().getWindow();
-	        stage.initOwner(ownerStage);
-	        stage.initModality(Modality.WINDOW_MODAL);
-	        stage.setScene(new Scene(root));
-	        stage.setTitle("Ajouter une Items");
-	        stage.setResizable(false);
+			Stage stage = new Stage();
+			Stage ownerStage = (Stage) TierContainer.getScene().getWindow();
+			stage.initOwner(ownerStage);
+			stage.initModality(Modality.WINDOW_MODAL);
+			stage.setScene(new Scene(root));
+			stage.setTitle("Ajouter une Items");
+			stage.setResizable(false);
 
-	        stage.showAndWait();
+			stage.showAndWait();
 
-	        List<ItemsM> newItems = controller.getItems();
-	        
-	        items.addAll(newItems);
-	        
-	        if (!newItems.isEmpty()) {
-	            for (ItemsM t : newItems) {
-	                itemsContainer.getChildren().add(new Items(t));
-	                items.add(t);
-	            }
-	        }
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	    }
+			List<ItemsM> newItems = controller.getItems();
+			refreshItems(newItems);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
-	
 	@FXML
 	public void saveTierList() // fonction pour initier la sauvegarde
 	{
 		tierlist = new TierList(Title.getText(), tiers, items);
+		tierlist.setDate(LocalDateTime.now());
+		setLastUpdate(tierlist.getDate());
 		DataManager.getInstance().saveTierList(tierlist);
 	}
-	
-	
+
 	@FXML
-	public void resetTierList()
-	{
+	public void resetTierList() {
 		this.tiers.clear();
 		this.items.clear();
-		
+
 		this.TierContainer.getChildren().clear();
 		this.itemsContainer.getChildren().clear();
-		
+
 		tierlist = null;
 	}
-	
-	
-	@FXML
-	public void deleteTierList()
-	{
-		//TODO deleteTierList
-	}
-	
-	@FXML
-	public void configureTierList()
-	{
-	    try {
-	        FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/views/modal/editTierslist.fxml"));
-	        Parent root = loader.load();
 
-	        ConfigureTierList controller = loader.getController();
-	        controller.setTiersAndItems(tiers, items);
-	        
-	        Stage stage = new Stage();
-	        Stage ownerStage = (Stage) TierContainer.getScene().getWindow();
-	        stage.initOwner(ownerStage);
-	        stage.initModality(Modality.WINDOW_MODAL);
-	        stage.setScene(new Scene(root));
-	        stage.setTitle("Configurer la TiersList");
-	        
-	        stage.showAndWait();
-	        
-	        //on efface les tiers avant de mettre les nouveau
-	        
-	        if(controller.getTiers() != null)
-	        {
-	        	//on delete la liste des tiers
-	        	tiers.clear();
-	        	//on delete tout les tiers afficher
-	        	TierContainer.getChildren().clear();	        	
-	        	refreshTier(controller.getTiers());
-	        	
-	        }
-	        
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	    }
+	@FXML
+	public void deleteTierList() {
+		// TODO deleteTierList
 	}
-	
-	private void refreshTier(List<TierM> m)
-	{
-		if(m.isEmpty() || m == null)
-		{
+
+	@FXML
+	public void configureTierList() {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/views/modal/editTierslist.fxml"));
+			Parent root = loader.load();
+
+			ConfigureTierList controller = loader.getController();
+			controller.setTiersAndItems(tiers, items);
+
+			Stage stage = new Stage();
+			Stage ownerStage = (Stage) TierContainer.getScene().getWindow();
+			stage.initOwner(ownerStage);
+			stage.initModality(Modality.WINDOW_MODAL);
+			stage.setScene(new Scene(root));
+			stage.setTitle("Configurer la TiersList");
+
+			stage.showAndWait();
+
+			// on efface les tiers avant de mettre les nouveau
+
+			if (controller.getTiers() != null) {
+				// on delete la liste des tiers
+				tiers.clear();
+				// on delete tout les tiers afficher
+				TierContainer.getChildren().clear();
+				refreshTier(controller.getTiers());
+
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	private void refreshTier(List<TierM> m) {
+		if (m.isEmpty() || m == null) {
 			return;
 		}
-		
-		if(m != null)
-		{
-			for(TierM t : m)
-			{
+
+		if (m != null) {
+			for (TierM t : m) {
 				Tier tier = new Tier(t, TierType.PLAY);
 				tier.setWitdh(TierContainer.getWidth());
 				TierContainer.getChildren().add(tier);
 				tiers.add(t);
 			}
-        	TierContainer.requestLayout();
+			TierContainer.requestLayout();
 		}
 	}
-	
-	@FXML
-	public void exportTierList()
-	{
-		//TODO exportTierList
+
+	private void refreshItems(List<ItemsM> m) {
+		if (m.isEmpty() || m == null) {
+			return;
+		}
+
+		if (m != null) {
+
+			for (ItemsM t : m) {
+				itemsContainer.getChildren().add(new Items(t));
+				items.add(t);
+			}
+
+			TierContainer.requestLayout();
+		}
 	}
 
-	
-	@FXML
-	public void goBack()
+	private void setLastUpdate(LocalDateTime date)
 	{
+		lastUpdate.setText(String.format("Dernière modification le %s/%s/%s à %s:%s", date.getDayOfMonth(), date.getMonth(), date.getYear(), date.getHour(), date.getMinute()));
+	}
+	@FXML
+	public void exportTierList() {
+		// TODO exportTierList
+	}
+
+	@FXML
+	public void goBack() {
+		Settings.getInstance().setCurrentTierList_edit(null);
 		Manager.getInstance().setPage(PageType.HOME);
 	}
 }
