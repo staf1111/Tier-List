@@ -1,8 +1,6 @@
 package model;
 
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -27,12 +25,12 @@ public class ImageItems implements ItemsM{
 		this.name = name;
 		this.path = path;
 		
-		if("Image local".equals(name))
+		if("Image locale".equals(name))
 		{
 			try {
-				imageData = Files.readAllBytes(Path.of(new URI(path).getPath()));
+				this.imageData = Files.readAllBytes(Path.of(path));
 
-			} catch (IOException | URISyntaxException e) {
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}

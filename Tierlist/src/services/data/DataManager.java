@@ -8,8 +8,12 @@ import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 import javafx.scene.paint.Color;
 import model.ImageItems;
@@ -75,7 +79,7 @@ public class DataManager {
 			
 			for(ItemsM m : obj.getItems()) // on crée des items spé pour les image local étant donnée qu'elle contient des images au format byte
 			{
-				if ("Image local".equals(m.getName()))
+				if ("Image locale".equals(m.getName()))
 				{
 					ImageItems it = (ImageItems) m;
 					Items.add(it);
@@ -97,6 +101,65 @@ public class DataManager {
 		return tierList;
 	}
 	
+	public void importFileTierlist() {
+	    try {
+	        File fileSelected = null;
+	        JFileChooser fileChooser = new JFileChooser();
+	        FileNameExtensionFilter filter = new FileNameExtensionFilter("Fichiers Image (*.mmlc)", "mmlc");
+	        fileChooser.setFileFilter(filter);
+
+	        int response = fileChooser.showOpenDialog(null);
+	        
+	        if (response == JFileChooser.APPROVE_OPTION) {
+	            fileSelected = fileChooser.getSelectedFile();
+	            
+	            String fileName = fileSelected.getName();
+	            
+	            Path destination = Paths.get(DEFAULT_PATH).resolve(fileName);
+	            
+	            Files.copy(fileSelected.toPath(), destination, StandardCopyOption.REPLACE_EXISTING);
+	        }
+	        
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	}
+	public void exportFileTierlist(TierList t)
+	{
+	    try {
+	    	JFileChooser folderChooser = new JFileChooser();
+	        
+	        folderChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+	        
+	        folderChooser.setDialogTitle("Sélectionnez le dossier de destination");
+
+	        int response = folderChooser.showOpenDialog(null);
+	        
+	        if (response == JFileChooser.APPROVE_OPTION) {
+	            File folderSelected = folderChooser.getSelectedFile();
+	            
+	            String folderPath = folderSelected.getAbsolutePath();
+	            
+	            System.out.println("Dossier sélectionné : " + folderPath);
+	            
+	    		try {
+	    			FileOutputStream fos = new FileOutputStream(folderPath + File.separator +t.getName() + ".mmlc");
+	    			ObjectOutputStream  oos = new ObjectOutputStream (fos);
+	    			
+	    			oos.writeObject(t);
+	    			
+	    			oos.close();
+	    			fos.close();
+	    			
+	    		}catch (Exception e) {
+	    			e.printStackTrace();
+	    		}	
+	        }	 
+	        
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	}
 	public void duplicateTierList(TierList tierlist) {
 		int count = 1;
 		

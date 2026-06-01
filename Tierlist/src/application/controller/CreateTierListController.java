@@ -1,5 +1,6 @@
 package application.controller;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +20,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
@@ -149,7 +151,14 @@ public class CreateTierListController {
 		setLastUpdate(tierlist.getDate());
 		DataManager.getInstance().saveTierList(tierlist);
 	}
+	@FXML
+	public void exportTierList() {
+		tierlist = new TierList(Title.getText(), tiers, items);
+		tierlist.setDate(LocalDateTime.now());
+		setLastUpdate(tierlist.getDate());
+		DataManager.getInstance().exportFileTierlist(tierlist);
 
+	}
 	@FXML
 	public void resetTierList() {
 		this.tiers.clear();
@@ -164,7 +173,6 @@ public class CreateTierListController {
 
 	@FXML
 	public void deleteTierList() {
-		// TODO deleteTierList
 		if(tierlist != null)
 		{
 			DataManager.getInstance().deleteTierlist(tierlist.getName());
@@ -243,14 +251,35 @@ public class CreateTierListController {
 	            date.getHour(), 
 	            date.getMinute()));
 	}
-	@FXML
-	public void exportTierList() {
-		// TODO exportTierList
-	}
 
 	@FXML
 	public void goBack() {
 		Temporary.getInstance().setCurrentTierList_edit(null);
 		Manager.getInstance().setPage(PageType.HOME);
 	}
+	
+    @FXML
+    private void ClickAccueil(MouseEvent event) throws IOException {
+        Manager.getInstance().setPage(PageType.HOME);
+    }
+
+    @FXML
+    private void ClickMesTierList(MouseEvent event) throws IOException {
+        Manager.getInstance().setPage(PageType.MYTIERLIST);
+    }
+
+    @FXML
+    private void ClickImporter(MouseEvent event) throws IOException {
+		DataManager.getInstance().importFileTierlist();
+    }
+
+    @FXML
+    private void ClickParametres(MouseEvent event) throws IOException {
+        //TODO Param
+    }
+
+    @FXML
+    private void ClickAide(MouseEvent event) throws IOException {
+        //TODO
+    }
 }

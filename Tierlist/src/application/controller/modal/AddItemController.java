@@ -8,7 +8,6 @@ import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import application.widget.Items;
-import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -18,7 +17,6 @@ import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import model.ImageItems;
@@ -73,7 +71,7 @@ public class AddItemController {
 	    	SysMsg.setText("Item ajouté");
 	    	SysMsg.setStyle("-fx-text-fill: Green;");
 			break;
-		case "Image local":
+		case "Image locale":
 			ImageItems II = new ImageItems(titreOnglet, imagePath);
 			items.add(II);
 	    	SysMsg1.setText("Item ajouté");
@@ -91,26 +89,25 @@ public class AddItemController {
 	@FXML
 	public void getLocalImage()
 	{
-		File fileSelected = null;
-		
-		JFileChooser fileChooser = new JFileChooser();
-		
-		FileNameExtensionFilter filter = new FileNameExtensionFilter("Fichiers Image (*.png, *.jpg, *.jpeg)", "png", "jpg", "jpeg");
-		
-		fileChooser.setFileFilter(filter);
+	    File fileSelected = null;
+	    JFileChooser fileChooser = new JFileChooser();
+	    
+	    FileNameExtensionFilter filter = new FileNameExtensionFilter("Fichiers Image (*.png, *.jpg, *.jpeg)", "png", "jpg", "jpeg");
+	    fileChooser.setFileFilter(filter);
 
-		int response = fileChooser.showOpenDialog(null);
-		
-		if(response == fileChooser.APPROVE_OPTION)
-		{
-			fileSelected = fileChooser.getSelectedFile();
-			
-			imagePath = fileSelected.toURI().toString();
-			
-			Image image = new Image(imagePath);
-			
-			localImageIcon.setImage(image);
-		}
+	    int response = fileChooser.showOpenDialog(null);
+	    
+	    if(response == fileChooser.APPROVE_OPTION)
+	    {
+	        fileSelected = fileChooser.getSelectedFile();
+	        
+	        imagePath = fileSelected.getAbsolutePath();
+	        
+	        String uriPath = fileSelected.toURI().toString();
+	        Image image = new Image(uriPath);
+	        
+	        localImageIcon.setImage(image);
+	    }
 	}
 	
 	@FXML

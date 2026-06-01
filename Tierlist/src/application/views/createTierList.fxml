@@ -28,7 +28,7 @@
                         <Insets bottom="10" />
                     </VBox.margin>
                 </ImageView>
-                <HBox alignment="CENTER_LEFT" spacing="10" styleClass="sidebar-button">
+                <HBox alignment="CENTER_LEFT" onMouseClicked="#ClickAccueil" spacing="10" styleClass="sidebar-button">
                     <children>
                         <ImageView fitHeight="22" fitWidth="22" preserveRatio="true">
                             <image><Image url="@../../assets/Home.png" /></image>
@@ -36,7 +36,7 @@
                         <Label style="-fx-font-size:12px; -fx-font-family:'Orbitron';" text="Accueil" textFill="WHITE" />
                     </children>
                 </HBox>
-                <HBox alignment="CENTER_LEFT" spacing="10" styleClass="sidebar-button">
+                <HBox alignment="CENTER_LEFT" onMouseClicked="#ClickMesTierList" spacing="10" styleClass="sidebar-button">
                     <children>
                         <ImageView fitHeight="22" fitWidth="22" preserveRatio="true">
                             <image><Image url="@../../assets/mesTiersLists.png" /></image>
@@ -44,7 +44,7 @@
                         <Label style="-fx-font-size:12px; -fx-font-family:'Orbitron';" text="Mes Tier List" textFill="WHITE" />
                     </children>
                 </HBox>
-                <HBox alignment="CENTER_LEFT" spacing="10" styleClass="sidebar-button">
+                <HBox alignment="CENTER_LEFT" onMouseClicked="#ClickImporter" spacing="10" styleClass="sidebar-button">
                     <children>
                         <ImageView fitHeight="22" fitWidth="22" preserveRatio="true">
                             <image><Image url="@../../assets/Importer.png" /></image>
@@ -132,7 +132,7 @@
                         </graphic>
                     </Button>
                     <Separator prefWidth="90.0" style="-fx-border-color: rgba(139, 61, 255, 0.19);" visible="false" />
-                    <Button fx:id="Export" mnemonicParsing="false" prefHeight="70.0" prefWidth="80.0">
+                    <Button fx:id="Export" mnemonicParsing="false" onAction="#exportTierList" prefHeight="70.0" prefWidth="80.0">
                         <graphic>
                             <VBox alignment="CENTER">
                                 <children>

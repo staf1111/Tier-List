@@ -79,9 +79,8 @@
                                 </children>
                             </VBox>
                             <Region prefHeight="56.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                            <HBox alignment="CENTER" prefHeight="32.0" prefWidth="200.0" spacing="16.0">
+                            <HBox alignment="CENTER" prefHeight="56.0" prefWidth="97.0" spacing="16.0">
                                 <children>
-                                    <Button alignment="CENTER" prefWidth="80" styleClass="button-apercu" text="Aperçu" />
                                     <Button prefWidth="80" styleClass="button-theme" text="Theme" />
                                 </children>
                             </HBox>
@@ -91,7 +90,7 @@
             </AnchorPane>
             <HBox spacing="12">
                 <Button fx:id="newtierlist" onAction="#ClickNouvelleTierList" prefHeight="36" prefWidth="200" styleClass="primary-button" text="+ Nouvelle Tier List" />
-                <Button fx:id="imptierlist" onMouseClicked="#ClickImporterTierList" prefHeight="36" prefWidth="200" styleClass="secondary-button" text="Importer une Tier List" />
+                <Button fx:id="imptierlist" onMouseClicked="#ClickImporter" prefHeight="36" prefWidth="200" styleClass="secondary-button" text="Importer une Tier List" />
             </HBox>
             <Label style="-fx-font-family:'Orbitron'; -fx-font-size:15px;" text="Vos tiers du moment" textFill="#FF2B8A" />
          <ScrollPane fx:id="tierlistPreview" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="457.0" prefWidth="800.0" styleClass="scroll-pane-transparent">

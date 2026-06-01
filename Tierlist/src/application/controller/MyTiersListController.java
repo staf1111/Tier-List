@@ -104,7 +104,7 @@ public class MyTiersListController {
 
     @FXML
     private void ClickImporter(MouseEvent event) throws IOException {
-        //TODO
+		DataManager.getInstance().importFileTierlist();
     }
 
     @FXML
@@ -116,7 +116,6 @@ public class MyTiersListController {
     private void ClickAide(MouseEvent event) throws IOException {
         //TODO
     }
-
     @FXML
     private void ClickNouvelleTierList(ActionEvent event) throws IOException {
         Manager.getInstance().setPage(PageType.CREATETIERLIST);

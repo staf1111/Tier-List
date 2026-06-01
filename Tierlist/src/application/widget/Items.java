@@ -34,7 +34,7 @@ public class Items extends StackPane {
 			Label l = new Label(model.getContent());
 			l.setPrefSize(width, height);
 			l.setAlignment(Pos.CENTER);
-			l.setStyle("-fx-text-fill: white; -fx-background-color: black;");
+			l.setStyle("-fx-text-fill: white; -fx-background-color: gray;");
 			l.setWrapText(true);
 
 			this.getChildren().add(l);
@@ -42,7 +42,7 @@ public class Items extends StackPane {
 			try {
 				Image image = null;
 
-				if ("Image Local".equalsIgnoreCase(model.getName())) // si c'est une image local on affiche l'image a partir des byte de l'image et non du path
+				if ("Image locale".equalsIgnoreCase(model.getName())) // si c'est une image local on affiche l'image a partir des byte de l'image et non du path
 				{
 					ImageItems II = (ImageItems) model;
 					image = new Image(new ByteArrayInputStream(II.getImageData()));

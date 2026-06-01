@@ -75,12 +75,13 @@ public class HomeController {
 
     @FXML
     private void ClickImporter(MouseEvent event) throws IOException {
-        //TODO
+		DataManager.getInstance().importFileTierlist();
+		showRecently();
     }
 
     @FXML
     private void ClickParametres(MouseEvent event) throws IOException {
-        //TODO
+        //TODO Param
     }
 
     @FXML
@@ -91,10 +92,5 @@ public class HomeController {
     @FXML
     private void ClickNouvelleTierList(ActionEvent event) throws IOException {
         Manager.getInstance().setPage(PageType.CREATETIERLIST);
-    }
-
-    @FXML
-    private void ClickImporterTierList(ActionEvent event) throws IOException {
-        //TODO
     }
 }
