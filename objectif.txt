@@ -1,13 +1,13 @@
 Tâches faite :
 ● importer un item à partir d’une image locale FAIT
 ● modifier la couleur des tier FAIT 
+● renommer et réordonner les tiers FAIT
 
 
 
 Tâches urgentes :
 ● créer, dupliquer et supprimer une tier list A FAIRE LEO 
 ● ajouter et supprimer des catégories (les “tiers”) EN COURS MAXENCE
-● renommer et réordonner les tiers EN COURS MAXENCE
 ● ajouter, modifier et supprimer des items (simple texte OU image) à classer EN COURS MAXENCE
 ● organiser les items par glisser-déposer dans les différents tiers A FAIRE MUSTAFA
 ● organiser l’ordre des items par glisser-déposer dans chaque tier  A FAIRE MUSTAFA

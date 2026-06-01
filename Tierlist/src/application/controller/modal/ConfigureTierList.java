@@ -73,6 +73,11 @@ public class ConfigureTierList {
 	    	tier.setOnDelete(()->{
 	    		TierContainer.getChildren().remove(tier);
 	    		tiers.remove(tr);
+	    	});
+	    	
+	    	tier.setOnDelete(()->{
+	    		TierContainer.getChildren().remove(tier);
+	    		tiers.remove(tr);
 	    		TierContainer.requestLayout();
 	    		//TODO a finir
 	    	});

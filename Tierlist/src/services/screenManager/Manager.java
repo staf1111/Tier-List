@@ -18,8 +18,8 @@ public class Manager {
 	private static final PageType DEFAULT = PageType.HOME;
 	
 	private static final int HEIGHT_PREF = 650;
-	private static final int WIDTH_PREF = 1000;
-	
+	private static final int WIDTH_PREF = 1040;	
+
 	private PageType current; // type de la page en cours
 	private ThemeList currentT;
 	
@@ -57,7 +57,7 @@ public class Manager {
     			}
     		}
   
-            stage.setResizable(true); //on empèche le redimensionnement de la page
+            stage.setResizable(false); //on empèche le redimensionnement de la page
         	
             if (stage.getScene() == null) { // si null cela veut dire que la scene n'existe pas
 

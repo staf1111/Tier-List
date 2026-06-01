@@ -155,7 +155,10 @@ public class Tier extends HBox{
 			buttonLayout.getChildren().addAll(up, down);
 			
 			Button delete = new Button("Delete");
-
+			
+			delete.setOnAction(e ->{
+				if(this.onDelete != null) this.onDelete.run();
+			});
 			
 			// on ajoute le tout;
 			this.editContainer.getChildren().addAll(
