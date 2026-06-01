@@ -6,7 +6,6 @@ import services.api.Api;
 import services.data.DataManager;
 import services.data.Settings;
 import services.screenManager.Manager;
-import services.screenManager.PageType;
 
 public class Main extends Application {
 	@Override
@@ -17,8 +16,7 @@ public class Main extends Application {
 
 			Manager.init(primaryStage); //on initialise la classe qui va géré les différente page et modal
 			
-			Settings.getInstance().setCurrentTierList_play(DataManager.getInstance().importTierList("C:\\Users\\maxim\\Documents\\TierList_TD11A\\test.mmlc"));
-			Manager.getInstance().setPage(PageType.PLAY);
+			DataManager.getInstance().getAllTierList();
 			Api.init();
 			
 				
