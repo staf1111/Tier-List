@@ -28,36 +28,85 @@
             <Button fx:id="Themes" mnemonicParsing="false" prefHeight="27" prefWidth="103" text="Themes" />
         </HBox>
     </top>
-
-    <!-- ═══════════════════════════════════════
-         LEFT SIDEBAR (panneau vide)
-    ════════════════════════════════════════ -->
     <left>
-        <VBox fillWidth="true" prefWidth="192" />
+                  <VBox prefHeight="761.0" prefWidth="220.0" spacing="6" styleClass="sidebar">
+               <children>
+                  <ImageView fitHeight="162.0" fitWidth="210.0" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/logo.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="10" />
+                     </VBox.margin>
+                  </ImageView>
+                  <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button">
+                     <children>
+                        <ImageView fitHeight="28" fitWidth="28" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/Home.png" />
+                           </image>
+                        </ImageView>
+                        <Label style="-fx-font-size:13px; -fx-font-family:'Orbitron';" text="Accueil" textFill="WHITE" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button">
+                     <children>
+                        <ImageView fitHeight="28" fitWidth="28" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/mesTiersLists.png" />
+                           </image>
+                        </ImageView>
+                        <Label style="-fx-font-size:13px; -fx-font-family:'Orbitron';" text="Mes Tier List" textFill="WHITE" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button">
+                     <children>
+                        <ImageView fitHeight="28" fitWidth="28" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/Importer.png" />
+                           </image>
+                        </ImageView>
+                        <Label style="-fx-font-size:13px; -fx-font-family:'Orbitron';" text="Importer" textFill="WHITE" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button">
+                     <children>
+                        <ImageView fitHeight="28" fitWidth="28" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/parametre.png" />
+                           </image>
+                        </ImageView>
+                        <Label style="-fx-font-size:13px; -fx-font-family:'Orbitron';" text="Paramètres" textFill="WHITE" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button">
+                     <children>
+                        <ImageView fitHeight="28" fitWidth="28" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/aide.png" />
+                           </image>
+                        </ImageView>
+                        <Label style="-fx-font-size:13px; -fx-font-family:'Orbitron';" text="Aide" textFill="WHITE" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
     </left>
-
-    <!-- ═══════════════════════════════════════
-         CENTER : header + toolbar + contenu principal
-    ════════════════════════════════════════ -->
     <center>
         <VBox fillWidth="true" prefHeight="205.0" prefWidth="808.0">
             <padding>
                 <Insets bottom="12" left="12" right="12" top="0" />
             </padding>
 
-            <!-- ── HEADER ROW : Retour | Titre + date | (espace) ── -->
             <HBox alignment="CENTER" fillHeight="true">
                 <padding>
                     <Insets bottom="4" top="10" />
                 </padding>
 
-                <!-- Retour (ancré à gauche) -->
                 <Button fx:id="back" mnemonicParsing="false" onAction="#goBack" prefHeight="27" prefWidth="103" text="Retour" />
 
-                <!-- Spacer gauche -->
                 <Region HBox.hgrow="ALWAYS" />
 
-                <!-- Titre + date (centré) -->
                 <VBox alignment="CENTER_LEFT">
                <TextField fx:id="Title" alignment="CENTER" style="-fx-border-style: none;" text="Nom de la tiers list">
                   <font>
@@ -67,16 +116,13 @@
                     <Label fx:id="lastUpdate" contentDisplay="CENTER" text="Dernière modification le XX/XX/XXXX à XX:XX" />
                 </VBox>
 
-                <!-- Spacer droit (équilibre le bouton Retour) -->
                 <Region HBox.hgrow="ALWAYS" />
                 <Region prefWidth="103" />
             </HBox>
 
-            <!-- ── TOOLBAR : Ajouter / Réinitialiser / Sauvegarder + Play ── -->
             <HBox alignment="CENTER_LEFT" fillHeight="true">
                 <VBox.margin><Insets bottom="8" /></VBox.margin>
 
-                <!-- Boutons gauche -->
                 <Button fx:id="AddTier" mnemonicParsing="false" onAction="#addTier" text="Ajouter un tier">
                     <HBox.margin><Insets bottom="10.0" left="5.0" right="5.0" top="10.0" /></HBox.margin>
                 </Button>
@@ -92,10 +138,8 @@
                     <HBox.margin><Insets bottom="10.0" left="5.0" right="5.0" top="10.0" /></HBox.margin>
                 </Button>
 
-                <!-- Spacer pour pousser Play à droite -->
                 <Region prefHeight="63.0" prefWidth="250.0" HBox.hgrow="ALWAYS" />
 
-                <!-- Bouton Play (icône) -->
                 <Button fx:id="Play" prefHeight="42" prefWidth="53">
                     <HBox.margin><Insets bottom="10" right="10" top="10" /></HBox.margin>
                     <graphic>
@@ -107,17 +151,14 @@
             <Region prefHeight="63.0" prefWidth="25.0" />
             </HBox>
 
-            <!-- ── CONTENU PRINCIPAL : ScrollPane + Panneau config ── -->
             <HBox fillHeight="true" prefHeight="276.0" prefWidth="784.0" VBox.vgrow="ALWAYS">
 
-                <!-- ScrollPane (prend toute la largeur restante) -->
                 <ScrollPane fx:id="Scrollpane" fitToWidth="true" prefHeight="270.0" prefWidth="651.0" HBox.hgrow="ALWAYS">
                     <content>
                         <VBox fx:id="TierContainer" alignment="CENTER" fillWidth="false" />
                     </content>
                 </ScrollPane>
 
-                <!-- Panneau latéral droit (Config tier) -->
                 <VBox alignment="TOP_CENTER" prefWidth="124" spacing="5.0">
                     <HBox.margin><Insets left="8" /></HBox.margin>
 
