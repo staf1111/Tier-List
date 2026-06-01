@@ -22,10 +22,10 @@
             <padding>
                 <Insets bottom="8" left="12" right="12" top="8" />
             </padding>
-            <Button fx:id="Preview" mnemonicParsing="false" prefHeight="27" prefWidth="103" text="Aperçus">
+            <Button fx:id="Preview" mnemonicParsing="false" prefHeight="27" prefWidth="103" styleClass="button-apercu" text="Aperçus">
                 <HBox.margin><Insets right="8" /></HBox.margin>
             </Button>
-            <Button fx:id="Themes" mnemonicParsing="false" prefHeight="27" prefWidth="103" text="Themes" />
+            <Button fx:id="Themes" mnemonicParsing="false" prefHeight="27" prefWidth="103" styleClass="button-theme" text="Themes" />
         </HBox>
     </top>
     <left>
@@ -153,13 +153,13 @@
 
             <HBox fillHeight="true" prefHeight="276.0" prefWidth="784.0" VBox.vgrow="ALWAYS">
 
-                <ScrollPane fx:id="Scrollpane" fitToWidth="true" prefHeight="270.0" prefWidth="651.0" HBox.hgrow="ALWAYS">
+                <ScrollPane fx:id="Scrollpane" fitToWidth="true" prefHeight="270.0" prefWidth="651.0" style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS">
                     <content>
                         <VBox fx:id="TierContainer" alignment="CENTER" fillWidth="false" />
                     </content>
                 </ScrollPane>
 
-                <VBox alignment="TOP_CENTER" prefWidth="124" spacing="5.0">
+                <VBox alignment="TOP_CENTER" prefWidth="124" spacing="5.0" style="-fx-background-color: transparent;">
                     <HBox.margin><Insets left="8" /></HBox.margin>
 
                     <Button fx:id="TierSettings" alignment="CENTER" mnemonicParsing="false" onAction="#configureTierList" prefHeight="69.0" prefWidth="75.0">
@@ -215,9 +215,9 @@
          <Separator orientation="VERTICAL" prefHeight="20.0" prefWidth="6.0" visible="false" />
          <HBox prefHeight="100.0" prefWidth="699.0" VBox.vgrow="NEVER">
             <children>
-               <ScrollPane fx:id="Scrollpane2" prefHeight="100.0" prefWidth="679.0" vbarPolicy="NEVER" HBox.hgrow="ALWAYS">
+               <ScrollPane fx:id="Scrollpane2" prefHeight="100.0" prefWidth="679.0" style="-fx-background-color: transparent;" vbarPolicy="NEVER" HBox.hgrow="ALWAYS">
                   <content>
-                     <FlowPane fx:id="itemsContainer" hgap="8.0" orientation="VERTICAL" prefHeight="100.0" prefWidth="662.0" vgap="8.0" />
+                     <FlowPane fx:id="itemsContainer" hgap="8.0" orientation="VERTICAL" prefHeight="100.0" prefWidth="662.0" style="-fx-background-color: transparent;" vgap="8.0" />
                   </content>
                </ScrollPane>
                <Region prefHeight="100.0" prefWidth="111.0" HBox.hgrow="ALWAYS" />
