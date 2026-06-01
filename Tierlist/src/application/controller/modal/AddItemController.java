@@ -19,6 +19,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import model.ImageItems;
 import model.ItemsM;
@@ -33,13 +34,14 @@ public class AddItemController {
 	@FXML TabPane nav;
 	@FXML ImageView localImageIcon;
 	
-	@FXML Pane imgFilm, imgJeu;
+	@FXML StackPane imgFilm, imgJeu;
 	
 	@FXML Label SysMsg, SysMsg1;
 	
 	List<ItemsM> items = new ArrayList<ItemsM>();
 	
-	
+	ImageItems resRequest = null;
+
 	private String imagePath;
 	
 	@FXML
@@ -78,12 +80,14 @@ public class AddItemController {
 	    	SysMsg1.setStyle("-fx-text-fill: Green;");
 	    	break;
 		case "Image film":
+			items.add(resRequest);
 			break;
 		case "Image Jeu":
+			items.add(resRequest);
 			break;
 		}
-		
 	}
+
 	@FXML
 	public void getLocalImage()
 	{
@@ -129,6 +133,18 @@ public class AddItemController {
 	    if(img!=null) {
 	    	Items it = new Items(img);
 	    	imgFilm.getChildren().add(it);
+	    	resRequest = img;
+	    }
+	}
+
+	@FXML
+	private void afficherJeu() {
+	    String query = rechercheJeu.getText();
+	    ImageItems img = Api.getInstance().RAWG_request(query);
+	    if(img!=null) {
+	    	Items it = new Items(img);
+	    	imgJeu.getChildren().add(it);
+	    	resRequest = img;
 	    }
 	}
 }

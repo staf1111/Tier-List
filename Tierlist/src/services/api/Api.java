@@ -25,10 +25,9 @@ public class Api {
 	private Api() {
 	}
 
-	public List<ImageItems> RAWG_request(String query) // fonction pour faire la requette a l'api
+	public ImageItems RAWG_request(String query) // fonction pour faire la requette a l'api
 														// RAWG
 	{
-		List<ImageItems> searchResult = new ArrayList<ImageItems>();
 
 		String encodedQuery = URLEncoder.encode(query, StandardCharsets.UTF_8);
 
@@ -50,14 +49,13 @@ public class Api {
 					JsonNode resultsArray = node.get("results");
 
 					if (resultsArray != null && resultsArray.isArray()) {
-						for (JsonNode gameNode : resultsArray) {
-							String name = gameNode.get("name").asText();
-							String imagePath = gameNode.get("background_image").asText();
-							String year = gameNode.get("released").asText("");
+						JsonNode gameNode = resultsArray.get(0);
+						String name = gameNode.get("name").asText();
+						String imagePath = gameNode.get("background_image").asText();
+						String year = gameNode.get("released").asText("");
 
-							ImageItems game = new ImageItems(name, imagePath, year);
-							searchResult.add(game);
-						}
+						ImageItems game = new ImageItems(name, imagePath, year);
+						return game;
 					}
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -66,7 +64,7 @@ public class Api {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return searchResult;
+		return null;
 	}
 
 	public ImageItems TMDB_request(String query) // fonction pour faire la requette a l'api TMDB
