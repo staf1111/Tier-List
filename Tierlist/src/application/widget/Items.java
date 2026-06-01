@@ -68,6 +68,7 @@ public class Items extends StackPane {
 				System.err.println("Exception lors du chargement de l'image : " + e.getMessage());
 				this.getChildren().add(new Label("[Erreur]"));
 			}
+			
 		}
 	}
 }
