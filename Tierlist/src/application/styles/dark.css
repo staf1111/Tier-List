@@ -1,28 +1,23 @@
-/* =========================
-   ROOT
-========================= */
+
 
 .root {
     -fx-background-color: #000000;
-    -fx-font-family: "Orbitron";
+    -fx-font-family: "Press Start 2P";
 }
 
 
-/* =========================
-   SIDEBAR
-========================= */
+
 
 .sidebar {
     -fx-background-color: #0A0D1A;
     -fx-padding: 20;
     -fx-border-color: rgba(139, 61, 255, 0.19);
     -fx-border-width: 0 2 0 0;
+	-fx-font-family: "Press Start 2P";
 }
 
 
-/* =========================
-   SIDEBAR BUTTONS
-========================= */
+
 
 .sidebar-button {
     -fx-padding: 12;
@@ -36,9 +31,7 @@
 }
 
 
-/* =========================
-   ACTIVE BUTTON
-========================= */
+
 
 .sidebar-button-active {
     -fx-background-color: #1A1F3A;
@@ -47,12 +40,11 @@
     -fx-border-color: transparent transparent transparent #FF5EE7;
     -fx-border-width: 0 0 0 3;
     -fx-cursor: hand;
+	-fx-font-family: "Press Start 2P";
 }
 
 
-/* =========================
-   TITRE PRINCIPAL
-========================= */
+
 
 .main-title {
     -fx-fill: #FF5EE7;
@@ -61,15 +53,14 @@
 }
 
 
-/* =========================
-   BOUTONS TIER LIST
-========================= */
+
 
 .button_newTierPage2 {
     -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #550CE7, #060A35);
     -fx-text-fill: white;
     -fx-background-radius: 10;
     -fx-cursor: hand;
+	-fx-font-family: "Press Start 2P";
 }
 
 .button_TrierPage2 {
@@ -81,18 +72,17 @@
     -fx-border-radius: 10;
     -fx-cursor: hand;
 	-fx-alignment: CENTER_LEFT;
+	-fx-font-family: "Press Start 2P";
 }
 
 
-/* =========================
-   PRIMARY BUTTON
-========================= */
+
 
 .primary-button {
     -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #3B0DFF, #6F2DFF);
     -fx-text-fill: white;
     -fx-background-radius: 10;
-    -fx-font-family: "Orbitron";
+    -fx-font-family: "Press Start 2P";
     -fx-font-size: 14px;
     -fx-font-weight: bold;
     -fx-cursor: hand;
@@ -104,9 +94,7 @@
 }
 
 
-/* =========================
-   SECONDARY BUTTON
-========================= */
+
 
 .secondary-button {
     -fx-background-color: #141A30;
@@ -115,7 +103,7 @@
     -fx-border-radius: 10;
     -fx-background-radius: 10;
     -fx-text-fill: white;
-    -fx-font-family: "Orbitron";
+    -fx-font-family: "Press Start 2P";
     -fx-cursor: hand;
 }
 
@@ -132,6 +120,7 @@
     -fx-border-radius: 8;
     -fx-background-radius: 8;
     -fx-cursor: hand;
+	-fx-font-family: "Press Start 2P";
 }
 
 .button-theme {
@@ -142,6 +131,7 @@
     -fx-border-radius: 8;
     -fx-background-radius: 8;
     -fx-cursor: hand;
+	-fx-font-family: "Press Start 2P";
 }
 
 .pagination-button-fleche {
@@ -216,14 +206,12 @@
 
 .card-title {
     -fx-text-fill: white;
-    -fx-font-family: "Orbitron";
+    
     -fx-font-size: 12px;
     -fx-font-weight: bold;
 }
 
-/* =========================
-   SCROLL PANE
-========================= */
+
 
 .scroll-pane-transparent {
     -fx-background-color: transparent;
@@ -235,4 +223,93 @@
 
 .scroll-pane-transparent .scroll-pane-content {
     -fx-background-color: transparent;
+}
+
+.UtiliserPartout-button {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #00C853, #00E676);
+    -fx-text-fill: white;
+    
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,230,118,0.35), 12, 0.2, 0, 0);
+}
+
+.UtiliserPartout-button:hover {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #00E676, #69F0AE);
+}
+
+
+
+
+.UtiliserPartout2-button {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #D50000, #FF1744);
+    -fx-text-fill: white;
+    
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+   
+}
+
+.UtiliserPartout2-button:hover {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #FF1744, #FF5252);
+}
+
+.UtiliserPartout3-button {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #8B3DFF, #FF1744);
+    -fx-text-fill: white;
+    
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(255,23,68,0.35), 12, 0.2, 0, 0);
+}
+
+.UtiliserPartout3-button:hover {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #FF1744, #FF5252);
+}
+
+.add-tier-button {
+    -fx-background-color: #141A30;
+    -fx-text-fill: #34C759;
+
+    -fx-border-color: #34C759;
+    -fx-border-width: 1.5;
+    -fx-border-style: dashed;
+
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+
+    -fx-font-family: "Press Start 2P";
+    -fx-font-weight: bold;
+
+    -fx-cursor: hand;
+}
+
+.add-tier-button:hover {
+    -fx-background-color: #1B223D;
+}
+
+
+
+
+.add-item-button {
+    -fx-background-color: #141A30;
+    -fx-text-fill: #8B3DFF;
+
+    -fx-border-color: #8B3DFF;
+    -fx-border-width: 1.5;
+
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+
+    -fx-font-family: "Orbitron";
+    -fx-font-weight: bold;
+
+    -fx-cursor: hand;
+}
+
+.add-item-button:hover {
+    -fx-background-color: #1B223D;
 }

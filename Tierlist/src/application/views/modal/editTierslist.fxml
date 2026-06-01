@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<Pane fx:id="windows" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="715.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.modal.ConfigureTierList">
+<Pane fx:id="windows" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="715.0" stylesheets="@../../styles/dark.css" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.modal.ConfigureTierList">
    <children>
       <TabPane fx:id="pane" prefHeight="523.0" prefWidth="715.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -18,9 +18,9 @@
                      <children>
                         <ScrollPane fx:id="Scrollpane" hbarPolicy="NEVER" layoutX="19.0" layoutY="22.0" prefHeight="402.0" prefWidth="687.0">
                            <content>
-                              <VBox fx:id="TierContainer" prefHeight="402.0" prefWidth="674.0" />
+                              <VBox fx:id="TierContainer" prefHeight="402.0" prefWidth="674.0" styleClass="Zone-blanches-add-tier" stylesheets="@../../styles/dark.css" />
                            </content></ScrollPane>
-                        <Button layoutX="316.0" layoutY="442.0" mnemonicParsing="false" onAction="#quitter" text="Quitter" />
+                        <Button layoutX="316.0" layoutY="442.0" mnemonicParsing="false" onAction="#quitter" styleClass="UtiliserPartout-button" stylesheets="@../../styles/dark.css" text="Quitter" />
                      </children>
                   </AnchorPane>
             </content>
@@ -31,10 +31,10 @@
                      <children>
                         <ScrollPane fx:id="Scrollpane1" hbarPolicy="NEVER" layoutX="19.0" layoutY="25.0" prefHeight="402.0" prefWidth="677.0">
                            <content>
-                              <VBox fx:id="TierContainer1" prefHeight="402.0" prefWidth="674.0" />
+                              <VBox fx:id="TierContainer1" prefHeight="402.0" prefWidth="674.0" styleClass="Zone-blanches-nom-tier" stylesheets="@../../styles/dark.css" />
                            </content>
                         </ScrollPane>
-                        <Button layoutX="331.0" layoutY="446.0" mnemonicParsing="false" onAction="#quitter" text="Quitter" />
+                        <Button layoutX="331.0" layoutY="446.0" mnemonicParsing="false" onAction="#quitter" styleClass="UtiliserPartout2-button" stylesheets="@../../styles/dark.css" text="Quitter" />
                      </children>
                   </AnchorPane>
             </content>

@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="650.0" prefWidth="1000.0" stylesheets="@../styles/dark.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CreateTierListController">
+<BorderPane prefHeight="650.0" prefWidth="1000.0" stylesheets="@../styles/dark.css" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CreateTierListController">
 
     <left>
         <VBox prefHeight="650.0" prefWidth="180.0" spacing="6" styleClass="sidebar">
@@ -81,37 +81,37 @@
                 <padding>
                     <Insets bottom="4" top="6" />
                 </padding>
-                <Button fx:id="back" mnemonicParsing="false" onAction="#goBack" prefHeight="27" prefWidth="90" text="Retour" />
+                <Button fx:id="back" mnemonicParsing="false" onAction="#goBack" prefHeight="27" prefWidth="90" styleClass="button-apercu" stylesheets="@../styles/dark.css" text="Retour" />
                 <Region prefHeight="64.0" prefWidth="154.0" HBox.hgrow="ALWAYS" />
                 <VBox alignment="CENTER_LEFT">
-                    <TextField fx:id="Title" alignment="CENTER" style="-fx-border-style: none;" text="Nom de la tiers list">
+                    <TextField fx:id="Title" alignment="CENTER" style="-fx-border-style: none;" styleClass="Zone-blanches-nom-tier" text="Nom de la tiers list">
                         <font>
                             <Font name="System Bold" size="22.0" />
                         </font>
                     </TextField>
-                    <Label fx:id="lastUpdate" contentDisplay="CENTER" text="Dernière modification le XX/XX/XXXX à XX:XX" textFill="WHITE" />
+                    <Label fx:id="lastUpdate" contentDisplay="CENTER" text="Dernière modification le XX/XX/XXXX à XX:XX" textFill="#d7d731" />
                 </VBox>
                 <Region prefHeight="64.0" prefWidth="126.0" HBox.hgrow="ALWAYS" />
                <Button fx:id="Themes" mnemonicParsing="false" prefHeight="27" prefWidth="90" styleClass="button-theme" text="Themes" />
             </HBox>
             <HBox alignment="CENTER_LEFT" fillHeight="true">
                 <VBox.margin><Insets bottom="4" /></VBox.margin>
-                <Button fx:id="AddTier" mnemonicParsing="false" onAction="#addTier" text="Ajouter un tier">
+                <Button fx:id="AddTier" mnemonicParsing="false" onAction="#addTier" styleClass="add-tier-button" stylesheets="@../styles/dark.css" text="Ajouter un tier">
                     <HBox.margin><Insets bottom="6.0" left="4.0" right="4.0" top="6.0" /></HBox.margin>
                 </Button>
-                <Button fx:id="AddItem" mnemonicParsing="false" onAction="#addItems" text="Ajouter un element">
+                <Button fx:id="AddItem" mnemonicParsing="false" onAction="#addItems" styleClass="button-saveandreload" stylesheets="@../styles/dark.css" text="Ajouter un element">
                     <HBox.margin><Insets bottom="6.0" left="4.0" right="4.0" top="6.0" /></HBox.margin>
                 </Button>
-                <Button fx:id="Reset" mnemonicParsing="false" onAction="#resetTierList" text="Réinitialiser">
+                <Button fx:id="Reset" mnemonicParsing="false" onAction="#resetTierList" styleClass="button-saveandreload" stylesheets="@../styles/dark.css" text="Réinitialiser">
                     <HBox.margin><Insets bottom="6.0" left="4.0" right="4.0" top="6.0" /></HBox.margin>
                 </Button>
-                <Button fx:id="Save" mnemonicParsing="false" onAction="#saveTierList" text="Sauvegarder">
+                <Button fx:id="Save" mnemonicParsing="false" onAction="#saveTierList" styleClass="button-saveandreload" stylesheets="@../styles/dark.css" text="Sauvegarder">
                     <HBox.margin><Insets bottom="6.0" left="4.0" right="4.0" top="6.0" /></HBox.margin>
                 </Button>
                 <Region HBox.hgrow="ALWAYS" />
             </HBox>
             <HBox fillHeight="true" prefHeight="320.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
-                <ScrollPane fx:id="Scrollpane" fitToWidth="true" prefHeight="320.0" prefWidth="680.0" style="-fx-background-color: transparent;" styleClass="scroll-pane-transparent" HBox.hgrow="ALWAYS">
+                <ScrollPane fx:id="Scrollpane" fitToWidth="true" prefHeight="320.0" prefWidth="680.0" style="-fx-background-color: transparent;" styleClass="scroll-pane-transparent" stylesheets="@../styles/dark.css" HBox.hgrow="ALWAYS">
                     <content>
                         <VBox fx:id="TierContainer" alignment="CENTER" fillWidth="false" />
                     </content>
@@ -120,40 +120,40 @@
                     <HBox.margin><Insets left="6" /></HBox.margin>
                <Separator orientation="VERTICAL" prefHeight="51.0" prefWidth="12.0" visible="false" />
 
-                    <Button fx:id="TierSettings" alignment="CENTER" mnemonicParsing="false" onAction="#configureTierList" prefHeight="70.0" prefWidth="80.0">
+                    <Button fx:id="TierSettings" alignment="CENTER" mnemonicParsing="false" onAction="#configureTierList" prefHeight="70.0" prefWidth="80.0" style="-fx-background-color: black;">
                         <VBox.margin><Insets bottom="4.0" top="8.0" /></VBox.margin>
                         <graphic>
-                            <VBox alignment="TOP_CENTER" prefHeight="62.0" prefWidth="62.0">
+                            <VBox alignment="TOP_CENTER" prefHeight="62.0" prefWidth="62.0" style="-fx-background-color: black;">
                                 <ImageView fitHeight="54.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                                     <image><Image url="@../../assets/iconConfig.png" /></image>
                                 </ImageView>
-                                <Label alignment="CENTER" prefHeight="16" prefWidth="70" text="Configuration" />
+                                <Label alignment="CENTER" prefHeight="16" prefWidth="70" text="Configuration" textFill="WHITE" />
                             </VBox>
                         </graphic>
                     </Button>
                     <Separator prefWidth="90.0" style="-fx-border-color: rgba(139, 61, 255, 0.19);" visible="false" />
-                    <Button fx:id="Export" mnemonicParsing="false" onAction="#exportTierList" prefHeight="70.0" prefWidth="80.0">
+                    <Button fx:id="Export" mnemonicParsing="false" onAction="#exportTierList" prefHeight="70.0" prefWidth="80.0" style="-fx-background-color: black;">
                         <graphic>
-                            <VBox alignment="CENTER">
+                            <VBox alignment="CENTER" style="-fx-background-color: black;" stylesheets="@../styles/dark.css">
                                 <children>
                                     <ImageView fitHeight="52.0" fitWidth="48.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
                                         <image><Image url="@../../assets/exporter.png" /></image>
                                     </ImageView>
-                                    <Label alignment="CENTER" prefHeight="16.0" prefWidth="48.0" text="Exporter" />
+                                    <Label alignment="CENTER" prefHeight="16.0" prefWidth="48.0" text="Exporter" textFill="WHITE" />
                                 </children>
                             </VBox>
                         </graphic>
                         <VBox.margin><Insets bottom="4.0" top="4.0" /></VBox.margin>
                     </Button>
                     <Separator prefWidth="90.0" style="-fx-border-color: rgba(139, 61, 255, 0.19);" visible="false" />
-                    <Button mnemonicParsing="false" onAction="#deleteTierList" prefHeight="90.0" prefWidth="80.0">
+                    <Button mnemonicParsing="false" onAction="#deleteTierList" prefHeight="90.0" prefWidth="80.0" style="-fx-background-color: black;">
                         <graphic>
-                            <VBox alignment="CENTER">
+                            <VBox alignment="CENTER" stylesheets="@../styles/dark.css">
                                 <children>
                                     <ImageView fx:id="Export1" fitHeight="54.0" fitWidth="48.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
                                         <image><Image url="@../../assets/supprimer.png" /></image>
                                     </ImageView>
-                                    <Label alignment="CENTER" prefHeight="16.0" prefWidth="60.0" text="Supprimer" />
+                                    <Label alignment="CENTER" prefHeight="16.0" prefWidth="60.0" text="Supprimer" textFill="WHITE" />
                                 </children>
                             </VBox>
                         </graphic>
@@ -166,7 +166,7 @@
                 <children>
                     <ScrollPane fx:id="Scrollpane2" hbarPolicy="NEVER" prefHeight="90.0" prefWidth="700.0" styleClass="scroll-pane-transparent" HBox.hgrow="ALWAYS">
                         <content>
-                            <FlowPane fx:id="itemsContainer" hgap="8.0" orientation="VERTICAL" prefHeight="90.0" prefWidth="686.0" style="-fx-background-color: transparent;" vgap="8.0" />
+                            <FlowPane fx:id="itemsContainer" hgap="8.0" orientation="VERTICAL" prefHeight="90.0" prefWidth="686.0" style="-fx-background-color: transparent;" styleClass="Zone-blanches-add-tier" stylesheets="@../styles/dark.css" vgap="8.0" />
                         </content>
                     </ScrollPane>
                     <Region prefHeight="90.0" prefWidth="90.0" HBox.hgrow="ALWAYS" />
