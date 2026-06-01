@@ -6,6 +6,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.TransferMode;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Border;
@@ -42,7 +45,6 @@ public class Tier extends HBox{
 		this.setPrefHeight(model.getHeight());
 		this.setPrefWidth(model.getWidth());
 		this.setMaxWidth(Double.MAX_VALUE);
-		
 
 	    this.setAlignment(javafx.geometry.Pos.CENTER_LEFT);
 	    
@@ -87,7 +89,38 @@ public class Tier extends HBox{
 				    CornerRadii.EMPTY, 
 				    BorderWidths.DEFAULT
 				)));
-			this.getChildren().addAll(labelPane,itemsContainer);
+
+			// ── DROP sur la zone items du tier ──
+			this.itemsContainer.setOnDragOver(e -> {
+			    if (e.getGestureSource() != itemsContainer
+			            && e.getDragboard().hasString()
+			            && "ITEM_DRAG".equals(e.getDragboard().getString())) {
+			        e.acceptTransferModes(TransferMode.MOVE);
+			    }
+			    e.consume();
+			});
+
+			this.itemsContainer.setOnDragDropped(e -> {
+			    Dragboard db = e.getDragboard();
+			    if (db.hasString() && "ITEM_DRAG".equals(db.getString())) {
+			        // On récupère la source via le gestureSource
+			        if (e.getGestureSource() instanceof Items draggedItem) {
+			            HBox sourceContainer = (HBox) draggedItem.getParent();
+			            if (sourceContainer != null) {
+			                sourceContainer.getChildren().remove(draggedItem);
+			            }
+			            itemsContainer.getChildren().add(draggedItem);
+			            e.setDropCompleted(true);
+			        } else {
+			            e.setDropCompleted(false);
+			        }
+			    } else {
+			        e.setDropCompleted(false);
+			    }
+			    e.consume();
+			});
+
+			this.getChildren().addAll(labelPane, itemsContainer);
 		}
 		else if(type == TierType.EDIT)
 		{

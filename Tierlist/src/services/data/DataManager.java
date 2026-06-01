@@ -95,20 +95,28 @@ public class DataManager {
 	}
 	
 	
-	public void saveSettings()
+	public List<String> getAllTierList()
 	{
-		//TODO
+		List<String> res = new ArrayList<String>();
+		
+		File folder = new File(DEFAULT_PATH);
+		if(!folder.exists())
+		{
+			folder.mkdir();
+		}
+		
+		for(File file : folder.listFiles())
+		{
+			
+			if(!file.isDirectory() && file.getName().contains(".mmlc"))
+			{
+				res.add(file.getAbsolutePath());
+			}
+		}
+		
+		return res;
 	}
 	
-	public void readSettings()
-	{
-		//TODO
-	}
-	
-	public void updateSettings()
-	{
-		//TODO
-	}
 	
 	private void pathVerify() //on verifie que le dossier existe
 	{

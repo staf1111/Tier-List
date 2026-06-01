@@ -18,7 +18,7 @@ public class Manager {
 	private static final PageType DEFAULT = PageType.HOME;
 	
 	private static final int HEIGHT_PREF = 650;
-	private static final int WIDTH_PREF = 1040;	
+	private static final int WIDTH_PREF = 1000;	
 
 	private PageType current; // type de la page en cours
 	private ThemeList currentT;
