@@ -20,209 +20,177 @@
     <top>
         <HBox alignment="CENTER_RIGHT" fillHeight="true">
             <padding>
-                <Insets bottom="8" left="12" right="12" top="8" />
+                <Insets bottom="6" left="12" right="12" top="6" />
             </padding>
-            <Button fx:id="Preview" mnemonicParsing="false" prefHeight="27" prefWidth="103" styleClass="button-apercu" text="Aperçus">
+            <Button fx:id="Preview" mnemonicParsing="false" prefHeight="27" prefWidth="90" styleClass="button-apercu" text="Aperçus">
                 <HBox.margin><Insets right="8" /></HBox.margin>
             </Button>
-            <Button fx:id="Themes" mnemonicParsing="false" prefHeight="27" prefWidth="103" styleClass="button-theme" text="Themes" />
+            <Button fx:id="Themes" mnemonicParsing="false" prefHeight="27" prefWidth="90" styleClass="button-theme" text="Themes" />
         </HBox>
     </top>
-    <left>
-                  <VBox prefHeight="761.0" prefWidth="220.0" spacing="6" styleClass="sidebar">
-               <children>
-                  <ImageView fitHeight="162.0" fitWidth="210.0" preserveRatio="true">
-                     <image>
-                        <Image url="@../../assets/logo.png" />
-                     </image>
-                     <VBox.margin>
-                        <Insets bottom="10" />
-                     </VBox.margin>
-                  </ImageView>
-                  <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button">
-                     <children>
-                        <ImageView fitHeight="28" fitWidth="28" preserveRatio="true">
-                           <image>
-                              <Image url="@../../assets/Home.png" />
-                           </image>
-                        </ImageView>
-                        <Label style="-fx-font-size:13px; -fx-font-family:'Orbitron';" text="Accueil" textFill="WHITE" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button">
-                     <children>
-                        <ImageView fitHeight="28" fitWidth="28" preserveRatio="true">
-                           <image>
-                              <Image url="@../../assets/mesTiersLists.png" />
-                           </image>
-                        </ImageView>
-                        <Label style="-fx-font-size:13px; -fx-font-family:'Orbitron';" text="Mes Tier List" textFill="WHITE" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button">
-                     <children>
-                        <ImageView fitHeight="28" fitWidth="28" preserveRatio="true">
-                           <image>
-                              <Image url="@../../assets/Importer.png" />
-                           </image>
-                        </ImageView>
-                        <Label style="-fx-font-size:13px; -fx-font-family:'Orbitron';" text="Importer" textFill="WHITE" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button">
-                     <children>
-                        <ImageView fitHeight="28" fitWidth="28" preserveRatio="true">
-                           <image>
-                              <Image url="@../../assets/parametre.png" />
-                           </image>
-                        </ImageView>
-                        <Label style="-fx-font-size:13px; -fx-font-family:'Orbitron';" text="Paramètres" textFill="WHITE" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" spacing="12" styleClass="sidebar-button">
-                     <children>
-                        <ImageView fitHeight="28" fitWidth="28" preserveRatio="true">
-                           <image>
-                              <Image url="@../../assets/aide.png" />
-                           </image>
-                        </ImageView>
-                        <Label style="-fx-font-size:13px; -fx-font-family:'Orbitron';" text="Aide" textFill="WHITE" />
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-    </left>
-    <center>
-        <VBox fillWidth="true" prefHeight="205.0" prefWidth="808.0">
-            <padding>
-                <Insets bottom="12" left="12" right="12" top="0" />
-            </padding>
 
+    <left>
+        <VBox prefHeight="650.0" prefWidth="180.0" spacing="6" styleClass="sidebar">
+            <children>
+                <ImageView fitHeight="120.0" fitWidth="170.0" preserveRatio="true">
+                    <image>
+                        <Image url="@../../assets/logo.png" />
+                    </image>
+                    <VBox.margin>
+                        <Insets bottom="10" />
+                    </VBox.margin>
+                </ImageView>
+                <HBox alignment="CENTER_LEFT" spacing="10" styleClass="sidebar-button">
+                    <children>
+                        <ImageView fitHeight="22" fitWidth="22" preserveRatio="true">
+                            <image><Image url="@../../assets/Home.png" /></image>
+                        </ImageView>
+                        <Label style="-fx-font-size:12px; -fx-font-family:'Orbitron';" text="Accueil" textFill="WHITE" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" spacing="10" styleClass="sidebar-button">
+                    <children>
+                        <ImageView fitHeight="22" fitWidth="22" preserveRatio="true">
+                            <image><Image url="@../../assets/mesTiersLists.png" /></image>
+                        </ImageView>
+                        <Label style="-fx-font-size:12px; -fx-font-family:'Orbitron';" text="Mes Tier List" textFill="WHITE" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" spacing="10" styleClass="sidebar-button">
+                    <children>
+                        <ImageView fitHeight="22" fitWidth="22" preserveRatio="true">
+                            <image><Image url="@../../assets/Importer.png" /></image>
+                        </ImageView>
+                        <Label style="-fx-font-size:12px; -fx-font-family:'Orbitron';" text="Importer" textFill="WHITE" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" spacing="10" styleClass="sidebar-button">
+                    <children>
+                        <ImageView fitHeight="22" fitWidth="22" preserveRatio="true">
+                            <image><Image url="@../../assets/parametre.png" /></image>
+                        </ImageView>
+                        <Label style="-fx-font-size:12px; -fx-font-family:'Orbitron';" text="Paramètres" textFill="WHITE" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" spacing="10" styleClass="sidebar-button">
+                    <children>
+                        <ImageView fitHeight="22" fitWidth="22" preserveRatio="true">
+                            <image><Image url="@../../assets/aide.png" /></image>
+                        </ImageView>
+                        <Label style="-fx-font-size:12px; -fx-font-family:'Orbitron';" text="Aide" textFill="WHITE" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox fillWidth="true" prefHeight="610.0" prefWidth="820.0">
+            <padding>
+                <Insets bottom="8" left="10" right="10" top="0" />
+            </padding>
             <HBox alignment="CENTER" fillHeight="true">
                 <padding>
-                    <Insets bottom="4" top="10" />
+                    <Insets bottom="4" top="6" />
                 </padding>
-
-                <Button fx:id="back" mnemonicParsing="false" onAction="#goBack" prefHeight="27" prefWidth="103" text="Retour" />
-
+                <Button fx:id="back" mnemonicParsing="false" onAction="#goBack" prefHeight="27" prefWidth="90" text="Retour" />
                 <Region HBox.hgrow="ALWAYS" />
-
                 <VBox alignment="CENTER_LEFT">
-               <TextField fx:id="Title" alignment="CENTER" style="-fx-border-style: none;" text="Nom de la tiers list">
-                  <font>
-                     <Font name="System Bold" size="30.0" />
-                  </font>
-               </TextField>
+                    <TextField fx:id="Title" alignment="CENTER" style="-fx-border-style: none;" text="Nom de la tiers list">
+                        <font>
+                            <Font name="System Bold" size="22.0" />
+                        </font>
+                    </TextField>
                     <Label fx:id="lastUpdate" contentDisplay="CENTER" text="Dernière modification le XX/XX/XXXX à XX:XX" textFill="WHITE" />
                 </VBox>
-
                 <Region HBox.hgrow="ALWAYS" />
-                <Region prefWidth="103" />
+                <Region prefWidth="90" />
             </HBox>
-
             <HBox alignment="CENTER_LEFT" fillHeight="true">
-                <VBox.margin><Insets bottom="8" /></VBox.margin>
-
+                <VBox.margin><Insets bottom="4" /></VBox.margin>
                 <Button fx:id="AddTier" mnemonicParsing="false" onAction="#addTier" text="Ajouter un tier">
-                    <HBox.margin><Insets bottom="10.0" left="5.0" right="5.0" top="10.0" /></HBox.margin>
+                    <HBox.margin><Insets bottom="6.0" left="4.0" right="4.0" top="6.0" /></HBox.margin>
                 </Button>
-            <Button fx:id="AddItem" mnemonicParsing="false" onAction="#addItems" text="Ajouter un element">
-               <HBox.margin>
-                  <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-               </HBox.margin>
-            </Button>
+                <Button fx:id="AddItem" mnemonicParsing="false" onAction="#addItems" text="Ajouter un element">
+                    <HBox.margin><Insets bottom="6.0" left="4.0" right="4.0" top="6.0" /></HBox.margin>
+                </Button>
                 <Button fx:id="Reset" mnemonicParsing="false" onAction="#resetTierList" text="Réinitialiser">
-                    <HBox.margin><Insets bottom="10.0" left="5.0" right="5.0" top="10.0" /></HBox.margin>
+                    <HBox.margin><Insets bottom="6.0" left="4.0" right="4.0" top="6.0" /></HBox.margin>
                 </Button>
                 <Button fx:id="Save" mnemonicParsing="false" onAction="#saveTierList" text="Sauvegarder">
-                    <HBox.margin><Insets bottom="10.0" left="5.0" right="5.0" top="10.0" /></HBox.margin>
+                    <HBox.margin><Insets bottom="6.0" left="4.0" right="4.0" top="6.0" /></HBox.margin>
                 </Button>
-
-                <Region prefHeight="62.0" prefWidth="198.0" HBox.hgrow="ALWAYS" />
-
-                <Button fx:id="Play" prefHeight="42" prefWidth="53">
-                    <HBox.margin><Insets bottom="10" right="10" top="10" /></HBox.margin>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="Play" prefHeight="38" prefWidth="46">
+                    <HBox.margin><Insets bottom="6" right="8" top="6" /></HBox.margin>
                     <graphic>
-                        <ImageView fitHeight="34" fitWidth="36" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="28" fitWidth="30" pickOnBounds="true" preserveRatio="true">
                             <image><Image url="@../../assets/iconPlay.png" /></image>
                         </ImageView>
                     </graphic>
                 </Button>
-            <Region prefHeight="63.0" prefWidth="25.0" />
             </HBox>
-
-            <HBox fillHeight="true" prefHeight="276.0" prefWidth="784.0" VBox.vgrow="ALWAYS">
-
-                <ScrollPane fx:id="Scrollpane" fitToWidth="true" prefHeight="270.0" prefWidth="651.0" style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS">
+            <HBox fillHeight="true" prefHeight="320.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
+                <ScrollPane fx:id="Scrollpane" fitToWidth="true" prefHeight="320.0" prefWidth="680.0" style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS">
                     <content>
                         <VBox fx:id="TierContainer" alignment="CENTER" fillWidth="false" />
                     </content>
                 </ScrollPane>
+                <VBox alignment="TOP_CENTER" prefWidth="110" spacing="4.0" style="-fx-background-color: transparent;">
+                    <HBox.margin><Insets left="6" /></HBox.margin>
 
-                <VBox alignment="TOP_CENTER" prefWidth="124" spacing="5.0" style="-fx-background-color: transparent;">
-                    <HBox.margin><Insets left="8" /></HBox.margin>
-
-                    <Button fx:id="TierSettings" alignment="CENTER" mnemonicParsing="false" onAction="#configureTierList" prefHeight="69.0" prefWidth="75.0">
-                        <VBox.margin><Insets bottom="5.0" top="10.0" /></VBox.margin>
+                    <Button fx:id="TierSettings" alignment="CENTER" mnemonicParsing="false" onAction="#configureTierList" prefHeight="62.0" prefWidth="70.0">
+                        <VBox.margin><Insets bottom="4.0" top="8.0" /></VBox.margin>
                         <graphic>
-                            <VBox alignment="TOP_CENTER" prefHeight="58.0" prefWidth="50.0">
-                                <ImageView fitHeight="62.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                            <VBox alignment="TOP_CENTER" prefHeight="52.0" prefWidth="46.0">
+                                <ImageView fitHeight="54.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                                     <image><Image url="@../../assets/iconConfig.png" /></image>
                                 </ImageView>
-                                <Label alignment="CENTER" prefHeight="18" prefWidth="201" text="Config tier" />
+                                <Label alignment="CENTER" prefHeight="16" prefWidth="70" text="Config tier" />
                             </VBox>
                         </graphic>
                     </Button>
-               <Separator prefWidth="97.0" />
-               <Button fx:id="Export" mnemonicParsing="false" prefHeight="72.0" prefWidth="79.0">
-                  <graphic>
-                     <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
-                        <children>
-                           <ImageView fitHeight="69.0" fitWidth="57.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
-                              <image>
-                                 <Image url="@../../assets/exporter.png" />
-                              </image>
-                           </ImageView>
-                           <Label alignment="CENTER" prefHeight="18.0" prefWidth="51.0" text="Exporter" />
-                        </children>
-                     </VBox>
-                  </graphic>
-                  <VBox.margin>
-                     <Insets bottom="5.0" top="5.0" />
-                  </VBox.margin>
-               </Button>
-               <Separator prefWidth="200.0" />
-               <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0">
-                  <graphic>
-                     <VBox alignment="CENTER" prefHeight="0.0" prefWidth="0.0">
-                        <children>
-                           <ImageView fx:id="Export1" fitHeight="62.0" fitWidth="56.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
-                              <image>
-                                 <Image url="@../../assets/supprimer.png" />
-                              </image>
-                           </ImageView>
-                           <Label alignment="CENTER" prefHeight="18.0" prefWidth="67.0" text="Supprimer" />
-                        </children>
-                     </VBox>
-                  </graphic>
-                  <VBox.margin>
-                     <Insets bottom="5.0" top="5.0" />
-                  </VBox.margin>
-               </Button>
+                    <Separator prefWidth="90.0" />
+                    <Button fx:id="Export" mnemonicParsing="false" prefHeight="66.0" prefWidth="72.0">
+                        <graphic>
+                            <VBox alignment="CENTER">
+                                <children>
+                                    <ImageView fitHeight="52.0" fitWidth="48.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                                        <image><Image url="@../../assets/exporter.png" /></image>
+                                    </ImageView>
+                                    <Label alignment="CENTER" prefHeight="16.0" prefWidth="48.0" text="Exporter" />
+                                </children>
+                            </VBox>
+                        </graphic>
+                        <VBox.margin><Insets bottom="4.0" top="4.0" /></VBox.margin>
+                    </Button>
+                    <Separator prefWidth="90.0" />
+                    <Button mnemonicParsing="false" prefHeight="72.0" prefWidth="72.0">
+                        <graphic>
+                            <VBox alignment="CENTER">
+                                <children>
+                                    <ImageView fx:id="Export1" fitHeight="54.0" fitWidth="48.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                                        <image><Image url="@../../assets/supprimer.png" /></image>
+                                    </ImageView>
+                                    <Label alignment="CENTER" prefHeight="16.0" prefWidth="60.0" text="Supprimer" />
+                                </children>
+                            </VBox>
+                        </graphic>
+                        <VBox.margin><Insets bottom="4.0" top="4.0" /></VBox.margin>
+                    </Button>
                 </VBox>
-
             </HBox>
-         <Separator orientation="VERTICAL" prefHeight="20.0" prefWidth="6.0" visible="false" />
-         <HBox prefHeight="100.0" prefWidth="699.0" VBox.vgrow="NEVER">
-            <children>
-               <ScrollPane fx:id="Scrollpane2" prefHeight="100.0" prefWidth="679.0" style="-fx-background-color: transparent;" vbarPolicy="NEVER" HBox.hgrow="ALWAYS">
-                  <content>
-                     <FlowPane fx:id="itemsContainer" hgap="8.0" orientation="VERTICAL" prefHeight="100.0" prefWidth="662.0" style="-fx-background-color: transparent;" vgap="8.0" />
-                  </content>
-               </ScrollPane>
-               <Region prefHeight="100.0" prefWidth="111.0" HBox.hgrow="ALWAYS" />
-            </children>
-         </HBox>
+            <Separator orientation="VERTICAL" prefHeight="10.0" prefWidth="6.0" visible="false" />
+            <HBox prefHeight="90.0" prefWidth="800.0" VBox.vgrow="NEVER">
+                <children>
+                    <ScrollPane fx:id="Scrollpane2" prefHeight="90.0" prefWidth="700.0" style="-fx-background-color: transparent;" vbarPolicy="NEVER" HBox.hgrow="ALWAYS">
+                        <content>
+                            <FlowPane fx:id="itemsContainer" hgap="8.0" orientation="VERTICAL" prefHeight="90.0" prefWidth="686.0" style="-fx-background-color: transparent;" vgap="8.0" />
+                        </content>
+                    </ScrollPane>
+                    <Region prefHeight="90.0" prefWidth="90.0" HBox.hgrow="ALWAYS" />
+                </children>
+            </HBox>
 
         </VBox>
     </center>
