@@ -6,7 +6,6 @@ import services.api.Api;
 import services.data.DataManager;
 import services.data.Settings;
 import services.screenManager.Manager;
-import services.screenManager.PageType;
 
 public class Main extends Application {
 	@Override
@@ -17,8 +16,6 @@ public class Main extends Application {
 
 			Manager.init(primaryStage); //on initialise la classe qui va géré les différente page et modal
 			
-			
-			Manager.getInstance().setPage(PageType.CREATETIERLIST);
 
 			Api.init();
 			

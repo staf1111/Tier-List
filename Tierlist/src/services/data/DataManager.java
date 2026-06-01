@@ -94,22 +94,6 @@ public class DataManager {
 		return tierList;
 	}
 	
-	
-	public void saveSettings()
-	{
-		//TODO
-	}
-	
-	public void readSettings()
-	{
-		//TODO
-	}
-	
-	public void updateSettings()
-	{
-		//TODO
-	}
-	
 	private void pathVerify() //on verifie que le dossier existe
 	{
 		File folder = new File(path);

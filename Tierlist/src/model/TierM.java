@@ -14,7 +14,7 @@ public class TierM implements Serializable {
 	
 	//on stocke les couleur mais quand on save le fichier binaire on ne sauvegarde pas la couleur
 	private transient Color backColor;
-	private transient Color nameColor; //TODO a l'import il faut recrée la couleur;
+	private transient Color nameColor;
 	
 	private double backColor_bleu;
 	private double backColor_red;
