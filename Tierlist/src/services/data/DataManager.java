@@ -199,11 +199,7 @@ public class DataManager {
 			}
 			
 			
-			if (Files.deleteIfExists(filePath)) {
-	            System.out.println("Fichier supprimé avec succès : " + filePath.toAbsolutePath());
-	        } else {
-	            System.out.println("Aucun fichier trouvé à supprimer pour : " + path);
-	        }
+			Files.deleteIfExists(filePath);
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
