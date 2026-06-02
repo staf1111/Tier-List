@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="650.0" prefWidth="1000.0" stylesheets="@../styles/dark.css" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.aideController">
+
+   
+    <left>
+        <VBox prefHeight="650.0" prefWidth="180.0" spacing="6" styleClass="sidebar">
+            <children>
+                <ImageView fitHeight="120.0" fitWidth="170.0" preserveRatio="true">
+                    <image>
+                        <Image url="@../../assets/logo.png" />
+                    </image>
+                    <VBox.margin>
+                        <Insets bottom="10" />
+                    </VBox.margin>
+                </ImageView>
+                <HBox alignment="CENTER_LEFT" onMouseClicked="#ClickAccueil" spacing="10" styleClass="sidebar-button">
+                    <children>
+                        <ImageView fitHeight="22" fitWidth="22" preserveRatio="true">
+                            <image><Image url="@../../assets/Home.png" /></image>
+                        </ImageView>
+                        <Label style="-fx-font-size:12px; -fx-font-family:'Orbitron';" text="Accueil" textFill="WHITE" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" onMouseClicked="#ClickMesTierList" spacing="10" styleClass="sidebar-button">
+                    <children>
+                        <ImageView fitHeight="22" fitWidth="22" preserveRatio="true">
+                            <image><Image url="@../../assets/mesTiersLists.png" /></image>
+                        </ImageView>
+                        <Label style="-fx-font-size:12px; -fx-font-family:'Orbitron';" text="Mes Tier List" textFill="WHITE" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" onMouseClicked="#ClickImporter" spacing="10" styleClass="sidebar-button">
+                    <children>
+                        <ImageView fitHeight="22" fitWidth="22" preserveRatio="true">
+                            <image><Image url="@../../assets/Importer.png" /></image>
+                        </ImageView>
+                        <Label style="-fx-font-size:12px; -fx-font-family:'Orbitron';" text="Importer" textFill="WHITE" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" spacing="10" styleClass="sidebar-button">
+                    <children>
+                        <ImageView fitHeight="22" fitWidth="22" preserveRatio="true">
+                            <image><Image url="@../../assets/parametre.png" /></image>
+                        </ImageView>
+                        <Label style="-fx-font-size:12px; -fx-font-family:'Orbitron';" text="Paramètres" textFill="WHITE" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" spacing="10" styleClass="sidebar-button-active" stylesheets="@../styles/dark.css">
+                    <children>
+                        <ImageView fitHeight="22" fitWidth="22" preserveRatio="true">
+                            <image><Image url="@../../assets/aide.png" /></image>
+                        </ImageView>
+                        <Label style="-fx-font-size:12px; -fx-font-family:'Orbitron';" text="Aide" textFill="WHITE" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </left>
+
+  
+    <center>
+        <VBox fillWidth="true" prefHeight="650.0" prefWidth="820.0" spacing="10">
+            <padding>
+                <Insets bottom="10" left="16" right="16" top="0" />
+            </padding>
+
+          
+            <HBox alignment="CENTER_LEFT" fillHeight="true" prefWidth="788.0">
+                <padding>
+                    <Insets bottom="4" top="8" />
+                </padding>
+                <Text fill="#f047ff" strokeType="OUTSIDE" strokeWidth="0.0" text="Aide">
+                    <font><Font name="Orbitron Bold" size="27.0" /></font>
+                </Text>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="Themes" mnemonicParsing="false" prefHeight="27" prefWidth="90" styleClass="button-theme" text="Thème" />
+            </HBox>
+
+          
+            <Label style="-fx-font-family:'Courier New'; -fx-font-size:13px;" text="Tout ce que tu dois savoir pour utiliser Tier List App" textFill="WHITE">
+                <VBox.margin><Insets bottom="6" /></VBox.margin>
+            </Label>
+
+          
+            <Label style="-fx-font-family:'Orbitron'; -fx-font-size:16px;" text="Définition tier list" textFill="#f047ff" />
+
+            <VBox maxWidth="390.0" prefWidth="370.0" spacing="4" styleClass="card-dark">
+                <padding><Insets bottom="14" left="14" right="14" top="14" /></padding>
+                <Label prefWidth="360.0" style="-fx-font-family:'Courier New'; -fx-font-size:12px;" text="Une tier list permet de classer des éléments (images, objets, personnages…) dans différentes catégories appelées &quot;tiers&quot;, généralement du meilleur au moins bon (ex : S, A, B, C, D)." textFill="WHITE" wrapText="true" />
+            </VBox>
+
+            
+            <Region prefHeight="6.0" />
+
+           
+            <Label style="-fx-font-family:'Orbitron'; -fx-font-size:16px;" text="Fonctionnalitées" textFill="#f047ff" />
+
+            
+            <FlowPane hgap="12" prefWrapLength="788.0" vgap="12" VBox.vgrow="ALWAYS">
+
+              
+                <VBox minHeight="140.0" prefWidth="180.0" spacing="8" styleClass="card-feature">
+                    <padding><Insets bottom="12" left="12" right="12" top="12" /></padding>
+                    <Button mnemonicParsing="false" prefHeight="30" prefWidth="130" styleClass="add-item-button" stylesheets="@../styles/dark.css" text="+ Ajouter un tier" />
+                    <Label prefWidth="156.0" style="-fx-font-family:'Courier New'; -fx-font-size:11px;" text="• Clique sur le bouton &quot;Ajouter&quot;&#10;• Sélectionne une image ou un élément&#10;• Il apparaîtra dans la zone de stockage" textFill="WHITE" wrapText="true" />
+                </VBox>
+
+                
+                <VBox minHeight="140.0" prefWidth="180.0" spacing="8" styleClass="card-feature">
+                    <padding><Insets bottom="12" left="12" right="12" top="12" /></padding>
+                    <Label style="-fx-font-family:'Courier New'; -fx-font-size:13px; -fx-font-weight:bold;" text="Drag and drop" textFill="#f047ff" />
+                    <Label prefWidth="156.0" style="-fx-font-family:'Courier New'; -fx-font-size:11px;" text="Clique et maintiens un élément. Glisse-le dans le tier souhaité (S, A, B…). Relâche pour le déposer." textFill="WHITE" wrapText="true" />
+                </VBox>
+
+               
+                <VBox minHeight="140.0" prefWidth="180.0" spacing="8" styleClass="card-feature">
+                    <padding><Insets bottom="12" left="12" right="12" top="12" /></padding>
+                    <Label style="-fx-font-family:'Courier New'; -fx-font-size:13px; -fx-font-weight:bold;" text="Supprimer" textFill="#f047ff" />
+                    <Label prefWidth="156.0" style="-fx-font-family:'Courier New'; -fx-font-size:11px;" text="Clique droit sur un élément. Sélectionne &quot;Supprimer&quot;." textFill="WHITE" wrapText="true" />
+                    <Region VBox.vgrow="ALWAYS" />
+                    <ImageView fitHeight="32" fitWidth="32" preserveRatio="true">
+                        <image><Image url="@../../assets/supprimer.png" /></image>
+                    </ImageView>
+                </VBox>
+
+               
+                <VBox minHeight="140.0" prefWidth="180.0" spacing="8" styleClass="card-feature">
+                    <padding><Insets bottom="12" left="12" right="12" top="12" /></padding>
+                    <Label style="-fx-font-family:'Courier New'; -fx-font-size:13px; -fx-font-weight:bold;" text="Sauvegarder ta tier list" textFill="#f047ff" />
+                    <Label prefWidth="156.0" style="-fx-font-family:'Courier New'; -fx-font-size:11px;" text="Clique sur &quot;Save / Export&quot;. Choisis un format (image / fichier projet). Ta tier list sera enregistrée." textFill="WHITE" wrapText="true" />
+                    <Region VBox.vgrow="ALWAYS" />
+                    <ImageView fitHeight="32" fitWidth="32" preserveRatio="true">
+                        <image><Image url="@../../assets/save.png" /></image>
+                    </ImageView>
+                </VBox>
+
+               
+                <VBox minHeight="140.0" prefWidth="180.0" spacing="8" styleClass="card-feature">
+                    <padding><Insets bottom="12" left="12" right="12" top="12" /></padding>
+                    <Label style="-fx-font-family:'Courier New'; -fx-font-size:13px; -fx-font-weight:bold;" text="Charger" textFill="#f047ff" />
+                    <Label prefWidth="156.0" style="-fx-font-family:'Courier New'; -fx-font-size:11px;" text="Sélectionne un fichier sauvegardé. Ta tier list sera restaurée. Le fichier charger se trouve dans documents et se nomme TD11A" textFill="WHITE" wrapText="true" />
+                    <Region VBox.vgrow="ALWAYS" />
+                    <ImageView fitHeight="32" fitWidth="32" preserveRatio="true">
+                        <image><Image url="@../../assets/importer.png" /></image>
+                    </ImageView>
+                </VBox>
+
+            </FlowPane>
+
+        </VBox>
+    </center>
+
+</BorderPane>

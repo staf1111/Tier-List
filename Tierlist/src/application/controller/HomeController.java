@@ -86,7 +86,7 @@ public class HomeController {
 
     @FXML
     private void ClickAide(MouseEvent event) throws IOException {
-        //TODO
+    	 Manager.getInstance().setPage(PageType.AIDE);
     }
 
     @FXML

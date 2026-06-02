@@ -4,5 +4,6 @@ public enum PageType {
 	HOME,
 	CREATETIERLIST,
 	PLAY,
-	MYTIERLIST
+	MYTIERLIST,
+	AIDE
 }

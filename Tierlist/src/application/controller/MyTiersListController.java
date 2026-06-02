@@ -114,7 +114,7 @@ public class MyTiersListController {
 
     @FXML
     private void ClickAide(MouseEvent event) throws IOException {
-        //TODO
+    	Manager.getInstance().setPage(PageType.AIDE);
     }
     @FXML
     private void ClickNouvelleTierList(ActionEvent event) throws IOException {
