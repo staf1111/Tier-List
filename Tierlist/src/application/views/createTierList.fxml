@@ -164,9 +164,9 @@
             <Separator orientation="VERTICAL" prefHeight="10.0" prefWidth="6.0" visible="false" />
             <HBox prefHeight="119.0" prefWidth="766.0" VBox.vgrow="NEVER">
                 <children>
-                    <ScrollPane fx:id="Scrollpane2" hbarPolicy="NEVER" prefHeight="118.0" prefWidth="688.0" styleClass="scroll-pane-transparent" HBox.hgrow="ALWAYS">
+                    <ScrollPane fx:id="Scrollpane2" hbarPolicy="NEVER" prefHeight="118.0" prefWidth="688.0" style="-fx-background: transparent; -fx-background-color: transparent;" styleClass="Zone-blanches-add-tier" HBox.hgrow="ALWAYS">
                         <content>
-                            <FlowPane fx:id="itemsContainer" alignment="CENTER" hgap="8.0" orientation="VERTICAL" prefHeight="114.0" prefWidth="676.0" style="-fx-background-color: transparent;" styleClass="Zone-blanches-add-tier" stylesheets="@../styles/dark.css" vgap="8.0" />
+                            <FlowPane fx:id="itemsContainer" alignment="CENTER" hgap="8.0" orientation="VERTICAL" prefHeight="113.0" prefWidth="676.0" style="-fx-background-color: transparent;" stylesheets="@../styles/dark.css" vgap="8.0" />
                         </content>
                     </ScrollPane>
                     <Region prefHeight="90.0" prefWidth="90.0" HBox.hgrow="ALWAYS" />

@@ -34,7 +34,7 @@ public class AddItemController {
 	
 	@FXML StackPane imgFilm, imgJeu;
 	
-	@FXML Label SysMsg, SysMsg1;
+	@FXML Label SysMsg, SysMsg1, SysMsg2, SysMsg3;
 	
 	List<ItemsM> items = new ArrayList<ItemsM>();
 	
@@ -78,10 +78,24 @@ public class AddItemController {
 	    	SysMsg1.setStyle("-fx-text-fill: Green;");
 	    	break;
 		case "Image film":
+			if(resRequest == null)
+			{
+		    	SysMsg2.setText("Erreur: image non trouvé");
+		    	SysMsg2.setStyle("-fx-text-fill: Red;");
+			}
 			items.add(resRequest);
+	    	SysMsg2.setText("Item ajouté");
+	    	SysMsg2.setStyle("-fx-text-fill: Green;");
 			break;
 		case "Image Jeu":
+			if(resRequest == null)
+			{
+		    	SysMsg3.setText("Erreur: image non trouvé");
+		    	SysMsg3.setStyle("-fx-text-fill: Red;");
+			}
 			items.add(resRequest);
+	    	SysMsg3.setText("Item ajouté");
+	    	SysMsg3.setStyle("-fx-text-fill: Green;");
 			break;
 		}
 	}
@@ -125,6 +139,7 @@ public class AddItemController {
 
 	@FXML
 	private void afficherFilm() {
+		imgFilm.getChildren().clear();
 	    String query = rechercheFilm.getText();
 	    ImageItems img = Api.getInstance().TMDB_request(query);
 	    if(img!=null) {
@@ -136,6 +151,7 @@ public class AddItemController {
 
 	@FXML
 	private void afficherJeu() {
+		imgJeu.getChildren().clear();
 	    String query = rechercheJeu.getText();
 	    ImageItems img = Api.getInstance().RAWG_request(query);
 	    if(img!=null) {

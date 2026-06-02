@@ -72,9 +72,14 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Button fx:id="ajouter" layoutX="80.0" layoutY="250.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="40.0" prefWidth="90.0" styleClass="UtiliserPartout2-button" stylesheets="@../../styles/dark.css" text="Ajouter" />
-                        <Button fx:id="quitter" layoutX="325.0" layoutY="250.0" mnemonicParsing="false" onAction="#leave" prefHeight="40.0" prefWidth="90.0" styleClass="UtiliserPartout3-button" stylesheets="@../../styles/dark.css" text="Quitter" />
+                        <Button fx:id="ajouter" layoutX="73.0" layoutY="250.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="40.0" prefWidth="90.0" styleClass="UtiliserPartout2-button" stylesheets="@../../styles/dark.css" text="Ajouter" />
+                        <Button fx:id="quitter" layoutX="334.0" layoutY="250.0" mnemonicParsing="false" onAction="#leave" prefHeight="40.0" prefWidth="90.0" styleClass="UtiliserPartout3-button" stylesheets="@../../styles/dark.css" text="Quitter" />
                         <StackPane fx:id="imgFilm" layoutX="170.0" layoutY="100.0" prefHeight="150.0" prefWidth="150.0" />
+                        <Label fx:id="SysMsg2" alignment="CENTER" contentDisplay="CENTER" layoutX="174.0" layoutY="252.0" prefHeight="35.0" prefWidth="141.0" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                      </children></AnchorPane>
                </content>
             </Tab>
@@ -91,6 +96,11 @@
                         <Button fx:id="rechercherJeu" layoutX="350.0" layoutY="65.0" mnemonicParsing="false" onAction="#afficherJeu" prefHeight="25.0" prefWidth="95.0" styleClass="button_newTierPage2" stylesheets="@../../styles/dark.css" text="Rechercher" />
                         <StackPane fx:id="imgJeu" layoutX="170.0" layoutY="100.0" prefHeight="150.0" prefWidth="150.0" />
                         <Button fx:id="ajouter" layoutX="70.0" layoutY="250.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="40.0" prefWidth="90.0" styleClass="UtiliserPartout2-button" stylesheets="@../../styles/dark.css" text="Ajouter" />
+                        <Label fx:id="SysMsg3" alignment="CENTER" contentDisplay="CENTER" layoutX="172.0" layoutY="252.0" prefHeight="35.0" prefWidth="141.0" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
                         <Button fx:id="quitter" layoutX="325.0" layoutY="250.0" mnemonicParsing="false" onAction="#leave" prefHeight="40.0" prefWidth="90.0" styleClass="UtiliserPartout3-button" stylesheets="@../../styles/dark.css" text="Quitter" />
                      </children></AnchorPane>
                </content>

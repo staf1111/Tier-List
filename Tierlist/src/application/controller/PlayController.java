@@ -1,6 +1,5 @@
 package application.controller;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +10,6 @@ import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.input.ClipboardContent;
@@ -30,7 +28,6 @@ import services.screenManager.PageType;
 public class PlayController {
 
     @FXML Button AddTier, Reset, Save, Preview, Themes, back, TierSettings, Play, Export, AddItem;
-    @FXML Label lastUpdate;
     @FXML VBox TierContainer;
     @FXML ScrollPane Scrollpane, Scrollpane2;
     @FXML TextField Title;
@@ -57,9 +54,11 @@ public class PlayController {
         TierContainer.setAlignment(Pos.TOP_CENTER);
         TierContainer.setFillWidth(true);
 
+        itemsContainer.setPrefHeight(Scrollpane2.getHeight());
+        itemsContainer.setPrefWidth(Scrollpane2.getWidth());
+        Scrollpane2.setStyle("-fx-background: transparent; -fx-background-color: transparent;");
+        
         Title.setEditable(false);
-
-        lastUpdate.setText("");
 
         if (Temporary.getInstance().getCurrentTierList_play() != null) {
 
@@ -69,10 +68,6 @@ public class PlayController {
 
             refreshTier(tierlist.getTier());
             refreshItems(tierlist.getItems());
-
-            if (tierlist.getDate() != null) {
-                setLastUpdate(tierlist.getDate());
-            }
         }
     }
 
@@ -155,18 +150,5 @@ public class PlayController {
     public void goBack() {
 		Temporary.getInstance().setCurrentTierList_play(tierlist);
         Manager.getInstance().setPage(PageType.HOME);
-    }
-
-    private void setLastUpdate(LocalDateTime date) {
-        if (date == null) return;
-
-        lastUpdate.setText(String.format(
-                "Dernière modification le %d/%s/%d à %02d:%02d",
-                date.getDayOfMonth(),
-                date.getMonth(),
-                date.getYear(),
-                date.getHour(),
-                date.getMinute()
-        ));
     }
 }

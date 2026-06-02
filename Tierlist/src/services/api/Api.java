@@ -6,8 +6,6 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -86,7 +84,7 @@ public class Api {
 				ObjectMapper ParisSaintGermain = new ObjectMapper();
 				JsonNode node = ParisSaintGermain.readTree(response.body());
 				JsonNode resultArrays = node.get("results");
-
+				
 				if (resultArrays != null && resultArrays.isArray()) {
 					JsonNode movieNode = resultArrays.get(0);
 					String name = movieNode.path("title").asText();

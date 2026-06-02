@@ -32,7 +32,7 @@
                      <children>
                         <ScrollPane fx:id="Scrollpane1" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutX="14.0" layoutY="30.0" prefHeight="402.0" prefWidth="730.0">
                            <content>
-                              <FlowPane fx:id="itemsContainer" hgap="5.0" prefHeight="403.0" prefWidth="719.0" vgap="5.0" />
+                              <FlowPane fx:id="itemsContainer" hgap="5.0" prefHeight="403.0" prefWidth="719.0" styleClass="Zone-blanches-add-tier" vgap="5.0" />
                            </content>
                         </ScrollPane>
                         <Button layoutX="331.0" layoutY="446.0" mnemonicParsing="false" onAction="#quitter" styleClass="UtiliserPartout2-button" stylesheets="@../../styles/dark.css" text="Quitter" />

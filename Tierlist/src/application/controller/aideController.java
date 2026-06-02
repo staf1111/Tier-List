@@ -1,9 +1,11 @@
 package application.controller;
 
 import java.io.IOException;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import services.data.DataManager;
 import services.screenManager.Manager;
 import services.screenManager.PageType;
 
@@ -24,7 +26,7 @@ public class aideController {
 
     @FXML
     private void ClickImporter(MouseEvent event) throws IOException {
-        // TODO : import
+		DataManager.getInstance().importFileTierlist();
     }
 
     @FXML

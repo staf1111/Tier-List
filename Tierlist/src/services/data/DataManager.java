@@ -142,9 +142,7 @@ public class DataManager {
 	            File folderSelected = folderChooser.getSelectedFile();
 	            
 	            String folderPath = folderSelected.getAbsolutePath();
-	            
-	            System.out.println("Dossier sélectionné : " + folderPath);
-	            
+	            	            
 	    		try {
 	    			FileOutputStream fos = new FileOutputStream(folderPath + File.separator +t.getName() + ".mmlc");
 	    			ObjectOutputStream  oos = new ObjectOutputStream (fos);

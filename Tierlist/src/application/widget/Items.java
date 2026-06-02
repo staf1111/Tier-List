@@ -2,7 +2,6 @@ package application.widget;
 
 import java.io.ByteArrayInputStream;
 
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -23,7 +22,6 @@ public class Items extends StackPane {
 		this.setPrefSize(width, height);
 		this.setMinSize(width, height);
 		this.setMaxSize(width, height);
-		this.setPadding(new Insets(5));
 
 		if (model.getName() == null || model.getContent() == null) {
 			this.getChildren().add(new Label("[Vide]"));

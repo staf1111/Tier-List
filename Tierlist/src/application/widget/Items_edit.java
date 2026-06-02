@@ -20,9 +20,12 @@ import model.ImageItems;
 import model.ItemsM;
 
 public class Items_edit extends HBox {
-	public static final int DEFAULT_WIDTH = 350;
+	public static final int DEFAULT_WIDTH = 150;
 	public static final int DEFAULT_HEIGHT = 80;
-
+	
+	private Runnable onDelete;
+	private Label l; //label du nom du text items
+	
 	public Items_edit(ItemsM model) {
 		this(model, DEFAULT_WIDTH, DEFAULT_HEIGHT);
 	}
@@ -41,8 +44,8 @@ public class Items_edit extends HBox {
 		}
 
 		if (model.getName().equalsIgnoreCase("texte")) {
-			Label l = new Label(model.getContent());
-			l.setPrefSize(height, height);
+			l = new Label(model.getContent());
+			l.setPrefSize(height - 10, height - 10);
 			l.setAlignment(Pos.CENTER);
 			l.setStyle("-fx-text-fill: white; -fx-background-color: gray;");
 			l.setWrapText(true);
@@ -69,8 +72,8 @@ public class Items_edit extends HBox {
 					this.getChildren().add(errorLabel);
 				} else {
 					ImageView imageView = new ImageView(image);
-					imageView.setFitWidth(height);
-					imageView.setFitHeight(height);
+					imageView.setFitWidth(height - 10);
+					imageView.setFitHeight(height - 10);
 					imageView.setPreserveRatio(true);
 					this.getChildren().add(imageView);
 				}
@@ -84,6 +87,13 @@ public class Items_edit extends HBox {
 		if (model.getName().equalsIgnoreCase("texte")) 
 		{
 			TextField name = new TextField();
+			l.textProperty().bind(name.textProperty());
+			name.setText(model.getContent());
+			
+			name.textProperty().addListener((observable, oldValue, newValue)->{
+				model.setContent(newValue);
+			});
+			
 			name.setPromptText("my new text");
 			name.getStyleClass().add("Zone-blanches-add-tier");
 			name.setStyle("-fx-text-fill: White");
@@ -92,6 +102,16 @@ public class Items_edit extends HBox {
 		}
 		Button delete = new Button("Delete");
 		delete.getStyleClass().add("configureTierlist-btn-delete");
+		delete.setOnAction(e->{
+			if(this.onDelete != null) onDelete.run();
+		});
+		
 		this.getChildren().add(delete);
 	}
+
+	public void setOnDelete(Runnable onDelete) {
+		this.onDelete = onDelete;
+	}
+	
+	
 }

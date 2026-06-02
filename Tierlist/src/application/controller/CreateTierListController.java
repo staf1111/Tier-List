@@ -72,8 +72,7 @@ public class CreateTierListController {
 		TierContainer.setAlignment(Pos.TOP_CENTER);
 		TierContainer.setFillWidth(true);
 
-		Title.setStyle(
-				"-fx-background-color: transparent;-fx-background-insets: 0;-fx-background-radius: 0;-fx-padding: 0;-fx-text-fill: #FFE45E");
+		Title.setStyle("-fx-background-color: transparent;-fx-background-insets: 0;-fx-background-radius: 0;-fx-padding: 0;-fx-text-fill: #FFE45E");
 
 		lastUpdate.setText("");
 		
@@ -207,6 +206,13 @@ public class CreateTierListController {
 				TierContainer.getChildren().clear();
 				refreshTier(controller.getTiers());
 			}
+			
+			if(controller.getItems() != null)
+			{
+				items.clear();
+				itemsContainer.getChildren().clear();
+				refreshItems(controller.getItems());
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -280,6 +286,6 @@ public class CreateTierListController {
 
     @FXML
     private void ClickAide(MouseEvent event) throws IOException {
-        //TODO
+        Manager.getInstance().setPage(PageType.AIDE);
     }
 }

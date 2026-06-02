@@ -86,12 +86,21 @@ public class ConfigureTierList {
 	    	TierContainer.getChildren().add(tier);
 	    }
 	    
-	    for(ItemsM it : items)
-	    {
-	    	Items_edit Ie = new Items_edit(it);
-	    	itemsContainer.getChildren().add(Ie);
+	    for (ItemsM it : items) {
+	        Items_edit Ie;
+	        
+	        if ("Texte".equalsIgnoreCase(it.getName())) {
+	            Ie = new Items_edit(it, 350, 80);
+	        } else {
+	            Ie = new Items_edit(it);
+	        }	        
+	        Ie.setOnDelete(() -> {
+	            items.remove(it); 
+	            itemsContainer.getChildren().remove(Ie);
+	        });
+	        
+	        if(Ie != null) itemsContainer.getChildren().add(Ie);
 	    }
-	    
 	}
 
 	

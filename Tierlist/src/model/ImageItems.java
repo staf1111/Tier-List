@@ -40,6 +40,12 @@ public class ImageItems implements ItemsM{
 	public String getContent() {
 		return path;
 	}
+	
+	@Override
+	public void setContent(String content) {
+		this.path = content;
+	}
+	
 	@Override
 	public String getName() {
 		return name;
@@ -48,9 +54,10 @@ public class ImageItems implements ItemsM{
 	public byte[] getImageData() {
 		return imageData;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "ImageItems [path=" + path + ", year=" + year + ", getName()=" + getName() + "]";
 	}
+
 }
