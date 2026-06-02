@@ -43,7 +43,7 @@ public class Manager {
                 throw new IllegalArgumentException("Page inconnue: " + PT); // la page voulu n'existe pas
             }
             
-            root = FXMLLoader.load(Manager.class.getResource(PATH)); // on itilisalise le rot
+            root = FXMLLoader.load(getClass().getResource(PATH)); // on itilisalise le root
     	
             if(root != null) //on initialise le thème de la page
     		{
