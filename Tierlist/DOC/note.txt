@@ -1,0 +1,1 @@
+Par ailleurs, je n'ai pas réussi à générer un fichier .jar fonctionnel comme demandé.

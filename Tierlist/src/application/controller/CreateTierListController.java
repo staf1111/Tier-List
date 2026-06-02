@@ -62,12 +62,13 @@ public class CreateTierListController {
 	public void initialize() {
 		Scrollpane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
 		Scrollpane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-		Scrollpane2.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
-		Scrollpane2.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+		Scrollpane2.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+		Scrollpane2.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
 
 		Scrollpane.setFitToWidth(true);
-		Scrollpane2.setFitToWidth(true);
-
+		Scrollpane2.setFitToWidth(false);
+		Scrollpane2.setFitToHeight(true);
+		
 		TierContainer.setSpacing(10);
 		TierContainer.setAlignment(Pos.TOP_CENTER);
 		TierContainer.setFillWidth(true);
