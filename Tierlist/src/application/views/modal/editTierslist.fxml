@@ -5,22 +5,23 @@
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<Pane fx:id="windows" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="715.0" stylesheets="@../../styles/dark.css" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.modal.ConfigureTierList">
+<Pane fx:id="windows" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" stylesheets="@../../styles/dark.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.modal.ConfigureTierList">
    <children>
-      <TabPane fx:id="pane" prefHeight="523.0" prefWidth="715.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane fx:id="pane" prefHeight="550.0" prefWidth="750.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab fx:id="Edit_tier" text="Edite Tier">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="461.0" prefWidth="707.0">
                      <children>
-                        <ScrollPane fx:id="Scrollpane" hbarPolicy="NEVER" layoutX="19.0" layoutY="22.0" prefHeight="402.0" prefWidth="687.0">
+                        <ScrollPane fx:id="Scrollpane" hbarPolicy="NEVER" layoutX="19.0" layoutY="22.0" prefHeight="402.0" prefWidth="721.0">
                            <content>
-                              <VBox fx:id="TierContainer" prefHeight="402.0" prefWidth="674.0" styleClass="Zone-blanches-add-tier" stylesheets="@../../styles/dark.css" />
+                              <VBox fx:id="TierContainer" prefHeight="402.0" prefWidth="711.0" styleClass="Zone-blanches-add-tier" stylesheets="@../../styles/dark.css" />
                            </content></ScrollPane>
-                        <Button layoutX="316.0" layoutY="442.0" mnemonicParsing="false" onAction="#quitter" styleClass="UtiliserPartout-button" stylesheets="@../../styles/dark.css" text="Quitter" />
+                        <Button layoutX="347.0" layoutY="448.0" mnemonicParsing="false" onAction="#quitter" styleClass="UtiliserPartout-button" stylesheets="@../../styles/dark.css" text="Quitter" />
                      </children>
                   </AnchorPane>
             </content>
@@ -29,9 +30,9 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ScrollPane fx:id="Scrollpane1" hbarPolicy="NEVER" layoutX="19.0" layoutY="25.0" prefHeight="402.0" prefWidth="677.0">
+                        <ScrollPane fx:id="Scrollpane1" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutX="14.0" layoutY="30.0" prefHeight="402.0" prefWidth="730.0">
                            <content>
-                              <VBox fx:id="TierContainer1" prefHeight="402.0" prefWidth="674.0" styleClass="Zone-blanches-nom-tier" stylesheets="@../../styles/dark.css" />
+                              <FlowPane fx:id="itemsContainer" hgap="5.0" prefHeight="403.0" prefWidth="719.0" vgap="5.0" />
                            </content>
                         </ScrollPane>
                         <Button layoutX="331.0" layoutY="446.0" mnemonicParsing="false" onAction="#quitter" styleClass="UtiliserPartout2-button" stylesheets="@../../styles/dark.css" text="Quitter" />

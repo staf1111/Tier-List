@@ -82,8 +82,7 @@ public class Tier extends HBox {
 
 			HBox.setHgrow(itemsContainer, Priority.ALWAYS);
 
-			this.borderProperty().set(new Border(new BorderStroke(model.getBackColor(), BorderStrokeStyle.SOLID,
-					CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+			this.borderProperty().set(new Border(new BorderStroke(model.getBackColor(), BorderStrokeStyle.SOLID,CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 
 			// drop
 			this.itemsContainer.setOnDragOver(e -> {
@@ -138,8 +137,11 @@ public class Tier extends HBox {
 			editContainer.setAlignment(Pos.CENTER_LEFT);
 
 			Label nameL = new Label("Nom :");
+			nameL.getStyleClass().add("configureTierlist-label-tier");
 			Label nomColorL = new Label("couleur texte :");
+			nomColorL.getStyleClass().add("configureTierlist-label-tier");
 			Label backgroundL = new Label("Arrière plan :");
+			backgroundL.getStyleClass().add("configureTierlist-label-tier");
 
 			nameController = new TextField();
 			nameController.setText(model.getName());
@@ -173,9 +175,11 @@ public class Tier extends HBox {
 			});
 
 			VBox buttonLayout = new VBox();
-
-			up = new Button("up");
-			down = new Button("down");
+			buttonLayout.setAlignment(Pos.CENTER);
+			buttonLayout.setSpacing(2);
+			
+			up = new Button("▲");
+			down = new Button("▼");
 
 			up.setOnAction(e -> {
 				if (this.onUp != null)
@@ -196,6 +200,10 @@ public class Tier extends HBox {
 					this.onDelete.run();
 			});
 
+			up.getStyleClass().add("configureTierlist-btn-nav");
+			down.getStyleClass().add("configureTierlist-btn-nav");
+			delete.getStyleClass().add("configureTierlist-btn-delete");
+			
 			this.editContainer.getChildren().addAll(nameL, nameController, nomColorL, nameFill, backgroundL, background, buttonLayout, delete);
 
 			this.getChildren().addAll(labelPane, editContainer);

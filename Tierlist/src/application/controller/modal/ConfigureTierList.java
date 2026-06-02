@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import application.widget.Items_edit;
 import application.widget.Tier;
 import application.widget.TierType;
 import javafx.fxml.FXML;
@@ -84,6 +85,13 @@ public class ConfigureTierList {
 	    	
 	    	TierContainer.getChildren().add(tier);
 	    }
+	    
+	    for(ItemsM it : items)
+	    {
+	    	Items_edit Ie = new Items_edit(it);
+	    	itemsContainer.getChildren().add(Ie);
+	    }
+	    
 	}
 
 	

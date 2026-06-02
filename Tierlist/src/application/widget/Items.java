@@ -60,7 +60,7 @@ public class Items extends StackPane {
 				} else {
 					ImageView imageView = new ImageView(image);
 					imageView.setFitWidth(width);
-					imageView.setFitHeight(height);
+					imageView.setFitHeight(width);
 					imageView.setPreserveRatio(true);
 					this.getChildren().add(imageView);
 				}
