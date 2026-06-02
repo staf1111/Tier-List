@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../styles/dark.css" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.modal.AddTierController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../styles/dark.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.modal.AddTierController">
    <children>
       <Button layoutX="378.0" layoutY="340.0" mnemonicParsing="false" onAction="#save" prefHeight="46.0" prefWidth="92.0" styleClass="button-apercu" stylesheets="@../../styles/dark.css" text="Sauvegarder" />
       <Button layoutX="486.0" layoutY="340.0" mnemonicParsing="false" onAction="#leave" prefHeight="46.0" prefWidth="92.0" styleClass="button-apercu" stylesheets="@../../styles/dark.css" text="Quitter" />
@@ -37,7 +37,7 @@
             </Pane>
          </children>
       </Pane>
-      <TextField fx:id="name" layoutX="375.0" layoutY="237.0" prefHeight="25.0" prefWidth="140.0" styleClass="Zone-blanches-add-tier" stylesheets="@../../styles/dark.css" text="S" />
+      <TextField fx:id="name" layoutX="375.0" layoutY="237.0" prefHeight="25.0" prefWidth="140.0" style="-fx-text-fill: white;" styleClass="Zone-blanches-add-tier" stylesheets="@../../styles/dark.css" text="S" />
       <Label layoutX="284.0" layoutY="236.0" text="Texte : " textFill="WHITE">
          <font>
             <Font size="18.0" />

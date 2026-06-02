@@ -84,7 +84,10 @@ public class DataManager {
 					ImageItems it = (ImageItems) m;
 					Items.add(it);
 				}
-				Items.add(m);
+				else
+				{
+					Items.add(m);
+				}
 			}
 			
 			tierList = new TierList(obj.getName(),Tiers, Items); 
